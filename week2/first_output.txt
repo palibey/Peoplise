@@ -1,0 +1,438 @@
+Header: Ana Başarılı Senaryo Data: 1. Kullanıcı iş tanımı ekranını açar.2. Dördüncü tab olan "işe alım talebi / onay" bölümünü görüntüler.3. Bölüm başlığı altındaki metni görüntüler. BR14. İşe alım takımı (Job team) bölümünü doldurur. BR2a. İK kullanıcısı (HR user) seçimi yapar.b. Sorumluluk alanı (Domain) seçimi yapar.Eğer kullanıcı "İşe alım takımı yarat" (Create job team) seçeneğini seçerse, aşağıdaki diğer alanlar da açılır:c. İşe alım yöneticisi (Hiring manager) seçer.d. İK İş Ortağı (HR business partner) seçer.e. Yeni üye ekle (add new member) seçeneği ile yeni kişi ekler. BR35. Kullanıcı Onay zinciri (Approval chain) bölümünü doldurur.6. Onay notları (Approval notes) bölümüne notlarını girer.7. İlan tercihleri (Posting preferences) bölümünde onaya gönderilme tercihini belirler. 2 seçenekten birini seçer:a. Hemen onaya gönder (send approval immediately): bu seçim ile bu sekme kaydedildiği anda onaya gönderilir.b. Gönderim zamanını planla (schedule sending time): bu seçeneği seçerse, onaya gönderme zamanını planlar.i. Gün (tarih) seçer.ii. Saat seçer.8. Tüm alanları doldurduktan sonra, bir sonraki next / ileri dediğinde, bir tebrik modal'i karşısına çıkar. Kullanıcı yapmak istediği aksiyonu belirler:a. İş tanımını kaydet (Save job for later): iş tanımını kaydeder ve ekrandan çıkar. Başarıyla kaydedildiğine dair, toast mesaj görüntüler. (Metin: "İş tanımınız başarıyla kaydedilmiştir.")b. Aday deneyimi (candidate experience): Bu seçim ile de, doğrudan işe alım süreç tasarımı ekranına yönlenmiş olur.
+Scenario: Admin adds content manager for announcement section
+  Given Admin is logged in and opens the dashboard settings page
+  When Admin clicks on the "Add content manager" button for the announcement section
+  Then System opens a popup for adding a new content manager
+  When Admin enters the name or email address in the popup
+  And Admin selects the required users from the employee directory
+  And Admin clicks the "Add selected" button
+  Then System saves the content managers for the announcement section
+  And System displays an info message on the dashboard settings page
+
+Header: Ana Başarılı Senaryo Data: 1. Kullanıcı iş tanımı ekranını açar.2. Üçüncü tab olan "yetenek personası" bölümüne geçer.3. Başlığın altında yer alan metni görüntüler. BR14. İsterse bu bölümü skip edip geçebilir. BR25. Kişisel özellikler (Personality) bölümünü doldurur. Bu bölümde, combo'dan potansiyel gösterge kütüphanesinde defaultta ekli olan göstergelerden de seçebilir, veya kütüphanede bulunmuyor ise yeni kayıt olarak da ekleyebilir. BR36. Eklediği potansiyel boyutun yanında 2 seçenek görüntüler. Bu seçenekler, ilgili iş tanımının yetenek personasından beklenen boyutun hangi seviyede bekleneceğini belirtir.Skala seçebilir: Bu durumda bir 5'li skala görüntüler. Bu skala üzerinden bir baz seviye seçer. Örneğin "learning agility" boyutu için, 3 seviyesini seçtiğinde, bu şu demektir: "Bu iş tanımının yetenek personasından beklenen, learning agility'sinin en az 3 veya üzeri olmasıdır."Var/yok seçebilir. Bu durumda var ya da yok seçimi yapar. Bu da, "Bu iş tanımının yetenek personasından bu boyut beklenir veya beklenmez." demek olacaktır.7. Yetkinlikler (Competencies) bölümünü doldurur. Bu bölümde, combo'dan yetkinlik kütüphanesindeki defaultta ekli yetkinlikler arasından seçim yapar. Eğer kütüphanede ekli değil ise, yeni yetkinlik kaydını da ekleyebilir. BR48. Aynı boyutlarda (kişisel özelliklerde) olduğu gibi, yetkinliklerde de, yetkinliğin baz seviyesini seçebilir. Yetkinlik kütüphanesi ile bağlı olacak. Kütüphanedeki skalayı burada getirecek. (yalnızca skaladan seçim yapar.)9. Motivatörler (Drivers) bölümüne eklemeler yapar. BR510. Demotivatörler (Drainers) bölümüne eklemeler yapar. BR611. İşe başlatma sırasında dikkat edilecekler (Tips for onboarding) bölümüne eklemeler yapar. BR712. Tüm alanları doldurduktan sonra, bir sonraki next / ileri dediğinde, bir tebrik modal'i karşısına çıkar. Kullanıcı yapmak istediği aksiyonu belirler: BR8a. İş tanımını kaydet (Save job for later): iş tanımını kaydeder ve ekrandan çıkar. Başarıyla kaydedildiğine dair, toast mesaj görüntüler. (Metin: "İş tanımınız başarıyla kaydedilmiştir.")b. İşe alım talebi oluştur / Onaya gönder (Requisition / Approval): Bu seçeneğe tıklarsa, bir sonraki tab olan "İşe alım talebi" (Requisition) bölümüne yönlenir. Bu kısmın analizi için Bkz.c. Aday deneyimi tasarla(candidae experience): Bu seçim ile de, doğrudan işe alım süreç tasarımı ekranına yönlenmiş olur.
+Scenario: Content manager adds a new announcement
+  Given Content manager is logged in and opens the dashboard
+  When Content manager clicks on the "Add announcement" button in the action section
+  Then System opens a new popup for adding an announcement
+  When Content manager fills in the announcement text, URL, and URL title
+  And Content manager clicks on the "Publish" button
+  Then System saves the announcement and displays it in the announcements section
+
+Header: Ana Başarılı Senaryo Data: 1. Kullanıcı iş tanımı ekranını açar.2. İkinci tab olan "iş karakteristikleri" bölümüne geçer.3. Başlığın altında yer alan metni görüntüler. BR14. Anahtar opsiyonlar (Key options) bölümünü doldurur. (adı doğru mu )a. İş dili (Job language) bilgisini seçer. BR2b. Tercih edilen başlama tarihi (Preferred StartDate) bilgisini girer.c. İşe alım sebebi (Reason to Hire) seçilir. BR3d. Bütçelenmiş olup olmadığı (Budgeted) bilgisi seçilir. (Seçenekler şöyledir; TR: Evet / Hayır EN: Yes / No) (Not: bu alanda bu iş tanımının bütçeye dahil edilmiş olup olmadığı bilgisi alınır.)e. Boş koltuk sayısı (Number of vacancies) seçilir. (Not: Bu alanda, bu iş tanımı ile eşlecek kaç açık pozisyon / koltuk var bunun bilgisi alınır.)f. Hedeflenen son tarih (Targetted Deadline) bilgisi girilir. (Not: Bu alanda, pozisyonun doldurulması beklenen son tarih bilgisi alınır.)g. Öncelik seviyesi (Priority Level) seçilir. BR4h. Sorumluluk alanı (Domain) seçilir. BR55. Pozisyon etiketleri (Position tags) bölümünü doldurur. Kullanıcı istediği kadar etiket (metin) ekleyebilir.6. Analitik modelleme (Analytical modelling) bölümünü doldurur. Bu bölümde işin kritikliği, karmaşıklığı vb bilgilerini belirler. BR6a. Kritiklik (Criticality) durumunu belirler. Seçenekler şöyledir:Seçim yokKritikKritik değilEğer kritik seçeneğini seçer ise, "Kritiklik tipi" alanı açılır ve kullanıcı bu seçenekler arasından seçim yapar:Ticari riskliBilgi birikimi riskiOperasyonel kritikYasal kritikDiğerb. Otonomi (Autonomy) seçimi yapar. Seçenekler şunlardır:DüşükOrtaYüksekc. Karmaşıklık (Complexity) seçimi yapar. Seçenekler şunlardır:DüşükOrtaYüksekd. İşgücü Piyasasındaki Önemi (Market desirability) seçimi yapar. Seçenekler şunlardır: (Türkçesi ne olsun , açıklama alanı da eklenecek, notları check edelim.)DüşükOrtaYüksek7. Tüm alanları doldurduktan sonra, bir sonraki tab olan yetenek personası (talent persona) bölümüne geçer. Bu kısmın analizi için Bkz.8. Kullanıcı bir sonraki taba geçmeden de "kaydet" butonuna tıklayarak yaptığı yere kadar olan kısmı kaydedip sonra doldurmaya da devam edebilir.
+Scenario: Employee views the organization chart
+  Given Employee is logged in and opens the dashboard
+  When Employee clicks on the organization chart icon in the left menu
+  Then System displays the organization chart starting from the top level
+  When Employee turns off the "Show Individual Positions" toggle to view only departments
+  Then System shows the organization chart based on departments
+  When Employee clicks on the "View Full Chart" button to see the entire organization chart
+  Then System displays the complete organization chart
+
+Header: Ana Başarılı Senaryo Data: 1. Kullanıcı iş tanımı ekranını açar.2. İlk tab olan iş detayları (job details) bölümünü görüntüler.3. Pozisyon Detayları başlığını ve altında yer alan metni görüntüler. BR14. İş Başlığı ve Departman Detayları (Job Title & Department Details) bölümünü doldurur.a. İş başlığı (Job title) alanını doldurur. BR2 AA1b. Sektör (Industry) seçer. BR3c. Departman (Department) seçer. BR4d. Pozisyon tipi (Position Type) seçer. BR5e. Dış Başvurular (External applications) mı yoksa İç Başvurular (Internal applications) mı kabul edileceğini seçer. BR65. Her bir alanı doldurdukça veya seçtikçe yan tarafta önizlemesini (preview) görüntüler. BR76. Deneyim seviyesi (Experience Level) seçer. BR87. Lokasyon bilgilerini girer.a. Ülke (Country) seçer.b. Şehir / ZIP Kodu (City or ZIP Code) girer.c. Çalışma tercihi (Remote Preference) seçer. BR98. Hakkımızda (About us) bölümünü doldurur. BR109. Sorumluluklar (Responsibilities) alanına eklemeler yapar. BR1110. Teknik bilgi ve beceriler (Skills Knowledge and Abilities (SKA)) bölümünü doldurur.a. Bu bölümde ilk alana "gerekenleri" (required) olanları ekler. (metin: Gerekenler(TR) - Required(EN))b. İkinci alana ise "tercih edilenleri" (preferred) olanları ekler. (metin: Tercih edilenler (TR) - Preferred(EN))11. İş deneyimi(Work Experience) bölümünü doldurur: BR12a. Gerekli mi yoksa tercihen mi olduğunu seçer.b. Deneyim alanını girer. (autocomplete önceki eklenmişler gelir ancak yeni de ekleyebilir.)c. Min deneyim süresini seçer.d. Raporlayacağı bir rol varsa onu belirler.12. Eğitim (Education) alanını doldurur. BR13a. Gerekli mi yoksa tercihen mi olduğunu seçer.b. Eğitim seviyesini (degree) seçer.c. Bölümünü seçer.13. Dil becerileri (Language skills) alanını doldurur. BR14a. Defaultta aşağıdaki alanları doldurur:i. Dil seçer.ii. Seviyesini seçer.b. Detaylı seçeneğini seçerse aşağıdaki alanları doldurur:i. Dil seçer.ii. Okuma seviyesini seçer.iii. Yazma seviyesini seçer.iv. Konuşma seviyesini seçer.14. Maaş ve yan haklar (Salary & Benefits) bölümünü doldurur. Aşağıdaki seçenekleri seçerek, detaylarını girer: BR15a. Maaşb. Yan haklarc. Prim (Var/Yok şeklinde seçim yapar.) Var seçeneğini seçerse, yanında açılan Açıklama alanına detay girebilir.15. Diğer gereklilikler (Other requirements) bölümünü doldurur.a. Çalışma izni (Work permit) (var/ yok seçimi yapar.)b. Ehliyet (Diriving license) ( ehliyet tipi seçimi yapılır (birden fazla seçilebilir). Ehliyet tipleri arasından seçtirilir: M, A1, A2, A, B1, B, BE, C1, C1E, C, CE, D1, D1E, D, DE, F)c. Askerlik durumu (military service) (Seçenekler şunlardır: Tecilli, Tamamlandı, Farketmez)16. Çalışma ortamı ve iklim (Work environment and culture) bölümünü doldurur. Bu alanda aşağıdaki üç alt başlık bazında seçimler yapar: BR16a. Çalışma ortamı (çalışma ortamının nasıl olduğu ve / veya nasıl olmadığına dair kutulara anahtar kelimeler veya cümleler eklenir.)b. Takım (takımın nasıl olduğu ve / veya nasıl olmadığına dair kutulara anahtar kelimeler veya cümleler eklenir.)c. Kültür (şirket kültürünün nasıl olduğu ve / veya nasıl olmadığına dair kutulara anahtar kelimeler veya cümleler eklenir.)17. Kullanıcı "ek bilgi ekle" seçeneğine tıklar. Yeni bir bölüm açılır. Adı "Panel1" şeklinde olup, eklendikçe "Panel2" "Panel3" diye artarak başlıklar gelir. Kullanıcı bu yeni eklediği bölüme ek bilgilerini yazar. BR1718. Tüm alanları doldurduktan sonra, bir sonraki tab olan İş karakteristikleri (job characteristics) bölümüne geçer. Bu kısmın analizi için Bkz.19. Kullanıcı bir sonraki taba geçmeden de "kaydet" butonuna tıklayarak yaptığı yere kadar olan kısmı kaydedip sonra doldurmaya da devam edebilir.
+Scenario: Employee views their profile information
+  Given Employee is logged in and opens the dashboard
+  When Employee clicks on the profile information icon in the top area
+  Then System opens the profile page for the employee
+  And Employee views their personal details under the "My Information" tab
+
+Header: Ana Başarılı Senaryo Data: Admin çalışan paneli kurulumu dashbaord ayarları sayfasını açar.Admin dashboard bölümlerinde yer alan duyuru alanı için "içerik yöneticisi ekle" butonuna basar.Sistem içerik yöneticisi eklenmesi için popup ekranını açar.Admin gelen kutucuğua isim veya e-posta adresi yazarak kullanıcı ekler.Sistem admin'in eklediği kullanıcıları getirir.Admin kullanıcı isimlerinin yanında bulunan X butonu ile kullanıcıları kaldırabilir.Admin gerekli kullanıcıları ekledikten sonra "seçilenleri ekle" butonuna basar.Sistem içerik yöneticilerini kaydeder. Dashboard düzenleme sayfasına döner ve bir bilgi mesajı yayınlar.İçerik Yöneticisi rolüne sahip çalışan paneline giriş yapar.Sistem dashboard sayfasını açar. Kullanıcının içerik yöneticisi rolü olduğu için duyurular kısmında "duyuru ekle" butonunu aktif hale getirir.İçerik yöneticisi "duyuru ekle" butonuna basar.Sistem yeni duyuru ekleme popupını açar.İçerik yöneticisi duyuru metni, URL, ve URL Başlığını ekler ve yayınlaya basar.Sistem duyuruyu kaydeder ve duyurular alanında en üste ekler.
+Scenario: Employee views actions and external links on the dashboard
+  Given Employee is logged in and opens the dashboard
+  Then Employee sees their name, department, position, reporting manager, and direct reports at the top
+  And Employee sees the actions area in the middle, which displays admin-defined actions with external links
+  When Employee clicks on an action with an external link, e.g., "View Payslip"
+  Then System opens the respective page in a new tab
+
+Header: Ana Başarılı Senaryo Data: Çalışan portala giriş yapar.Sistem çalışanın dashboard sayfasını açar.Çalışan sol menüden organizasyon şeması ikonuna tıklar.Sistem çalışanın bulunduğu işyerine ait tüm organizasyon şemasını en üst seviyeden itibaren getirir. BR1,BR2Çalışan açık pozisyonları da görmek isterse kişi bazlı göster toggle'ını kapatır. BR8Sistem pozisyon bazlı organizasyon şemasını getirir.Çalışan sağ üstte bulunan export ikonu ile organizasyon şemasını pdf ya da jpeg olarak dışarı aktarmak ister.Sistem organizasyon şemasında ekranda gördüğü alanı dışarı aktarır.Çalışan organizasyonda bulunan başka bir çalışanın kutucuğuna tıklar.Sistem ilgili çalışanın özet bilgi içeren kartını açar. BR7Çalışan kartı inceledikten sonra sağ üstte bulunan kapatma ikonuna basar.Sistem çalışan kartını kapatır.Çalışan renklendirme seçeneklerinden departman ya da çalışma lokasyonunu seçer. BR6Sistem seçime göre departman veya çalışma lokasyonuna göre renklendirme yapar. (örnekte departman seçilidir.)Çalışan renklendirme görünümünden çıkmak isterse renklendirme seçeneğinin yanında bulunan X ikonuna basar.Sistem varsayılan şema görünümüne döner.
+Scenario: Employee uses color-coded organization chart view
+  Given Employee is logged in and opens the dashboard
+  When Employee selects "Department" as the color-coding option
+  Then System color-codes the organization chart based on departments
+  When Employee wants to exit the color-coded view
+  And Employee clicks on the "X" icon next to the color-coding option
+  Then System returns to the default organization chart view
+
+Header: Ana Başarılı Senaryo Data: Çalışan portala giriş yapar.Sistem çalışanın dashboard sayfasını açar.Çalışan sol menüden profil bilgileri ikonuna tıklar.Sistem çalışanın profil sayfasını getirir.Çalışan profil kısmında kendi bilgilerini görür. Alt kısımda yer alan Bilgilerim tabı altında employee directory'den gelen alanları görür. Bu alanlar employee directory'de olduğu gibi kategorize edilmiştir. BR4
+Scenario: Admin designs the employee panel layout
+  Given Admin is logged in and opens the employee panel design screen
+  When Admin clicks on the "Edit Panel" button
+  Then System displays the available and inactive sections for the employee panel on the right side
+  When Admin makes changes to the panel layout, e.g., toggles on/off sections
+  And Admin clicks the "Save Changes" button
+  Then System saves the settings and shows a full-screen preview of the panel design
+  When Admin wants to continue editing
+  And Admin clicks on the "Edit Panel" button again
+  Then System returns to the panel editing screen
+  When Admin completes the design settings
+  And Admin clicks on the "Activation Email" button
+  Then Panel design settings are completed
+
+Header: Ana Başarılı Senaryo Data: Çalışanlar kullanıcı adı ve şifreleriyle sisteme giriş yapar.Sistem çalışan dashboardunu açar.Çalışan üst alanda kendi bilgileri görür. -İsim Soyisim- Departman- Pozisyon- Kime Raporluyor- Bağlı Çalışanlar (Sistem bu bilgileri employee directoryden getirir.)Çalışan üst alanda bulunan "Profiline git" butonuna basar.Sistem bu durumda profil bilgileri ekranına geçer. BR2Çalışan orta alanda aksiyonlar alanını görür. Admin'in belirlediği aksiyonlar burada gösterilir. External linkler aracılığıyla çalışan bordrosunu görüntüleme gibi çeşitli aksiyonlara basar.. BR3Sistem admin eklemiş olduğu aksiyondaki url'e göre yeni bir sekmede ilgili sayfayı açar.Çalışan alt alanda bağlı olduğu ekibinin organizasyon şemasını görüntüler.  BR5Çalışan şirkete ait tüm organizasyon şemasını görüntülemek için "Tüm Şemayı Görüntüle" butonuna basar.Sistem bu durumda Organizasyon Şeması ekranına geçer.  BR2Çalışan sağ tarafta tarih, duyurular ve önemli dökümanlar bilgilerini görür. Admin'in paylaştığı duyurular, önemli dökümanlar (varsa) burada gösterilir. BR7Çalışanın Optimise ve/veya Recognise'da yönetici ve/veya Admin rolü varsa sağ üstte bulunan ikon aracılığıyla diğer rolün dashboarduna geçiş yapar.Geçiş yaptığı dashboardda sistem bilgilendirme mesajı gösterir.
+Scenario: Admin activates the activation email for new employees
+  Given Admin is on the 3rd step of the activation email screen
+  When Admin wants to customize the content of the email
+  And Admin clicks on the "Edit Email" button
+  Then System opens a popup to edit the email content
+  When Admin adds variables to the email content, such as Employee Name, Activation Link, etc.
+  And Admin attaches files like PDF or JPEG to the email
+  And Admin clicks on the "Save" button
+  Then System saves the email content
+  When Admin clicks on the "Complete Panel Activation" button
+  Then System displays a popup, allowing the user to choose between "Activate Immediately" or "Activate Later"
+  When Admin selects "Activate Immediately"
+  And Admin clicks on the "Activate Now" button
+  Then System shows a congratulations message and offers two options for the next step:
+  | Next Action                           |
+  | Go to My Dashboard                    |
+  | Go to the Employee Panel List Screen |
+
+Header: Ana Başarılı Senaryo Data: 1.Kullanıcı 3.adım olan Aktivasyon e-postası ekranına geçer.2. Kullanıcı çalışan panelini açmak istediği çalışanlara gelecek olan mailin içeriğini oluşturmak için e-posta düzenle butonuna basar. BR2Kullanıcı mail içeriğine değişkenler ekleyebilir, pdf yada jpeg gibi dosyalar ekleyebilir.Eklenebilecek değişkenler: Çalışan Adı, Çalışan Soyadı, Aktivasyon linki3.Kullanıcı mail içeriğini oluşturur. Logo ekle butonuna basarak şirket logosunu ekler ve kaydet'e basar. BR34. Sistem kayıt işlemini gerçekleştirir.5. Kullanıcı "Panel Aktivasyonunu Tamamla" butonuna basar.6. Sistem popup ekranı açarak kullanıcıdan seçim yapmasını bekler.Hemen aktive et: Bu durumda seçili kişilere aktivasyon mailleri gönderilir.Daha sonra aktive et: Bu durumda aktivasyon mailleri gönderilmez. Kullanıcıya daha sonra aktivasyon mailerinin nereden yönetileceği gösterilir. BR57. Kullanıcı "hemen aktive et" butonuna basar.8. Sistem tebrikler mesajı yayılar. Kullanıcıya bir sonraki adım için iki seçenek sunar.Kullanıcı dashboarduna geçebilir. BR4Kullanıcı çalışan paneli açtığı çalışanların listesini kontrol etmek, yeni çalışan eklemek veya durumlarını kontrol etmek için çalışan paneli listesine geçebilir.Kullanıcı sağ üstte bulunan X butonu ile popup'ı kapatırsa kullanıcıya daha sonra aktivasyon mailerinin nereden yönetileceği gösterilir. BR5
+Scenario: Admin activates the activation email for new employees (Activate Later)
+  Given Admin is on the 3rd step of the activation email screen
+  When Admin wants to customize the content of the email
+  And Admin clicks on the "Edit Email" button
+  Then System opens a popup to edit the email content
+  When Admin adds variables to the email content, such as Employee Name, Activation Link, etc.
+  And Admin attaches files like PDF or JPEG to the email
+  And Admin clicks on the "Save" button
+  Then System saves the email content
+  When Admin clicks on the "Complete Panel Activation" button
+  Then System displays a popup, allowing the user to choose between "Activate Immediately" or "Activate Later"
+  When Admin selects "Activate Later"
+  And Admin clicks on the "Activate Later" button
+  Then System shows a message explaining where to manage activation emails later
+
+Header: Ana Başarılı Senaryo Data: 1. Sistem ikinci adım olan çalışan paneli tasarımı ekranını açar.   BR1Panel tasarımı dashboard, profil sayfası, organizasyon şeması tab'larından oluşur.2. Kullanıcı sağ üstte bulunan "paneli düzenle" butonuna basar.3. Sistem çalışan paneli bölümlerinde kullanıcının kullanıma alabileceği veya kullanım dışı bırakabileceği alanları ekranın sağ tarafında gösterir. BR2Organizasyon şeması alanında; şemayı çalışan portalında göster/gösterme ve açık pozisyonları göster/gösterme seçenekleri bulunmaktadır. BR34. Kullanıcı "değişiklikleri kaydet" butonuna basar.5. Sistem ayarları kaydeder ve tam ekran olarak önizleme ekranını açar.Kullanıcı düzenlemeye devam etmek isterse sağ üstte bulunan "Paneli düzenle" butonuna basar. Bu durumda düzenleme ekranına tekrar geçiş yapılır.Kullanıcı kontrollerini tamamladıktan sonra "Aktivasyon e-postası" butonuna basar. Bu durumda tasarım ayarları tamamlanmış olur.
+Scenario: Employee accesses Recognize or Optimise with other roles
+  Given Employee has both Manager and Admin roles in Recognize or Optimise
+  When Employee clicks on the icon for the other role in the top right corner
+  Then System informs the employee about the switch between roles
+
+Header: Ana Başarılı Senaryo Data: 1. Sistem ikinci adım olan çalışan paneli tasarımı ekranını açar.   BR2Panel tasarımı dashboard, profil sayfası, organizasyon şeması tab'larından oluşur.2. Kullanıcı sağ üstte bulunan "paneli düzenle" butonuna basar.3. Sistem çalışan paneli bölümlerinde kullanıcının kullanıma alabileceği veya kullanım dışı bırakabileceği alanları ekranın sağ tarafında gösterir. BR3Çalışan bilgileri alanında employee directory'den gelen hakkında, çalışma bilgileri, organizasyon bilgileri ve yasal bilgiler alanları bulunmaktadır. BR14. Kullanıcı + butonun basarak alt alanların detaylarını görür. Kullanmak istemediği alanları toggle aracılığıyla kapatır.5. Sistem autosave ile kapatılan veya açılan alanları kaydeder.6. Kullanıcı değişiklikleri kaydet butonuna basar.7. Sistem güncellenmiş haliyle önizleme ekranını getirir.8. Kullanıcı yeniden düzenleme yapmak için "paneli düzenle" butonuna basar veya değişiklikleri tamamladıysa bir sonraki aşama olan aktivasyon e-postası aşamasına geçer.
+Scenario: Employee Panel Design
+    Given the system opens the employee panel design screen as the second step
+    When the user clicks on the "edit panel" button at the top right corner
+    Then the system displays the areas in the employee panel that the user can enable or disable on the right side of the screen
+    And the employee information section contains fields for details from the employee directory, work information, organization information, and legal information
+    When the user clicks the "+" button to view the details of the sub-areas
+    And the user closes unwanted areas using the toggle functionality
+    And the system automatically saves the opened or closed areas
+    When the user clicks the "save changes" button
+    Then the system presents the updated preview of the panel
+    And the user can either go back to "edit panel" to make further changes or proceed to the next step, which is the activation email stage
+
+Header: Ana Başarılı Senaryo Data: 1.Sistem ikinci adım olan çalışan paneli tasarımı ekranını açar.   BR1Panel tasarımı dashboard, profil sayfası, organizasyon şeması tab'larından oluşur.2. Kullanıcı sağ üstte bulunan "paneli düzenle" butonuna basar.3.. Sistem çalışan paneli bölümlerinde kullanıcının kullanıma alabileceği veya kullanım dışı bırakabileceği alanları ekranın sağ tarafında gösterir. BR2Dashboard ayarlarında çalışan bilgileri, duyurular, önemli dökümanlar ve aksiyonlar alanlarını açıp kapatabilir. Aksiyon alanını açması durumunda çeşitli aksiyon linkleri (external linkler) ekleyebilir.  (Alternatif akışta detaylandırılmıştır.) (Duyuru ve dokümanlar için use case'in varsayımlarına bakınız)4. Kullanıcı seçimlerini yaptıktan sonra sağ altta bulunan değişiklileri kaydet butonuna basar.5. Sistem güncellenmiş haliyle önizleme ekranını getirir.6. Kullanıcı yeniden düzenleme yapmak için "paneli düzenle" butonuna basar veya değişiklikleri tamamladıysa bir sonraki aşama olan aktivasyon e-postası aşamasına geçer.
+Scenario: Opening Employee Panel Design
+    Given the system opens the employee panel design screen as the second step
+    And the panel design consists of dashboard, profile page, and organization chart tabs
+    When the user clicks on the "edit panel" button located at the top right corner
+    Then the system displays the areas in the employee panel that the user can enable or disable on the right side of the screen
+    And within the dashboard settings, the user can toggle on/off sections for employee information, announcements, important documents, and actions
+    And if the user enables the action section, they can add various action links (external links)
+    (Note: This part is further detailed in an alternative flow and depends on assumptions for announcements and documents. Please refer to the use case assumptions.)
+    When the user makes their selections
+    And clicks the "save changes" button located at the bottom right corner
+    Then the system presents the updated preview of the panel
+    And the user can either click "edit panel" to make further changes
+    Or if the changes are complete, proceed to the next step, which is the activation email stage
+
+Header: Ana Başarılı Senaryo Data: Kullanıcı Ayarlar menüsü altında çalışan paneli alt menüsüne tıklar.İlk açılış olduğu için sistem çalışan paneli kapalı olarak getirir.3. Kullanıcı sağ üstte bulunan "çalışan paneli açılsın" toggle'ını açar.4. Sistem 3 aşamadan oluşan çalışan paneli ayarları ekranını açar. İlk aşama olan çalışan paneli kullanıcıları seçim ekranını getirir.a. Tüm Çalışanlara Panel Açılsın: Bu durumda employee directoryde kayıtlı aktif çalışan sayısı dikkate alınır.b. Belirli Çalışanlara Panel Açılsın: Bu durumda kullanıcıdan panel açılacak kişileri seçmesi beklenir. 3 seçenek ile çalışan seçimi yapılabilir.Kişi Ekle: Kullanıcı elle çalışan ismi yazarak kişi ekler.Listeden Ekle: Aktif çalışan listesi üzerinden bir veya birden fazla seçim yaparak kişi ekler.Kural Oluştur: Kural ekranı açılır ve kurala bağlı olarak aktif çalışanlar getirilir.5. Kullanıcı paneli açmak istediği çalışanları eklemek için "kişi ekle" butonuna basar.6. Sistem isim veya e-posta adresi girilecek kutucuğu açar.7. Kullanıcı çalışanları tek tek ekler.8. Sistem seçim yapılan kişilerin listesini ekrana getirir ve bilgilendirme mesajı çıkarır. "Seçtiğiniz kişiler panel açılacak çalışanlar listesine eklenmiştir."9. Kullanıcı bu listede düzenleme yapabilir, yeni çalışan eklemeye devam edebilir.10. Çalışan listesi belirlendikten sonra kullanıcı sağ altta bulunan çalışan paneli tasarımı butonuna basar.11. Sistem ikinci adım olan çalışan paneli tasarımı ekranını açar.
+Scenario: Opening Employee Panel Settings
+    Given the user clicks on the "Employee Panel" submenu under the "User Settings" menu
+    And as it is the first time, the system brings the employee panel as closed
+    When the user opens the "Enable Employee Panel" toggle located at the top right corner
+    Then the system opens the employee panel settings screen, which consists of three steps
+    And the first step is the employee panel user selection screen
+    And the user can choose from the following options for opening the panel:
+        - "Open the Panel for All Employees": In this case, the system considers the total number of active employees in the employee directory.
+        - "Open the Panel for Specific Employees": In this case, the user is expected to select the employees for whom the panel will be opened. The user has three options for employee selection:
+            1. "Add Person": The user manually adds employees by typing their names.
+            2. "Add from List": The user selects one or more employees from the list of active employees.
+            3. "Create Rule": The user opens the rule screen and, based on the rule, relevant active employees are brought.
+    When the user clicks on the "add person" button to add the employees to open the panel for
+    And the system displays a text box for entering the name or email address
+    And the user adds employees one by one
+    Then the system shows the list of selected employees on the screen
+    And a notification message appears stating "The selected employees have been added to the list of employees for whom the panel will be opened."
+    And the user can make edits in this list or continue adding new employees
+    When the user has finalized the list of employees
+    And clicks on the "Employee Panel Design" button located at the bottom right corner
+    Then the system opens the second step, which is the employee panel design screen.
+
+Header: Ana Başarılı Senaryo Data: Kullanıcı Ayarlar menüsü altında çalışan paneli alt menüsüne tıklar.İlk açılış olduğu için sistem çalışan paneli açık olarak gelir.Sistem 3 aşamadan oluşan çalışan paneli ayarları ekranını açar. İlk aşama olan çalışan paneli kullanıcıları seçim ekranını getirir.a. Tüm Çalışanlara Panel Açılsın: Bu durumda employee directoryde kayıtlı aktif çalışan sayısı dikkate alınır.b. Belirli Çalışanlara Panel Açılsın: Bu durumda kullanıcıdan panel açılacak kişileri seçmesi beklenir. 3 seçenek ile çalışan seçimi yapılabilir.Kişi Ekle: Kullanıcı elle çalışan ismi yazarak kişi ekler.Listeden Ekle: Aktif çalışan listesi üzerinden bir veya birden fazla seçim yaparak kişi ekler.Kural Oluştur: Kural ekranı açılır ve kurala bağlı olarak aktif çalışanlar getirilir.4. Kullanıcı paneli açmak istediği çalışanları kural girerek seçer. "Kural Oluştur" butonuna basar.5. Sistem popup ekranında paneli kullanacak çalışan seçimi için kural ekranını getirir.6. Kullanıcı kuralı oluşturur ve kaydete basar. (örnek yaka rengi = beyaz yaka olanlar)7. Sistem seçim yapılan kişilerin listesini ekrana getirir.8. Kullanıcı bu listede düzenleme yapabilir, yeni çalışan eklemeye devam edebilir.9. Çalışan listesi belirlendikten sonra kullanıcı sağ altta bulunan çalışan paneli tasarımı butonuna basar.10. Sistem ikinci adım olan çalışan paneli tasarımı ekranını açar.Panel tasarımı dashboard, profil sayfası, organizasyon şeması tab'larından oluşur.11. Kullanıcı sağ üstte bulunan "paneli düzenle" butonuna basar.12. Sistem çalışan paneli bölümlerinde kullanıcının kullanıma alabileceği veya kullanım dışı bırakabileceği alanları ekranın sağ tarafında gösterir.Dashboard ayarlarında kullanıcı, duyurular, önemli dökümanlar ve aksiyonlar alanlarını açıp kapatabilir. Aksiyon alanını açması durumunda çeşitli aksiyon linkleri (external linkler) ekleyebilir.  (Alternatif akışta detaylandırılmıştır.) (Duyuru ve dokümanlar için use case'in varsayımlarına bakınız)Çalışan bilgileri alanında employee directory'den gelen hakkında, çalışma bilgileri, organizasyon bilgileri ve yasal bilgiler alanları bulunmaktadır.Kariyer ve Gelişim alanında Recognise alanlarından belirlenen alanlar bulunmaktadır.Organizasyon şeması alanında; şemayı çalışan portalında göster/gösterme ve açık pozisyonları göster/gösterme seçenekleri bulunmaktadır.13. Kullanıcı "değişiklikleri kaydet" butonuna basar.14. Sistem ayarları kaydeder ve tam ekran olarak önizleme ekranını açar.Kullanıcı düzenlemeye devam etmek isterse sağ üstte bulunan "Paneli düzenle" butonuna basar. Bu durumda düzenleme ekranına tekrar geçiş yapılır.Kullanıcı kontrollerini tamamladıktan sonra "Aktivasyon e-postası" butonuna basar. Bu durumda tasarım ayarları tamamlanmış olur.15 .Kullanıcı dashboard, profil sayfası ve organizasyon şeması ekranlarını kontrol ettikten sonra "Aktivasyon e-postası" butonuna basar.16. Sistem 3.adım olan Aktivasyon e-postası ekranına geçer.17. Kullanıcı çalışan panelini açmak istediği çalışanlara gelecek olan mailin içeriğini oluşturmak için e-posta düzenle butonuna basar.Kullanıcı mail içeriğine değişkenler ekleyebilir, pdf yada jpeg gibi dosyalar ekleyebilir.18.Kullanıcı mail içeriğini oluşturduktan sonra kaydet'e basar.19. Sistem kayıt işlemini gerçekleştirir.20. Kullanıcı "Panel Aktivasyonunu Tamamla" butonuna basar.21. Sistem popup ekranı açarak kullanıcıdan seçim yapmasını bekler.Hemen aktive et: Bu durumda seçili kişilere aktivasyon mailleri gönderilir.Daha sonra aktive et: Bu durumda aktivasyon mailleri gönderilmez. Kullanıcıya daha sonra aktivasyon mailerinin nereden yönetileceği gösterilir.22. Kullanıcı "hemen aktive et" butonuna basar.23. Sistem tebrikler mesajı yayılar. Kullanıcıya bir sonraki adım için iki seçenek sunar.Kullanıcı dashboarduna geçebilir.Kullanıcı çalışan paneli açtığı çalışanların listesini kontrol etmek, yeni çalışan eklemek veya durumlarını kontrol etmek için çalışan paneli listesine geçebilir.Kullanıcı sağ üstte bulunan X butonu ile popup'ı kapatırsa kullanıcıya daha sonra aktivasyon mailerinin nereden yönetileceği gösterilir.
+Scenario: Successful Main Scenario
+    Given the user clicks on the "Employee Panel" submenu under the "User Settings" menu
+    And as it is the first time, the system brings the employee panel as open
+    When the system opens the employee panel settings screen, which consists of three steps
+    And the first step is the employee panel user selection screen
+    And the user can choose from the following options for opening the panel:
+        - "Open the Panel for All Employees": In this case, the system considers the total number of active employees in the employee directory.
+        - "Open the Panel for Specific Employees": In this case, the user is expected to select the employees for whom the panel will be opened. The user has three options for employee selection:
+            1. "Add Person": The user manually adds employees by typing their names.
+            2. "Add from List": The user selects one or more employees from the list of active employees.
+            3. "Create Rule": The user opens the rule screen and, based on the rule, relevant active employees are brought.
+    When the user selects the employees to open the panel for using the rule
+    And clicks on the "Create Rule" button
+    Then the system displays a popup screen for the employee selection based on the rule
+    And the user creates the rule and saves it (e.g., Job title = "White-collar employees")
+    And the system shows the list of selected employees on the screen
+    And the user can make edits in this list or continue adding new employees
+    When the user has finalized the list of employees
+    And clicks on the "Employee Panel Design" button located at the bottom right corner
+    Then the system opens the second step, which is the employee panel design screen
+    And the panel design consists of dashboard, profile page, and organization chart tabs
+    And the user clicks on the "Edit Panel" button located at the top right corner
+    Then the system shows the user the available sections in the employee panel
+    And the user can toggle on/off sections like user, announcements, important documents, and actions in the dashboard settings (Detailed in alternative flow) (See use case assumptions for announcements and documents)
+    And the user can add various action links (external links) when opening the action section
+    And in the employee information section, the system includes fields such as about, work information, organizational information, and legal information from the employee directory
+    And in the Career and Development section, there are predefined fields from the "Recognize" section
+    And in the organization chart section, there are options to show/hide the chart on the employee portal and show/hide open positions
+    When the user clicks on the "Save Changes" button
+    Then the system saves the settings and opens the preview screen in full-screen mode
+    And if the user wants to continue editing, they can click on the "Edit Panel" button at the top right to switch back to the edit screen
+    And when the user has completed the controls
+    And clicks on the "Activation Email" button
+    Then the system proceeds to the third step, which is the Activation Email screen
+    And the user clicks on the "Edit Email" button to create the content of the email that will be sent to employees to activate the panel
+    And the user can add variables to the email content and attach files such as PDF or JPEG
+    When the user creates the email content and clicks "Save"
+    Then the system completes the registration process
+    And the user clicks on the "Complete Panel Activation" button
+    Then the system opens a popup screen and prompts the user to make a choice for employee activation:
+        - "Activate Now": In this case, activation emails will be sent to the selected employees immediately.
+        - "Activate Later": In this case, activation emails will not be sent immediately. The user will be shown where to manage activation emails later.
+    And the user clicks on the "Activate Now" button
+    Then the system displays a congratulations message and offers two options for the user's next steps:
+        - The user can go to their dashboard.
+        - The user can go to the employee panel list to check, add new employees, or review their status.
+    And if the user closes the popup by clicking on the X button, they will be shown where to manage activation emails later.
+
+Header: Ana Başarılı Senaryo Data: Terfi PlanıÜcret Değişiklik Akış Planı kaydedildikten sonra, sistem organizasyonel değişiklik akış planını getirir.  Sağ tarafta ücret değilikiği akışının tanımı ve amacını içeren bilgi metni görülür.Kullanıcı akış planını inceler.1.adım: Organizasyonel Değişiklik Planı seçili kişiler tarafından yapılır.2. adım : Organizasyonel Değişiklik Planı onaya gönderilir.3.adım: Final Onaycı organizasyonel değişiklik planını finalize eder.Kullanıcı 1. adımda bulunan organizasyonel değişiklik çalışması kimlerin tarafından yapılacağını seçer.Optmise AdminBütçe Sahibi4.Kullanıcı "Seçimi Kaydet" butonuna basar.5. Sistem seçimi kaydeder ve başarıyla kaydedildiğine dair mesaj yayınlanır.6. 3 akış için seçimler yapıldıktan sonra sistem özet ekranında akış planlarını gösterir.7. Kullanıcı kontrol ettikten sonra düzenlemek isterse "Düzenlemeye Geri Dön" butonuna basar. Bu durumda sistem Bütçe Akış Planı düzenleme ekranına geri döner.8. Kullanıcı kontrol ettikten sonra Launch butonuna basar ve akış adımı tamamlanır.9. Sistem kullanıcıya dilediği zaman akış ayarlarını değiştirebileceği yer gösterir.10. Kullanıcı OK butonuna basar ve Launch adımına geçer.
+Scenario: Successful Main Scenario - Promotion Plan - Salary Change Flow
+    Given the Promotion Plan and Salary Change Flow is saved, the system brings the organizational change flow plan.
+    And on the right side, a text containing the definition and purpose of the salary change flow is displayed.
+    When the user reviews the flow plan.
+    And in the first step, the Organizational Change Plan is performed by selected individuals.
+    And in the second step, the Organizational Change Plan is submitted for approval.
+    And in the third step, the Final Approver finalizes the organizational change plan.
+    When the user selects who will perform the organizational change work in the first step:
+        - Optmise Admin
+        - Budget Owner
+    And the user clicks on the "Save Selection" button.
+    Then the system saves the selection and displays a success message.
+    And after selections are made for all 3 steps, the system shows the summary of the flow plans on the summary screen.
+    When the user checks and decides to edit, they click on the "Go Back to Edit" button.
+    Then the system returns to the Budget Flow Plan editing screen.
+    When the user is satisfied and wants to proceed, they click the "Launch" button to complete the flow step.
+    Then the system informs the user that they can change the flow settings at any time.
+    And the user clicks on the "OK" button and proceeds to the Launch step.
+
+Header: Ana Başarılı Senaryo Data: Ücret Değişiklik Akış PlanıBütçe Akış Planı kaydedildikten sonra, sistem ücret değişiklik akış planını getirir.  Sağ tarafta ücret değilikiği akışının tanımı ve amacını içeren bilgi metni görülür.Kullanıcı akış adımlarını inceler. Info butonları aracılığıyla adımların detaylarını görür.Birinci Adım: "Bütçe Varsayımları Optimise Admin tarafından oluşturulur."İkinci Adım: "Ücret Değişikliği Çalışması seçili kişiler tarafından yapılır."Üçüncü Adım: "Ücret Değişikliği Çalışması onaya gönderilir."Dördüncü Adım: "Final Onaycı konsolide bütçeyi kontrol edip  finalize eder."Kullanıcı 2. adımda bulunan ücret değişikliği çalışması kimlerin tarafından yapılacağını seçer.Optimise AdminBütçe SahibiSistem seçimi kaydeder.Kullanıcı "Seçimi Kaydet" butonuna basar.Sistem seçimi kaydeder ve ekranın sağ üst köşesinde başarılı kayıta dair mesaj yayınlar. "Bütçe Akış Planı için yapmış olduğunuz seçimler başarıyla kaydedilmiştir."Sistem, bir sonraki akış planı olan ücret değişikliği akış planına geçer.
+Scenario: Successful Main Scenario - Salary Change Flow - Budget Flow Plan
+    Given the Salary Change Flow and Budget Flow Plan is saved, the system brings the salary change flow plan.
+    And on the right side, a text containing the definition and purpose of the salary change flow is displayed.
+    When the user reviews the flow steps and uses the info buttons to view the details of each step.
+    Then the user sees the following flow steps:
+        - First Step: "Budget Assumptions are created by Optimise Admin."
+        - Second Step: "Salary Change Work is performed by selected individuals."
+        - Third Step: "Salary Change Work is submitted for approval."
+        - Fourth Step: "Final Approver reviews and finalizes the consolidated budget."
+    When the user selects who will perform the salary change work in the second step:
+        - Optimise Admin
+        - Budget Owner
+    And the user clicks on the "Save Selection" button.
+    Then the system saves the selection and displays a success message in the top right corner of the screen. The message says, "Your selections for the Budget Flow Plan have been successfully saved."
+    And the system proceeds to the next flow plan, which is the salary change flow plan.
+
+Header: Ana Başarılı Senaryo Data: Bütçe Akış PlanıKullanıcı kurulum adımlarından 5.adım olan Akış aşamasına gelir.Sistem akış ekranını açar. Bütçe akış planı için akış adımları gelir. Sağ tarafta Bütçe Akışının tanımı ve amacını içeren bilgi metni görülür. BR5Kullanıcı akış adımlarını inceler. Info butonları aracılığıyla adımların detaylarını görür. BR2Birinci Adım: "Bütçe Varsayımları Optimise Admin tarafından oluşturulur."  BR3İkinci Adım: "Optimise Admin taslak bütçeyi oluşturur." BR4Üçüncü Adım: "Bütçe Sahipleri kendi taslak bütçelerini oluştururlar." BR4Dördüncü Adım: "Bütçe Çalışması onaya gönderilir."Beşinci Adım: "Final Onaycı konsolide bütçeyi kontrol edip  finalize eder."Kullanıcı taslak bütçenin Optimise Admin tarafından yapılmasını istemiyorsa 2.adımda bulunan toggle'ı kapatır. Bu durumda 1.adımdan sonra 3.adım işler.Sistem seçimi kaydeder.Kullanıcı Bütçe sahipleri (Budget owner) tarafından bütçe planları yapılmasını istemiyorsa diğer bir deyişle tüm sürecin Admin tarafından planlanmasını istiyorsa 3.adımda bulunan toggle'ı kapatır. Bu durumda bütçe taslakları budget ownerlar ile paylaşılmaz.Sistem seçimi kaydeder.Kullanıcı "Seçimi Kaydet" butonuna basar.Sistem seçimi kaydeder ve ekranın sağ üst köşesinde başarılı kayıta dair mesaj yayınlar. "Bütçe Akış Planı için yapmış olduğunuz seçimler başarıyla kaydedilmiştir."Sistem, bir sonraki akış planı olan ücret değişikliği akış planına geçer.
+Scenario: Successful Main Scenario - Budget Flow Plan
+    Given the user reaches the Flow step, which is the 5th step, in the setup process.
+    When the system opens the flow screen, displaying the flow steps for the Budget Flow Plan.
+    And on the right side, a text containing the definition and purpose of the Budget Flow is displayed.
+    When the user reviews the flow steps and uses the info buttons to view the details of each step.
+    Then the user sees the following flow steps:
+        - First Step: "Budget Assumptions are created by Optimise Admin."
+        - Second Step: "Optimise Admin creates the draft budget."
+        - Third Step: "Budget Owners create their draft budgets."
+        - Fourth Step: "Budget Work is submitted for approval."
+        - Fifth Step: "Final Approver reviews and finalizes the consolidated budget."
+    When the user doesn't want the draft budget to be created by Optimise Admin in the second step, the user toggles off the option in step 2. In this case, step 3 proceeds after step 1.
+    Then the system saves the selection.
+    And when the user doesn't want budget owners to create budget plans, in other words, the user wants the entire process to be planned by the Admin, the user toggles off the option in step 3. In this case, budget drafts are not shared with budget owners.
+    Then the system saves the selection.
+    And the user clicks on the "Save Selection" button.
+    Then the system saves the selection and displays a success message in the top right corner of the screen. The message says, "Your selections for the Budget Flow Plan have been successfully saved."
+    And the system proceeds to the next flow plan, which is the salary change flow plan.
+
+Header: Ana Başarılı Senaryo Data: Kullanıcı Maliyet Kartı menüsüne gelir.Kullanıcı entegrasyondan gelmeyen bir ödeme kalemi eklemek için "Yeni Ödeme Başlığı Ekle" butonuna basar.Sistem yeni ödeme başlığı popup ekranını açar.Kullanıcı Yeni ödeme başlığına isim verir ve kaydeder (Örnek: Parasal Olmayan Ödemeler)Sistem yeni ödeme başlığı ismini kaydeder. (maliyet kartı bölümlerinde de bu isim görünür.)Kullanıcı yeni açtığı başlığın altına yeni bir kalem ekler ve kaydet'e basar. (Örn: Kıyafet Yardımı)Sistem yeni ödeme başlığını ve alt kalemini kaydeder ve maliyet kartına yansıtır. Maliyet kaleminde yeni ödeme başlığı ve detayları gösterilir ve info mesajı çıkar. "Yeni eklediğiniz bölümün ayarlarını buradan yapabilir, dağıtım yapabilirsiniz."Kullanıcı infoda çıkan "görüntüle" butonuna tıklar veyaikonuna tıklar.Sistem ilgili ödeme başlığının ayarlar popupını açar.Kullanıcı dağıtım kuralı butonuna tıklar.Sistem kural oluşturma popup ekranını açar. Burada sistem yeni kural ekleme seçeneğini ve daha önceden tanımlanmış kurallar gösterir.Kullanıcı "Yeni Kural Ekle"ye basar.Sistem kural adı, dönemi, kural ekleme alanı, ödeme şekli başlıklarını getirir. BR1, BR142Kullanıcı açtığı ödemenin dağıtımını yapar.Kuralın ismi yazılır.Ödemenin başlangıç ve bitiş tarihi belirlenir.Ödemeye tabi olacak çalışanların özelleştirmek için varsa kural tanımı yapılır.Ödeme şekli detayları - ödeme dönemi, ödeme tipi, tutarı ve para birimi seçilir.Ayni yardım olup olmadığına ait seçim yapılır.Bütçe sahibinin düzenleme yapıp yapamayacağı ayarlarını düzenler (Bütçe sahibi düzenleme yapabiliyor toggle'ı açıksa oransal veya tutarsal olarak minimum ve maksimum değer girilir.Kullanıcı kaydet'e basar.Sistem ayarları kaydeder. BR3Kullanıcı birden fazla kural girdiyse çakışma kuralı belirler ve kaydete basar. BR4Sistem ayarları kaydeder ve başarıyla kaydedildiğine dair bilgi mesajı yayınlar.
+Scenario: Successful Main Scenario - Adding a New Payment Item to Cost Card
+    Given the user navigates to the "Cost Card" menu.
+    When the user clicks on the "Add New Payment Item" button to add a payment item that is not coming from integration.
+    Then the system opens the popup screen for adding a new payment item.
+    When the user provides a name for the new payment item and saves it (Example: Non-Monetary Payments).
+    Then the system saves the name of the new payment item (this name will also be visible in the cost card sections).
+    When the user adds a new item under the newly created payment item and clicks on "Save".
+    Then the system saves the new payment item and its details, reflecting it in the cost card. An info message appears: "You can adjust the settings and distribute the newly added section from here."
+    When the user clicks on the "view" button that appears in the info message or clicks on the icon.
+    Then the system opens the settings popup for the relevant payment item.
+    When the user clicks on the "distribution rule" button.
+    Then the system opens the popup for creating a distribution rule. Here, the system displays the option to add a new rule and any previously defined rules.
+    When the user clicks on "Add New Rule".
+    Then the system displays the fields for the rule name, period, rule application area, payment method headings. BR1, BR142
+    And the user sets the distribution for the payment:
+        - The rule's name is specified.
+        - The start and end dates for the payment are determined.
+        - If there is any specific rule definition for eligible employees for the payment, it is provided.
+        - Payment method details are selected, including payment period, payment type, amount, and currency.
+        - It is specified whether it is an in-kind aid or not.
+        - If the budget owner is allowed to make edits, the minimum and maximum values are entered for the proportional or fixed amount if the budget owner can make edits. (If the toggle for budget owner edit is on)
+    When the user clicks on "Save".
+    Then the system saves the settings. BR3
+    And if the user has entered multiple rules and there is a rule conflict, the user specifies the conflict resolution and clicks on "Save". BR4
+    Then the system saves the settings and displays an information message saying, "The settings have been successfully saved."
+
+Header: Ana Başarılı Senaryo Data: Kullanıcı uygulamayı açar.Sistem, entegrasyon sonucu alınan veriler hakkında özet bilgi getirir. - BR10Kullanıcı entegrasyon sonuçlarıyla ilgili detayları incelemek için "Tüm Veri Detayını Göster" butonuna basar.Sistem veri detayını getirir.Kullanıcı "Çalışan Kartını Tasarla" butonuna basar.Sistem Çalışan Kartı Tasarımı ekranını açar.Sistem öncelikle önizleme seçeneğini ön plana çıkarak bilgi mesajı yayınlar.Kullanıcı Görüntüle butonuna basar.Sistem toggle'ları açık olan alanlar için örnek çalışan kartı önizlemesini getirir.Kullanıcı önizlemeyi görüntüler ve X ile kapatır.Sistem entegrasyonla gelen alanların yanınaile gösterir. (kırmızı kutu ile işaretli)Kullanıcı sağ taraftaki "Employee Directory Bölümleri" kısmından Profil Bilgileri, Hakkında, Çalışan Bilgileri, Organizasyon Bilgiler ve Yasal Bilgileri içeriklerinden kartta ve ürünün genelinde (raporlarda&filtrelerde) kullanmak istediği alanların toggle'larını açar. - BR1Sistem toggle ile açılan bölümleri kart kısmına getirir. Kapatılan bölümleri ise tasarımdan kaldırır.Kullanıcı profil bilgileri, hakkında, çalışan bilgileri, organizasyon bilgileri ve yasal bilgiler alanlarının detaylarını inceler.Kullanıcı, Organizasyon Bilgileri alanında yer alan Organizasyon Seviyesi içinde kullanmak istediği seviyeleri işaretler.Kullanıcı seçimlerini yaptıktan sonra " Kaydet" butonuna basar. -BR2, BR3Sistem seçimi kaydetme işlemini yapmak için öncelikle tasarlanan kart görünümünü kullanıcıya açar.Kullanıcı onayla butonuna basar.Sistem başarıyla kaydedildiğine dair bilgi mesajını gösterir.Sistem, kullanıcıya çalışan kartına dair seçimleri daha sonra değiştirebilmesi için yönlendirme mesajı çıkarır. Mesaj: "Çalışan kartına dair seçimlerinizi ve veri yükleme işlemlerinizi dilediğinizde buradan yapabilirsiniz."Kullanıcı "OK" butonuna basar.
+Scenario: Successful Main Scenario - Designing Employee Card and Data Selection
+    Given the user opens the application.
+    Then the system provides a summary of the data received from integration. - BR10
+    When the user clicks on the "Show All Data Details" button to review integration results in detail.
+    Then the system displays the data details.
+    When the user clicks on the "Design Employee Card" button.
+    Then the system opens the Employee Card Design screen.
+    And the system emphasizes the preview option with an info message.
+    When the user clicks on the "View" button.
+    Then the system displays a sample employee card preview for the fields with toggle switches turned on.
+    And the user reviews the preview and closes it with the "X" button.
+    When the system marks the fields received through integration with a "check" symbol (indicated by a red box).
+    When the user opens the toggle switches for the Profile Information, About, Employee Information, Organizational Information, and Legal Information sections from the "Employee Directory Sections" on the right side, which they want to use in the card and throughout the product (in reports & filters). - BR1
+    Then the system brings the selected sections from the toggles to the card view. Closed sections are removed from the design.
+    When the user reviews the details of the Profile Information, About, Employee Information, Organizational Information, and Legal Information sections.
+    And in the Organizational Information section, the user selects the levels they want to use within the Organization Level.
+    When the user clicks on the "Save" button after making their selections. - BR2, BR3
+    Then the system opens the designed card view to perform the save operation.
+    When the user clicks on the "Approve" button.
+    Then the system shows an information message saying that the card has been successfully saved.
+    And the system presents a message to the user: "You can make changes to your employee card selections and data uploads here whenever you want."
+    When the user clicks on the "OK" button.
+
+Header: Ana Başarılı Senaryo Data: İK kullanıcısı, Onboardee kullanıcı sayfasından fonksiyon eklenmiş senaryoyu seçer.Senaryo akışı tab'ına tıklar.Fonksiyon eklenmiş adımda bulunan fonksiyon ikonuna tıklar.Sistem bu adıma eklenen fonksiyonların log sonuçlarının olduğu liste ekranını açar. BR-15. Kullanıcı Yeniden Çalıştırikonuna tıklar.6. Son çalışma sonucuna göre satırdaki bilgiler güncellenir. BR-27. Kullanıcı  Geçmişikonuna tıklar. Fonksiyonun geçmiş sonuçlarını listeleyen ekran çıkar.8. Kullanıcı Görüntüleikonuna tıklar.9. Trigger sonucuna ait detay bilgi gösterilir. BR-310. Kapat butonuna tıklar.
+Scenario: Successful Main Scenario - Viewing Function Log Results for Onboardee User
+    Given the HR user selects the scenario with added functions from the Onboardee user page.
+    When the user clicks on the Scenario Flow tab.
+    And clicks on the function icon in the step with the added function.
+    Then the system opens the list screen with log results for the functions added to this step. - BR-1
+    When the user clicks on the "Run Again" icon.
+    Then the information in the row is updated based on the latest execution result. - BR-2
+    When the user clicks on the "History" icon.
+    Then the system displays a screen listing the historical results of the function.
+    When the user clicks on the "View" icon.
+    Then the detailed information for the trigger result is shown. - BR-3
+    When the user clicks on the "Close" button.
+
+Header: Ana Başarılı Senaryo Data: 1- Kullanıcı senaryo tanımında yeni adım eklemek için + seçeneğine tıklar.2- İçerik Paylaş, Görev Ata, Anket Gönder ya da Profil Doldurt seçeneklerinden birini seçer.3- Adımın detaylarının girileceği ekran gelir.4- Başlık ve Görev Tipi alanlarının yanında bulunan Görevin Amacı alanında listelenen alanlardan, adıma uygun birini seçer.3- Adıma ilişkin diğer alanları doldurur.
+Scenario: Successful Main Scenario - Adding a New Step to the Scenario Description
+    Given the user clicks on the "+" option to add a new step in the scenario description.
+    When the user selects one of the options: "Share Content," "Assign Task," "Send Survey," or "Fill Profile."
+    Then the screen to enter the details of the step appears.
+    And the user selects a relevant option from the list in the "Purpose of the Task" field next to the Title and Task Type fields.
+    When the user fills in other relevant fields for the step.
+
+Header: Ana Başarılı Senaryo Data:  1- Kullanıcı menüden Liste Raporlarına tıklar.2- Sistem Rapor Şablonları ekranını açar.3- Kullanıcı Yeni Rapor Tasarımı Oluştur butonuna tıklar.4- Yeni Rapor Şablonu Oluştur sayfası açılır. BR-15- Kullanıcı Rapor Türü alanında Senaryo Raporu'nu seçer. BR-26- Senaryo raporuna ait kolon başlıkları listelenir. BR-37- Kullanıcı raporlamak istediği kolon başlıklarınısimgesini kullanarak sağ tarafa sürükler. BR-48- Sağ tarafa taşınan kolonların adını Düzenleikonuna tıklayarak değiştirir.9- Kullanıcı raporlamaktan vazgeçtiği alanları Silikonuna tıklayarak rapor kolonlarından çıkartabilir.10- Gruplama alanında raporun gruplanarak gösterilmesini istediği kolonu seçer. BR-511- Toplamlar kolonunda raporda toplam alınması istenen kolonlar seçilir. BR-612- Kullanıcı Filtre ekle butonuna tıklar.13- Sistem filtreleme yapılacak kolonun seçileceği alanı getirir.14- Filtreleme için Görev Tipi alanını ve istenen değeri seçer. BR-715- Filtre ekle butonuna tıklar.16- Filtreleme için Değişken Adı alanını ve istenen değeri seçer.17- Filtre ekle butonuna tıklar.18- Filtreleme için Tamamlanma Tarihi alanını ve istenen değeri seçer.19- Şablon adına "Örnek senaryo raporu" girer.20- Kaydet butonuna tıklar. BR-821- Kullanıcı Raporu Başlat butonuna tıklar. BR-922. Bilgilendirme ekranında Hayır'a tıklar.
+Scenario: Successful Main Scenario - Creating a New Scenario Report Template
+    Given the user clicks on the "List Reports" from the menu.
+    When the system opens the Report Templates screen.
+    And the user clicks on the "Create New Report Template" button.
+    Then the New Report Template Creation page opens.
+    And the user selects "Scenario Report" from the Report Type field.
+    When the column headers for the Scenario report are listed.
+    Then the user drags the desired column headers from the left to the right using the icon.
+    And the user changes the names of the columns moved to the right by clicking on the "Edit" icon.
+    When the user no longer wants to include certain columns in the report, they can remove them by clicking the "Delete" icon.
+    And the user selects the column for grouping the report in the Grouping field.
+    Then the user selects the columns for which total values are desired in the Totals column.
+    And the user clicks on the "Add Filter" button.
+    When the system displays the area to select the column for filtering.
+    And the user selects the "Task Type" field and the desired value for filtering.
+    Then the user clicks on the "Add Filter" button.
+    And the user selects the "Variable Name" field and the desired value for filtering.
+    And the user clicks on the "Add Filter" button.
+    And the user selects the "Completion Date" field and the desired value for filtering.
+    And the user enters "Sample Scenario Report" in the template name.
+    When the user clicks on the "Save" button.
+    And the user clicks on the "Start Report" button.
+    Then the user clicks on "No" on the confirmation screen.
+
+Header: Ana Başarılı Senaryo Data: 1- Kullanıcı menüden Liste Raporlarına tıklar.2- Sistem Rapor Şablonları ekranını açar.3- Listede hazır olarak sunulan şablonların yanı sıra kullanıcılar tarafından oluştururulan şablonlar listelenir. BR-14- Kullanıcı "Raporu Başlat"ikonuna tıklar.5- Raporun oluşturulmaya başlandığını bildiren popup açılır. BR-2
+Scenario: Successful Main Scenario - Starting a Report
+    Given the user clicks on the "List Reports" from the menu.
+    When the system opens the Report Templates screen.
+    Then the system lists both pre-defined templates and user-created templates.
+    And the user clicks on the "Start Report" icon.
+    Then a popup opens indicating that the report creation has started.
+
+
+Header: Ana Başarılı Senaryo Data: 1- Kullanıcı menüden Liste Raporlarına tıklar.2- Sistem Rapor Şablonları ekranını açar.3- Kullanıcı sağ üst köşedeki Raporlar butonuna tıklar.3- Rapor şablonları sayfasından ya da yeni rapor tasarımı sayfasından başlatılan raporların listelendiği sayfa açılır. BR-14- Kullanıcı Durumu "Sonlandı" olan bir rapor için Raporu İndir'etıklar. BR-25- Rapor şablon tasarımında yapılan kolon, gruplama ve toplam seçimlerine uygun olarak rapor excel dosya olarak indirilir.
+Scenario: Successful Main Scenario - Downloading a Completed Report
+    Given the user clicks on the "List Reports" from the menu.
+    When the system opens the Report Templates screen.
+    And the user clicks on the "Reports" button in the top right corner.
+    Then the page displaying the list of reports started from either the Report Templates page or the New Report Design page is opened.
+    And the user clicks on the "Download Report" for a report with the status "Completed".
+    Then the report is downloaded as an Excel file based on the column, grouping, and total selections made in the report template design.
+
+Header: Ana Başarılı Senaryo Data: Kullanıcı, Seçenekler menüsüne eklenecek Yasal Dokümanlar menüsüne tıklar.Yasal Dokümanlar ekranı açılır.Sistem daha önceden Senaryo/plan/seçenekler bölümünde eklenen tüm metin dokümanlarını listede gösterir.
+Scenario: Successful Main Scenario - Accessing Legal Documents
+    Given the user clicks on the "Options" menu.
+    When the user clicks on the "Legal Documents" menu under the Options menu.
+    Then the Legal Documents screen is opened.
+    And the system displays all the text documents previously added in the Scenario/Plan/Options section in the list.
+
+Header: Ana Başarılı Senaryo Data: HR Admin Hesap Ayarları menüsünden Güvenlik Ayarlarına tıklar.Sistem Güvenlik Ayarları sayfasını getirir.3. Kullanıcı gerek gördüğü seçimleri yapar.4. Kaydet butonuna tıklar.
+Scenario: Successful Main Scenario - Accessing Security Settings
+    Given the HR Admin clicks on the "Account Settings" menu.
+    When the HR Admin clicks on the "Security Settings" option from the Account Settings menu.
+    Then the system displays the Security Settings page.
+    And the HR Admin makes necessary selections if required.
+    And the HR Admin clicks on the "Save" button.
+
+Header: Ana Başarılı Senaryo Data: HR Admin Kişi Listesinden işlem yapmak istediği kullanıcı adına tıklar.Sistem ekrana kullanıcı sayfasını getirir.Kullanıcı, iptal etmek istediği görevler için kolon filtrelerini kullanarak filtreleme yapar.Kullanıcı durumu değiştirilecek kayıtlar listedeki görevlerin başına checkbox'ı kullanarak seçer.Kullanıcı durumunu iptal etmek istediklerini seçer ve İptal Et'e tıklar. (BR-1)
+Scenario: Successful Main Scenario - Cancelling Tasks for a User
+    Given the HR Admin clicks on the username of the user from the Person List that they want to perform an action on.
+    Then the system displays the user page on the screen.
+    When the HR Admin uses column filters to filter the tasks they want to cancel.
+    And the HR Admin selects the tasks they want to cancel by using checkboxes at the beginning of each task in the list.
+    And the HR Admin selects the tasks they want to cancel and clicks on the "Cancel" button. (BR-1)
+
+Header: Ana Başarılı Senaryo Data: 1- Kullanıcı Hesap Yönetimi menüsünden "Dış Kaynak Listesi" ne tıklar.2- Herhangi bir tanım bulunmayan Dış Kaynak Listesi sayfası açılır.3- Kullanıcı Ekle seçeneğine tıklar.4- Dış Kaynak Ekle ekranı açılır.5- Kullanıcı servis bilgilerini bir isim vererek girer ve Bağlantıyı Kontrol Et'e tıklar.  Bağlantı başarılı olduğunda servis parametreleri listelenir.6- Kullanıcı Seçenekler'den düzenle ile girerek parametreleri düzenler ve kaydeder.6- Kullanıcı dış kaynağı kaydeder, kaydedilen bilgi listede gösterilir.
+Scenario: Successful Main Scenario - Adding External Resource
+    Given the user clicks on the "External Resource List" from the Account Management menu.
+    Then the system opens the External Resource List page with no existing definitions.
+    When the user clicks on the "Add User" option.
+    And the External Resource Add screen opens.
+    When the user enters the service information with a given name and clicks on "Check Connection". If the connection is successful, the service parameters are listed.
+    And the user edits the parameters from the options and saves them by clicking on "Save".
+    And the user saves the external resource, and the saved information is displayed in the list.
+
+Header: Ana Başarılı Senaryo Data: 1- Kullanıcı senaryo adımlarına Görev Atama görevi ekler.2- Yeni alt görev ekleye tıklar.3- Görev tipinde "Seçenek Doldurt" u seçer.4- Seçenek bölümünde "Toplu seçenek ekle" ye tıklar.5- Açılan toplu seçenek ekleme popup'ında Şablon İndir seçeneğine tıklar.6. Sistem option-import.xlsx isimli şablon dosyasını oluşturur.Spreadsheet7- Kullanıcı dosyayı açarak eklenmesini istediği seçenekleri dosyaya yazar.Spreadsheet8- Toplu seçenek ekleme ekranında, seçenekleri girdiği dosyayı seçer.9- Kaydet butonuna tıklar.10- Excel'deki data seçeneklere eklenir.
+Scenario: Successful Main Scenario - Adding Options through Batch Option Entry
+    Given the user adds a "Task Assignment" task to the scenario steps.
+    When the user clicks on "Add New Subtask".
+    And selects "Fill Options" in the task type.
+    And clicks on "Add Bulk Options" in the options section.
+    And selects "Download Template" in the opened batch option entry popup.
+    Then the system generates the option-import.xlsx template file as a Spreadsheet.
+    When the user opens the file and enters the options they want to add in the spreadsheet.
+    And selects the file with the entered options in the batch option entry screen.
+    And clicks on "Save".
+    Then the data from the Excel file is added as options.
+
+Header: Ana Başarılı Senaryo Data: 1- Kullanıcı senaryo adımında alt görev ekle'ye tıklar.2- Alt görev tipi olarak "Dış Kaynaktan Seçenek Doldurt" seçer.3- Soru, Açıklama bilgilerini girer.4- Sistem Kontrol tipi olarak Tekli seçim dropdown seçeneğini getirir.5- Sistem Dış Kaynak Adı sahasında dış kaynak listesine eklenmiş kaynakları gösterir.6- Kullanıcı Kaynağı seçer ve kaydeder.
+Scenario: Successful Main Scenario - Adding Subtask with External Option Fill
+    Given the user clicks on "Add Subtask" in the scenario steps.
+    When the user selects "Fill from External Source" as the subtask type.
+    And enters the Question and Description information.
+    And the system displays the Control Type as Single Selection Dropdown.
+    And the system shows the list of external sources added to the external source list in the External Source Name field.
+    When the user selects a source from the list and saves the subtask.
+    Then the subtask is added with the chosen external source for option fill.
