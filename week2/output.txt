@@ -1,0 +1,2098 @@
+Header: Adý
+Data: Ýþ tanýmý - "iþe alým talebi / onay" bölümü
+------------------------------------------------
+Header: Konu
+Data: Ýþ tanýmýnýn son tabý olan "iþe alým talebi / onay" bölümünde yer alan alanlarýn kullanýcý tarafýndan doldurulmasýna iliþkin analiz
+------------------------------------------------
+Header: Birincil Aktör
+Data: Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1. Kullanýcý iþ tanýmý ekranýný açar.
+2. Dördüncü tab olan "iþe alým talebi / onay" bölümünü görüntüler.
+3. Bölüm baþlýðý altýndaki metni görüntüler. BR1
+4. Ýþe alým takýmý (Job team) bölümünü doldurur. BR2
+a. ÝK kullanýcýsý (HR user) seçimi yapar.
+b. Sorumluluk alaný (Domain) seçimi yapar.
+Eðer kullanýcý "Ýþe alým takýmý yarat" (Create job team) seçeneðini seçerse, aþaðýdaki diðer alanlar da açýlýr:
+c. Ýþe alým yöneticisi (Hiring manager) seçer.
+d. ÝK Ýþ Ortaðý (HR business partner) seçer.
+e. Yeni üye ekle (add new member) seçeneði ile yeni kiþi ekler. BR3
+5. Kullanýcý Onay zinciri (Approval chain) bölümünü doldurur.
+6. Onay notlarý (Approval notes) bölümüne notlarýný girer.
+7. Ýlan tercihleri (Posting preferences) bölümünde onaya gönderilme tercihini belirler. 2 seçenekten birini seçer:
+a. Hemen onaya gönder (send approval immediately): bu seçim ile bu sekme kaydedildiði anda onaya gönderilir.
+b. Gönderim zamanýný planla (schedule sending time): bu seçeneði seçerse, onaya gönderme zamanýný planlar.
+i. Gün (tarih) seçer.
+ii. Saat seçer.
+8. Tüm alanlarý doldurduktan sonra, bir sonraki next / ileri dediðinde, bir tebrik modal'i karþýsýna çýkar. Kullanýcý yapmak istediði aksiyonu belirler: 
+a. Ýþ tanýmýný kaydet (Save job for later): iþ tanýmýný kaydeder ve ekrandan çýkar. Baþarýyla kaydedildiðine dair, toast mesaj görüntüler. (Metin: "Ýþ tanýmýnýz baþarýyla kaydedilmiþtir.")
+b. Aday deneyimi (candidate experience): Bu seçim ile de, doðrudan iþe alým süreç tasarýmý ekranýna yönlenmiþ olur.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Sýra Dýþý Durumlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: Bu bölüm servise dahil olacak mý Analyse'a mý ait olacak?
+BR1:
+BR2: Bu bölümdeki tüm seçimler combobox olup, kullanýcý listesi dolu getirilir. Kullanýcý email veya kullanýcý adý soyadý aratarak kullanýcý seçer.
+BR3: Kullanýcý ekle ekle diyerek birden fazla yeni takým üyesi (kullanýcý) seçebilir.
+------------------------------------------------
+Header: Fonksiyonel Olmayan
+Gereksinimler
+Data: EMPTY
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+Header: Adý
+Data: Ýþ tanýmý - Yetenek personasý (Talent persona) bölümü
+------------------------------------------------
+Header: Konu
+Data: Ýþ tanýmýnýn üçüncü tabý olan "yetenek personasý" bölümünde yer alan alanlarýn kullanýcý tarafýndan doldurulmasýna iliþkin analiz
+------------------------------------------------
+Header: Birincil Aktör
+Data: Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1. Kullanýcý iþ tanýmý ekranýný açar.
+2. Üçüncü tab olan "yetenek personasý" bölümüne geçer.
+3. Baþlýðýn altýnda yer alan metni görüntüler. BR1
+4. Ýsterse bu bölümü skip edip geçebilir. BR2
+5. Kiþisel özellikler (Personality) bölümünü doldurur. Bu bölümde, combo'dan potansiyel gösterge kütüphanesinde defaultta ekli olan göstergelerden de seçebilir, veya kütüphanede bulunmuyor ise yeni kayýt olarak da ekleyebilir. BR3 
+6. Eklediði potansiyel boyutun yanýnda 2 seçenek görüntüler. Bu seçenekler, ilgili iþ tanýmýnýn yetenek personasýndan beklenen boyutun hangi seviyede bekleneceðini belirtir.
+Skala seçebilir: Bu durumda bir 5'li skala görüntüler. Bu skala üzerinden bir baz seviye seçer. Örneðin "learning agility" boyutu için, 3 seviyesini seçtiðinde, bu þu demektir: "Bu iþ tanýmýnýn yetenek personasýndan beklenen, learning agility'sinin en az 3 veya üzeri olmasýdýr."
+Var/yok seçebilir. Bu durumda var ya da yok seçimi yapar. Bu da, "Bu iþ tanýmýnýn yetenek personasýndan bu boyut beklenir veya beklenmez." demek olacaktýr.
+7. Yetkinlikler (Competencies) bölümünü doldurur. Bu bölümde, combo'dan yetkinlik kütüphanesindeki defaultta ekli yetkinlikler arasýndan seçim yapar. Eðer kütüphanede ekli deðil ise, yeni yetkinlik kaydýný da ekleyebilir. BR4 
+8. Ayný boyutlarda (kiþisel özelliklerde) olduðu gibi, yetkinliklerde de, yetkinliðin baz seviyesini seçebilir. Yetkinlik kütüphanesi ile baðlý olacak. Kütüphanedeki skalayý burada getirecek. (yalnýzca skaladan seçim yapar.)
+9. Motivatörler (Drivers) bölümüne eklemeler yapar. BR5
+10. Demotivatörler (Drainers) bölümüne eklemeler yapar. BR6
+11. Ýþe baþlatma sýrasýnda dikkat edilecekler (Tips for onboarding) bölümüne eklemeler yapar. BR7 
+12. Tüm alanlarý doldurduktan sonra, bir sonraki next / ileri dediðinde, bir tebrik modal'i karþýsýna çýkar. Kullanýcý yapmak istediði aksiyonu belirler: BR8
+a. Ýþ tanýmýný kaydet (Save job for later): iþ tanýmýný kaydeder ve ekrandan çýkar. Baþarýyla kaydedildiðine dair, toast mesaj görüntüler. (Metin: "Ýþ tanýmýnýz baþarýyla kaydedilmiþtir.")
+b. Ýþe alým talebi oluþtur / Onaya gönder (Requisition / Approval): Bu seçeneðe týklarsa, bir sonraki tab olan "Ýþe alým talebi" (Requisition) bölümüne yönlenir. Bu kýsmýn analizi için Bkz.
+c. Aday deneyimi tasarla(candidae experience): Bu seçim ile de, doðrudan iþe alým süreç tasarýmý ekranýna yönlenmiþ olur.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Sýra Dýþý Durumlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Metin: "Ýþi yapacak kiþinin iþe uyum saðlayabilmesi için gerekli özelliklerini bu kýsýmda belirleyebilirsiniz"
+BR3: Bu bölümde arkada ayrý bir servis olarak tanýmlanmýþ potansiyel göstergeler kütüphanesinden bir gösterge / boyut seçebilir. Bu boyutlar, tenanta otomatik ekli gelir, peoplise'ýn sunduðu default kayýtlar olarak düþünülebilir. Ancak eðer kullanýcý farklý bir boyut eklemek isterse de ekleyebilir. Kullanýcýnýn ekledikleri bir flag ile ayrýþtýrýlarak, hangisinin kendi eklediði hangisinin default olduðu arkada bilinir. 
+Birden fazla boyut seçebilir / ekleyebilir.
+BR4: Ayný potansiyel göstergeler servisi gibi, yetkinlikler de ayrý bir servistir. Burada da peoplise'ýn defaultta sunduðu bir yetkinlik kütüphanesi bulunur. Kullanýcý isterse, bu kütüphaneye yeni yetkinlikler de ekleyebilir. 
+Birden fazla yetkinlik seçebilir / ekleyebilir.
+Yetkinlik seçimini yapacaðý comboyu tree view þeklinde görüntüler. Yani, her bir yetkinlik kategorisi altýnda yetkinlikler listelenir.
+Yetkinlik kütüphanesi analizleri ile ilgili lütfen inceleyiniz. Recognise - 7.22 Competency Library
+Yeni yetkinlik eklediðinde kütüphaneye de eklenir. Yetkinlik eklerken grup da seçtirmemiz gerekmektedir. 
+BR5: Defaultta gelen motivatörler aþaðýdaki gibidir:
+Baþarý odaklýlýk
+Sosyalleþme
+Güç odaðý
+Kullanýcý isterse yeni motivatör de ekleyebilir.
+Birden fazla motivatöre eklenebilir.
+BR6: Ayný motivatörler gibi burada da default seçenekler vardýr. Aþaðýdaki gibidir:
+Kullanýcý kendisi yeni düþürücü etkenler de ekleyebilir. 
+Birden fazla ekleme yapabilir.
+BR7: Tips for onboarding için defaultta aþaðýdaki metinler arasýndan seçim yapabilir: 
+Ekiple hýzlý kaynaþtýrýn
+Buddy atamayý unutmayýn
+Ýþe baþlamadan gerekli dokümanlarý paylaþýn
+Soru sorabilmesi için mentor atayýn
+Ekipmanlarýnýn hazýr olduðuna emin olun
+Kendisi de yeni metin / cümle ekleyebilir.
+Birden fazla ekleme yapabilir.
+BR8: Açýlan tebrik modal'i eðer ürün Recognise ise, bu þekilde görünmez. Yalnýzca Tebrikler, iþ tanýmýnýz baþarýyla kaydedildi. þeklinde bir bilgi içeren bir popup veya toast mesaj görünür. Recognise için iþe alým adýmlarý veya onay akýþlarý olmaz.
+------------------------------------------------
+Header: Fonksiyonel Olmayan
+Gereksinimler
+Data: EMPTY
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+Header: Adý
+Data: Ýþ tanýmý - Ýþ Karakteristikleri (Job Characteristics) bölümü
+------------------------------------------------
+Header: Konu
+Data: Ýþ tanýmýnýn ikinci tabý olan "iþ karakteristikleri" bölümünde yer alan alanlarýn kullanýcý tarafýndan doldurulmasýna iliþkin analiz
+------------------------------------------------
+Header: Birincil Aktör
+Data: Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1. Kullanýcý iþ tanýmý ekranýný açar.
+2. Ýkinci tab olan "iþ karakteristikleri" bölümüne geçer.
+3. Baþlýðýn altýnda yer alan metni görüntüler. BR1
+4. Anahtar opsiyonlar (Key options) bölümünü doldurur. (adý doðru mu )
+a. Ýþ dili (Job language) bilgisini seçer. BR2
+b. Tercih edilen baþlama tarihi (Preferred StartDate) bilgisini girer.
+c. Ýþe alým sebebi (Reason to Hire) seçilir. BR3
+d. Bütçelenmiþ olup olmadýðý (Budgeted) bilgisi seçilir. (Seçenekler þöyledir; TR: Evet / Hayýr EN: Yes / No) (Not: bu alanda bu iþ tanýmýnýn bütçeye dahil edilmiþ olup olmadýðý bilgisi alýnýr.)
+e. Boþ koltuk sayýsý (Number of vacancies) seçilir. (Not: Bu alanda, bu iþ tanýmý ile eþlecek kaç açýk pozisyon / koltuk var bunun bilgisi alýnýr.)
+f. Hedeflenen son tarih (Targetted Deadline) bilgisi girilir. (Not: Bu alanda, pozisyonun doldurulmasý beklenen son tarih bilgisi alýnýr.)
+g. Öncelik seviyesi (Priority Level) seçilir. BR4
+h. Sorumluluk alaný (Domain) seçilir. BR5
+5. Pozisyon etiketleri (Position tags) bölümünü doldurur. Kullanýcý istediði kadar etiket (metin) ekleyebilir.
+6. Analitik modelleme (Analytical modelling) bölümünü doldurur. Bu bölümde iþin kritikliði, karmaþýklýðý vb bilgilerini belirler. BR6
+a. Kritiklik (Criticality) durumunu belirler. Seçenekler þöyledir:
+Seçim yok
+Kritik
+Kritik deðil
+Eðer kritik seçeneðini seçer ise, "Kritiklik tipi" alaný açýlýr ve kullanýcý bu seçenekler arasýndan seçim yapar: 
+Ticari riskli
+Bilgi birikimi riski
+Operasyonel kritik
+Yasal kritik
+Diðer
+b. Otonomi (Autonomy) seçimi yapar. Seçenekler þunlardýr:
+Düþük
+Orta
+Yüksek
+c. Karmaþýklýk (Complexity) seçimi yapar. Seçenekler þunlardýr:
+Düþük
+Orta
+Yüksek
+d. Ýþgücü Piyasasýndaki Önemi (Market desirability) seçimi yapar. Seçenekler þunlardýr: (Türkçesi ne olsun , açýklama alaný da eklenecek, notlarý check edelim.)
+Düþük
+Orta
+Yüksek
+7. Tüm alanlarý doldurduktan sonra, bir sonraki tab olan yetenek personasý (talent persona) bölümüne geçer. Bu kýsmýn analizi için Bkz. 
+8. Kullanýcý bir sonraki taba geçmeden de "kaydet" butonuna týklayarak yaptýðý yere kadar olan kýsmý kaydedip sonra doldurmaya da devam edebilir.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Sýra Dýþý Durumlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Metin: " Ýþ tanýmýnýza uygun adaylarýn iþe baþlangýç detaylarý ve rolün karakteristik özellikleri ile ilgili bilgileri alacaðýz." 
+BR2: Tüm diller defaultta dolu getirilir. Kullanýcý combodan istediði dilleri seçer. Birden fazla dil seçimi yapabilir.
+BR3: Ýþe alým sebepleri aþaðýdaki gibidir, seçenekler arasýndan kullanýcý seçim yapar.
+Yeni pozisyon
+Yer deðiþikliði 
+BR4: Öncelik seviyeleri aþaðýdaki gibidir. Kullanýcý birini seçerek ilerler. 
+Düþük
+Orta
+Yüksek
+BR5: Sorumluluk alanlarý Analyse ve Recognise için nasýl dolu gelir, nereden okunur. (Bu analyse da farklý domain alanýndan gelecek, recognise da da domain kýsmýndan gelecek)
+BR6: Bu alandaki bilgiler için birer info eklenebilir.
+BR7: Bu bölüm Recognise'da görünür müdür? Ne kadarý görünürdür?  Tag ve analitik modelleme anlamlý, key options daha çok ilaný ilgilendiriyor.
+------------------------------------------------
+Header: Fonksiyonel Olmayan
+Gereksinimler
+Data: 1. Bölüm baþlýklarýnýn adýný deðiþtirme opsiyonu yer alýr.
+2. Text giriþi yapýlan alanlarýn hepsi autocomplete olup, daha önce kütüphaneye eklenmiþ ise, oradan seçtirilebilir, reuse edilebilir.
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+Header: Adý
+Data: Ýþ tanýmý - "iþ detaylarý" bölümü
+------------------------------------------------
+Header: Konu
+Data: Ýþ tanýmýnýn ilk tabý olan "iþ detaylarý" bölümünde yer alan alanlarýn kullanýcý tarafýndan doldurulmasýna iliþkin analiz
+------------------------------------------------
+Header: Birincil Aktör
+Data: Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1. Kullanýcý iþ tanýmý ekranýný açar.
+2. Ýlk tab olan iþ detaylarý (job details) bölümünü görüntüler. 
+3. Pozisyon Detaylarý baþlýðýný ve altýnda yer alan metni görüntüler. BR1
+4. Ýþ Baþlýðý ve Departman Detaylarý (Job Title & Department Details) bölümünü doldurur.
+a. Ýþ baþlýðý (Job title) alanýný doldurur. BR2 AA1
+b. Sektör (Industry) seçer. BR3
+c. Departman (Department) seçer. BR4
+d. Pozisyon tipi (Position Type) seçer. BR5
+e. Dýþ Baþvurular (External applications) mý yoksa Ýç Baþvurular (Internal applications) mý kabul edileceðini seçer. BR6
+5. Her bir alaný doldurdukça veya seçtikçe yan tarafta önizlemesini (preview) görüntüler. BR7
+6. Deneyim seviyesi (Experience Level) seçer. BR8
+7. Lokasyon bilgilerini girer.
+a. Ülke (Country) seçer.
+b. Þehir / ZIP Kodu (City or ZIP Code) girer.
+c. Çalýþma tercihi (Remote Preference) seçer. BR9
+8. Hakkýmýzda (About us) bölümünü doldurur. BR10
+9. Sorumluluklar (Responsibilities) alanýna eklemeler yapar. BR11
+10. Teknik bilgi ve beceriler (Skills Knowledge and Abilities (SKA)) bölümünü doldurur. 
+a. Bu bölümde ilk alana "gerekenleri" (required) olanlarý ekler. (metin: Gerekenler(TR) - Required(EN))
+b. Ýkinci alana ise "tercih edilenleri" (preferred) olanlarý ekler. (metin: Tercih edilenler (TR) - Preferred(EN))
+11. Ýþ deneyimi(Work Experience) bölümünü doldurur: BR12
+a. Gerekli mi yoksa tercihen mi olduðunu seçer.
+b. Deneyim alanýný girer. (autocomplete önceki eklenmiþler gelir ancak yeni de ekleyebilir.)
+c. Min deneyim süresini seçer.
+d. Raporlayacaðý bir rol varsa onu belirler. 
+12. Eðitim (Education) alanýný doldurur. BR13
+a. Gerekli mi yoksa tercihen mi olduðunu seçer.
+b. Eðitim seviyesini (degree) seçer.
+c. Bölümünü seçer.
+13. Dil becerileri (Language skills) alanýný doldurur. BR14
+a. Defaultta aþaðýdaki alanlarý doldurur:
+i. Dil seçer.
+ii. Seviyesini seçer.
+b. Detaylý seçeneðini seçerse aþaðýdaki alanlarý doldurur:
+i. Dil seçer.
+ii. Okuma seviyesini seçer.
+iii. Yazma seviyesini seçer.
+iv. Konuþma seviyesini seçer.
+14. Maaþ ve yan haklar (Salary & Benefits) bölümünü doldurur. Aþaðýdaki seçenekleri seçerek, detaylarýný girer: BR15
+a. Maaþ 
+b. Yan haklar
+c. Prim (Var/Yok þeklinde seçim yapar.) Var seçeneðini seçerse, yanýnda açýlan Açýklama alanýna detay girebilir.
+15. Diðer gereklilikler (Other requirements) bölümünü doldurur.
+a. Çalýþma izni (Work permit) (var/ yok seçimi yapar.)
+b. Ehliyet (Diriving license) ( ehliyet tipi seçimi yapýlýr (birden fazla seçilebilir). Ehliyet tipleri arasýndan seçtirilir: M, A1, A2, A, B1, B, BE, C1, C1E, C, CE, D1, D1E, D, DE, F)
+c. Askerlik durumu (military service) (Seçenekler þunlardýr: Tecilli, Tamamlandý, Farketmez)
+16. Çalýþma ortamý ve iklim (Work environment and culture) bölümünü doldurur. Bu alanda aþaðýdaki üç alt baþlýk bazýnda seçimler yapar: BR16
+a. Çalýþma ortamý (çalýþma ortamýnýn nasýl olduðu ve / veya nasýl olmadýðýna dair kutulara anahtar kelimeler veya cümleler eklenir.)
+b. Takým (takýmýn nasýl olduðu ve / veya nasýl olmadýðýna dair kutulara anahtar kelimeler veya cümleler eklenir.)
+c. Kültür (þirket kültürünün nasýl olduðu ve / veya nasýl olmadýðýna dair kutulara anahtar kelimeler veya cümleler eklenir.)
+17. Kullanýcý "ek bilgi ekle" seçeneðine týklar. Yeni bir bölüm açýlýr. Adý "Panel1" þeklinde olup, eklendikçe "Panel2" "Panel3" diye artarak baþlýklar gelir. Kullanýcý bu yeni eklediði bölüme ek bilgilerini yazar. BR17
+18. Tüm alanlarý doldurduktan sonra, bir sonraki tab olan Ýþ karakteristikleri (job characteristics) bölümüne geçer. Bu kýsmýn analizi için Bkz. 
+19. Kullanýcý bir sonraki taba geçmeden de "kaydet" butonuna týklayarak yaptýðý yere kadar olan kýsmý kaydedip sonra doldurmaya da devam edebilir.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: 1. Kullanýcý iþ baþlýðýný girerken, bu alan autocomplete doldurulur. Eðer kullanýcý, gelen seçeneklerden birini seçerse, kütüphane modal'i açýlýr. Veya hiç iþ baþlýðý alanýný doldurmadan da "Kütüphaneden seç" seçeneðini seçerek de modal'e yönlenebilir.
+2. Kütüphanede peoplise'ýn default verdiði iþ tanýmlarý listelenir. (Peoplise kütüphanesi)
+3. Buna ek olarak, kullanýcýnýn kendi oluþturduðu iþ tanýmlarý da kütüphaneye otomatik kaydedilir. (Peoplise Ýþ Tanýmlarý diðeri, Firma iþ tanýmlarý) 
+4. Kullanýcý, 1. adýmdaki gibi bir baþlýk (iþ tanýmý) seçerek kütüphaneye yönlendiðinde, seçtiði iþ tanýmý modal'de otomatik seçili gelir, ve sað taraftaki detaylarý görüntülenir. 
+5. Kullanýcý baþka bir iþ tanýmýný da seçebilir. 
+6. Seçtiði iþ tanýmýnýn detaylarýndan hangilerini almak isterse onlarý seçer. 
+7. Önceki iþ tanýmýndan kopyaladýðý bilgileri seçerek, ana ekrana geri döner. 
+8. Seçtiði bilgileri, ilgili alanlarda dolu gelmiþ þekilde görüntüler. Ýsterse dolu gelen alanlar üzerinde oynama yapabilir, deðiþtirebilir.
+9. Ýþ baþlýðý adýný deðiþtirerek devam eder ve iþ tanýmýný kaydeder.
+10. Kütüphaneden gelen alanlarý temizlemek için ise, her bir bölümün içinde yer alan temizle butonuna týklayarak, bölümünü clear edebilir.
+------------------------------------------------
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Pozisyon detaylarý metni: " Akýllý bir iþ tanýmý ve yetenek profili oluþturmak için sizden bazý önemli veriler alacaðýz." (TR) "We will get some important data from you to create a smart job description and talent profile." (EN)
+BR2: 
+Ýþ baþlýðý zorunlu bir alandýr.
+Ýþ baþlýðý alanýna input girilirken autocomplete alan doldurulur. Eðer kullanýcý autocomplete ile gelen bir baþlýða týklarsa, kütüphane modal'i açýlýr. Kütüphaneden bir iþ tanýmý seçimi AA1 (alternatif akýþ bölümü) içinde anlatýlmýþtýr.
+Eðer yazýlan iþ baþlýðý, kütüphanede yok ise, tüm iþ tanýmý, yazýlan iþ baþlýðý ile kütüphaneye (Firma iþ tanýmlarý tabý altýna) otomatik kaydedilir. Ve sonraki iþ tanýmlarýnda kullanýlabilir. 
+BR3: Sektör bilgisi sistemde defaultta liste þeklinde verilmiþtir. Combodan bir sektör seçilerek ilerlenir. Sektörler þunlardýr:
+BR4: Zorunlu alandýr. Departman bilgisi Analyse için içerideki departmanlardan yüklenir. Recongise için ED'den dolu gelir. Kullanýcý mevcut departmanlardan seçim yapar. Eðer Analyse ürünü içerisinde kullanýlýyor ise, yeni taným da yaparak, departmaný kaydedebilir. 
+BR5: Zorunlu alandýr. Pozisyon tipi bilgisi, Analyse için aþaðýdaki seçenekler arasýndan seçtirilir.
+Recognise'da ise Çalýþma zamaný alanýnýn içindeki bilgilerden seçtirilir. Bu alanlar þunlardýr: Tam zamanlý, Yarý zamanlý, Saatlik, Proje Süreli
+BR6: Bu bölüm Recognise ürününde kullanýldýðý durumda görünür olmaz.
+BR7: Ýlk tabta yer alan her bir bölüm için geçerlidir. Yani, iþ detaylarý tabýndaki her bir bölüm altýndaki alanlarý seçildikçe, saðda önizlemesi görüntülenir.
+BR8: Analyse için aþaðýdaki seviyeler getirilir.
+Recognise için ise, Organizasyonel Seviye seçenekleri bu alanda gelir. Bu seçenekler þunlardýr: Yönetim Kurulu, Stratejik Ýþ Birimi, C-Level, Direktörlük, Müdürlük, Birim, Takým, Çalýþan, Asistan, Stajyer
+BR9: Bu kýsým Analyse için aþaðýdaki alanlardan seçilir.
+
+BR10: Bu alan html editör formatýnda olup, editörün kabiliyetlerini kullanýcý kullanabilecektir. (örn image ekleme vb.)
+BR11: Kullanýcý bir veya daha fazla sorumluluðu ekle (add new) diyerek ekleyebilir. Ýsterse bölümün baþlýðýný, adýn yanýnda yer alan kalem ikonuna týklayarak deðiþtirebilir. Deðiþen baþlýk adýný saðdaki önizlemede de görüntüler. 
+BR12: Bu bölümde birden fazla kural ekle ekle denerek belirlenebilir.
+Yýl alanýna metin alaný girilemez. 
+0'dan küçük bir sayý veya ondalýklý bir sayý girilemez.
+BR13: Degree yani eðitim seviyesi Analyse'da þu alanlardýr:
+Recognise için eðitim seviyeleri, entegrasyon var ise oradan getirilir. Yok ise, default seçenekler þunlardýr: Ýlköðretim, Lise, Önlisans, Lisans, Yüksek Lisans, Doktora
+Bölümler ise, Analyse'da defaulttakiler getirilir, ancak defaultlar arasýnda yazýlan bölüm yok ise, yeni taným olarak eklenebilir. Recognise için ise yine aynýsý geçerlidir.
+Birden fazla eðitim þartý eklenebilir.
+BR14: Birden fazla dil ekleyebilir. Tüm diller defaultta gelir. Mevcut diller arasýndan seçim yapar.
+Baþlangýç düzeyinde yetkinlik, Sýnýrlý çalýþma yetkinliði, Profesyonel çalýþma yetkinliði, Tam profesyonel yetkinliði, Ana dil veya ikinci dil yetkinliði 
+Kullanýcý detaylý seçime veya birinden diðerine geçtiðinde, önceki seçimi kaybolur.
+BR15:
+Maaþ alaný detaylarý:
+Min deðer
+Maks (Max) deðer
+Para birimi (currency) (tüm para birimleri default getirilir, arasýndan seçim yapar.)
+Net mi Brüt mü seçimi
+Maaþ aralýðý seçimi (Yýllýk, Aylýk, Günlük, Saatlik) 
+Birden fazla yan hak ekleyebilir.
+Prim sistemi için var veya yok seçimini yapar. Var seçeneðini seçerse, yanýnda açýklama alaný açýlýr.
+BR16: Her 3 baþlýk içinde ekli default seçenekler olacaktýr. Bu seçenekler pair olup biri diðerinin karþýtý þeklindedir. Örneðin, çalýþma ortamý içindeki seçeneklerden ikisi; "Eðlenceli" ve karþýtý "Stresli" þeklindedir. Biri bir kutuya atýldýðýnda, diðeri de otomatik olarak karþý kutuya atýlýr. Kullanýcý isterse, yeni metinler de ekleyebilir.
+BR17: Bu alan html editör þeklinde açýlýr. Kullanýcý istediði kadar yeni alan ekleyebilir. 
+------------------------------------------------
+Header: Fonksiyonel Olmayan
+Gereksinimler
+Data: 1. Alanlarda, "autogenerate text / custom text" bölümü yer alýr. 
+2. Hide alaný yer alýr. (Bölüm gizlenerek, önizlemede çýkmasý engellenir, bu bölüm iþ tanýmýnda kullanýlmamýþ boþ geçilmiþ olur.)
+3. Bölüm baþlýklarýnýn adýný deðiþtirme opsiyonu yer alýr.
+Yukarýdaki 3 özellik, aþaðýdaki bölümler için geçerli deðildir: 
+ Ýþ Baþlýðý ve Departman Detaylarý
+4. Text giriþi yapýlan alanlarýn hepsi autocomplete olup, daha önce kütüphaneye eklenmiþ ise, oradan seçtirilebilir, reuse edilebilir.
+5. Yeniden sýralama (reorder) özelliði ile bölümler arasýnda sýralama yer deðiþikliði yapabilir.
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+------------------------------------------------
+Header: Epic Name
+Data: Competency Library
+------------------------------------------------
+Header: Epic JIRA Link
+Data: TRA-297 - Jira project doesn't exist or you don't have permission to view it.
+------------------------------------------------
+Header: Description
+Data: Yetkinlik kütüphanesi iþlemleri için (yetkinlik ekleme, düzenleme, silme, skala veya skor belirleme, davranýþ göstergelerini belirleme vb)  aksiyonlarýnýn HR admin tarafýndan alýnabilir olmasý saðlanýr.
+------------------------------------------------
+Header: Introduction
+Data: Bu epic ile kullanýcý eðer bir yetkinlik belirlemek ve çalýþanýný bu yetkinlik ile deðerlendirmek üzere ilgili yetkinlikleri seçmek isterse yetkinlik kütüphanesini kullanacaktýr.
+Eklenecek bu özellikler ile yapýlmak istenen, eðer yetkinlik setleri entegrasyon ile saðlanamýyor ise örneðin bir þirkette performans ve yetkinlik deðerlendirmeleri exceller ile takip ediliyor ise, bu durumda Recognise içerisine bu yetkinliklerin manuel veya excel aktarýmlar ile alýnmasý saðlanacaktýr. Sonucunda ise, oluþturulacak yetkinliklerin yönetimi "Yetkinlik Kütüphanesi" ekranýndan yapýlýr.
+------------------------------------------------
+Header: Product Requirements
+Data: Eðer entegrasyon bulunmuyor ise, ik admin kullanýcýsý performans kart tasarýmý bölümünde, yeni yetkinlik eklerken yetkinlik kütüphanesine yönlenebilir. 
+Yetkinlik kütüphanesinde tüm yetkinlikler listelenir.
+Yeni bir yetkinlik yaratýlabilir, düzenlenebilir, silinebilir.
+Silme ve düzenleme gibi iþlemlerde kullanýcý uyarýlýr.
+Bir yetkinlik eklenirken, yetkinliðin skalasý veya skoru seçilir. Ancak her bir yetkinliðin ölçütü ayný olacaðýndan, bir skala tüm yetkinlikler için geçerli olacaktýr.
+Yetkinlikler için belirli davranýþ göstergeleri girilir. Bu göstergeler ile çalýþanlardan o yetkinlik özelinde hangi davranýþlarýn bekleneceði belirlenir. Göstergeler seviyeden seviyeye farklýlýk gösterebileceðinden ayný yetkinlik özelinde farklý gruplardan farklý davranýþlar beklenebilir.
+Yetkinlik kütüphanesinde oluþturulmuþ yetkinliklerden kullanýlacak olanlar Yetenek Kartý Tasarýmý ekranýnýn Performans bölümünde seçilir. 
+Kullanýcý çalýþanlarýnýn yetkinliklerini ve o yetkinliklerden performans dönemi kapsamýnda aldýklarý notlarý sisteme manuel veya excel aktarým yolu ile girebilir.
+------------------------------------------------
+Header: Design Requirements
+Data: Sisteme ilk giriþte açýlan sistem ayarlarý adýmlarý esnasýnda, kullanýcýdan istediði skala ve yetkinlik setinin kolay kullanýmý esas alacak þekilde saðlanmasý.
+------------------------------------------------
+Header: Engineering Requirements
+Data: Bu ekrana eriþebilir kullanýcý rolü HR Admin (IK Admin) olacaktýr.
+Default durumda sistem açýlýþýnda kütüphaneye yetkinlik seti eklenir.
+SAP entegrasyonu olduðu durumda, yetkinlik ekle / çýkar yapýlamaz.
+------------------------------------------------
+Header: Notes
+Data: Performans sonuçlarý ve performans yetkinlikleri tek ve ayný ölçüt üzerinden deðerlendirilebilir. Yetkinlik veya performans sonucu bazýnda skala seçimi özelleþtirilemez. Ya da ölçüt birinde skor birinde skala olamaz. 
+------------------------------------------------
+Header: Open Questions
+Data: Davranýþ göstergesi kýrýlým yapýsý için 3 seçenek sunulmuþ ancak henüz netleþtirilmemiþtir. Kullanýcý ihtiyacý ve az maliyet açýsýndan düþünülerek en optimal çözüm hangisi olmalýdýr?
+Filtre ile detaylý bir kýrýlým yapýsýna gitmek (Örn. "Departmaný x && Pozisyonu y" olanlar için davranýþlar a,b,c'dir. "Departmaný z && Pozisyonu t && p adlý çalýþan hariç" grup için davranýþlar e,f,g'dir.)
+Kýrýlým tiplerine göre bir gruplama yapmak (Örn. Kýrýlým tipi seçimi: Pozisyon grubu. A && B pozisyon grubu için a,b,c davranýþlarý, C && D && E pozisyon gruplarý için e,f,g davranýþlarý beklenir.)
+Yalnýzca seviyeye göre kýrýlýma izin verilmesi. (Örn. 1,2,3 seviyeleri için x,y,z davranýþlarý, 4,5,6 seviyeleri için t,w,f davranýþlarý beklenir.)
+SAP entegrasyonu olduðu durumda yeni yetkinlik eklenemez iþ kuralýna göre, eðer potansiyel göstergelerin yetkinlikler kolu entegrasyondan gelmiyor ise, potansiyel göstergeler için yeni yetkinlik ekleme ihtiyacý doðacaðýndan, potansiyel ve performans yetkinliklerini metadata özelinde ayýrmak gerekir mi?
+
+
+------------------------------------------------
+Header: Epic Name
+Data: Manager Review
+------------------------------------------------
+Header: Description
+Data: Yönetici rolündeki kullanýcýlarýn, eðer onlarýn deðerlendirmesi için oluþturulmuþ bir deðerlendirme dönemi var ise, ona baðlý çalýþanlarýný deðerlendirmesi ve bir takým aksiyonlar alabilmesi saðlanýr.
+------------------------------------------------
+Header: Introduction
+Data: Bu oluþturulacak ekran ile, yöneticilerin deðerlendirme dönemlerinde çalýþanlarýn potansiyel göstergelerini deðerlendirmesi ve harici anlarda da dahil olmak üzere çalýþanlara STAR ve geri bildirim verme, geliþim planý belirleme, not ekleme vb aksiyonlarý alabilmesi saðlanýr. 
+Bu ekran ile hedeflenen, yetenek deðerlendirme kapsamýnda yöneticiden gerekli çalýþan bilgilerini toplayarak consensus saðlanacak görüþme öncesi çalýþan verisini oluþturmak ve yine final notu vermeden önce yönetici ön deðerlendirmesini almaktýr. Böylece yetenekli yüksek potansiyelli çalýþanlar ve diðer nbox kutularýna yerleþecek çalýþanlar belirlenirken, yerleþim için destekleyici doneler oluþturulmuþ olur.
+------------------------------------------------
+Header: Product Requirements
+Data: Yönetici bu adýma çalýþanýn yetenek kartý üzerinden (ve dashboard üzerinden deðerlendirme butonuna týklayarak) yönlenebilir.
+Yönetici baðlý çalýþanlarý için aksiyonlar alabilir.
+Seçili çalýþana STAR verebilir.
+Geri bildirim verebilir. (Realise entegrasyonu eklendiði durumda da ele alýnabilir.)
+Çalýþanýnýn geliþimini yönetebilir.
+Güçlü ve geliþime açýk alanlarýný belirleyebilir. 
+Yakýn ve uzun zamanda performans ve potansiyel geliþimi için önerilerde bulunabilir.
+Önerileri yetkinlikler ile iliþkilendirebilir. (Örn. Liderlik yetkinliðini geliþtirmek için x önerisini veriyorum vb.)
+Önerileri için öðrenme yolculuðu veya eðitim önerileri ekleyebilir. (LMS entegrasyonu eklendiði durumda da ele alýnabilir.)
+Çalýþana serbest notlar ekleyebilir.
+Çalýþanlarý karþýlaþtýrabilir. (Yetenek panolarý karþýlaþtýrmalý þekilde gösterilir.)
+Yönetici çalýþanlarýný organizasyon þemasý üzerinde görüntüler.
+Yetenek kodlarýna, segmentlerine (bulunduklarý yetenek havuzlarýna göre) vb. filtreleyebilir. 
+Yönetici çalýþanlarýný liste görünümünde görüntüler.
+Yönetici çalýþanlarýný nbox grid üzerinde görüntüler.
+Nbox üzerinde çalýþanlarýn kritiklik seviyelerini, mobilitelerini vb opsiyonel olarak görüntüleyebilir.
+Geçmiþ senenin nbox yerleþimi ile bu senenin yerleþimlerini karþýlaþtýrabilir. (Örn. Ayþe adlý çalýþan 2021 yýlýnda 1.1 kutusunda iken, bu yýlki deðerlendirme sonrasý 1.2 oldu vb.)
+Yönetici çalýþanlar arasýnda geçiþ yapar ve geçtiði kiþinin deðerlendirmesine yönlenir. 
+Yönetici eðer dönemsel deðerlendirme içinde ise, çalýþanýn potansiyel deðerlendirmesini yapar. 
+Dönemsel deðerlendirme içerisinde çalýþanda ekli olan potansiyel göstergeleri, belirlenmiþ skala veya puanlama sistemi üzerinden deðerlendirir. (Örn. People Agility için 3 (beklenen) seviye seçimi yapar vb.)
+Yönetici eðer bir potansiyel gösterge assessment sonucuna baðlanmýþ ise, assessmenttan gelen sonucu da görüntüler. 
+Deðerlendirmelerini taslak olarak ("save as draft") kaydeder.
+Deðerlendirmelerini nihai deðerlendirmesi olacak þekilde kaydeder ve gönderir. ("send for approval") 
+Eðer talent review flow'unda yönetici ön deðerlendirmesinden sonra bir onay adýmý var ise, yönetici deðerlendirmesini onaya göndermiþ olur. Buradan dönen cevap eðer reddedildi ise, bu durumda deðerlendirmelerini tekrar gözden geçirerek tekrar onaya gönderir.
+------------------------------------------------
+Header: Design Requirements
+Data: Ekranda çalýþanlar için bir arama ve seçim olacaktýr. Seçili çalýþanýn bilgileri ekranda yer alýr. 
+Seçili çalýþanýn dönemsel deðerlendirmesi ve alýnabilir aksiyonlarý için bölümler bulunur. (potansiyel göstergelerin deðerlendirilmesi, STAR ve geri bildirim verme, geliþim önerileri verme, not ekleme vb aksiyonlarýn alýnabilir olmasý saðlanýr.)
+Seçili çalýþanýn tamamlanmýþ deðerlendirmesi sonucu oluþmuþ final notlarý ile birlikte yetenek kartý ekranda yer alýr.
+------------------------------------------------
+Header: Engineering Requirements
+Data: Yönetici yalnýzca dönemsel deðerlendirme adýmý içinde ön deðerlendirmesini yapabilir.
+Deðerlendirme dönemi haricinde de aksiyonlar alabilir. (STAR ve geri bildirim verme, geliþimini yönetme ve öneriler sunma vb.)
+------------------------------------------------
+Header: Notes
+Data: EMPTY
+------------------------------------------------
+Header: Open Questions
+Data: Dönemsel deðerlendirmede prereview adýmý gelmemiþ ise veya work-in-progress durumunda iken, dönemsel deðerlendirme adýmý disabled mý görüntülenebilir?
+STAR, geri bildirim, not ekleme, geliþim önerisi verme vb aksiyonlarý dönem / dönem tarihleri baðýmsýz her an girebilir olmalýdýr, deðil mi?
+Soru cevap formatýndaki notlar, ik admin tarafýndan tüm yöneticiler için ortak ve dönemlere baðlanmaksýzýn mý oluþturulur? Bu sorularýn cevaplarý herhangi bir t anýnda yönetici tarafýndan mý yanýtlanýr. (Yoksa yönetici bu sorularý kendi tanýmlayýp kendi mi yanýtlar?)
+Verilen STAR'lar için karta pinle özelliði eklenebilir mi, alýnan tüm STAR vb aksiyonlar verildiði anda yetenek kartýna yansýtýlýr mý?
+------------------------------------------------
+
+Header: Epic Name
+Data: Talent Card Performans Bölümü Ýþlemleri
+------------------------------------------------
+Header: Description
+Data: Talent Card (Yetenek Kartý) 'nda hangi çalýþan bilgilerinin görünüp görünmeyeceðinin belirlendiði Yetenek Kartý Tasarýmý ekranýnda, Performans'a iliþkin alanlarýn ayarlarýný ve önizlemesinin ik admin rolündeki kullanýcý için yönetiminin saðlanabilir olmasý beklenir.
+------------------------------------------------
+Header: Introduction
+Data: Bu epic ile Yetenek Kartý Tasarýmý'nda performans alanlarýnýn seçimi, skala gösterim ve veri yüklemesi gibi ayarlarýnýn yapýlmasý ve sonuçta bu alanlarýn yönetici ya da hrbp, host rollerinde nasýl görüntüleneceðine dair önizlemesi yapýlabilir.
+Eklenecek bu özellikler ile yapýlmak istenen, admin kullanýcýnýn performans notlarýna ve performans yetkinliklerine potansiyel deðerlendirmeler ve süreç içerisinde ihtiyacý var ise, bu bölüme özel alanlarýn nasýl görüntüleneceði bu alanlarýn neler olacaðý gibi yönetim iþlemini yapabilir olmasýdýr. Böylelikle nbox gridlere çalýþanlar oturtulurken performans notlarýndan da yararlanýlýr.
+------------------------------------------------
+Header: Product Requirements
+Data: Kullanýcý Performans bölümüne iliþkin þu alanlarý görüntüleyebilir:
+1 önceki yýlýn performans notu
+Son dönem performans notu
+Son dönem hedef sonucu
+Son dönem yetkinlik sonucu
+Son dönem yetkinlikleri ve notlarý
+Kullanýcý bu alanlarý SAP entegrasyonu ile almak istediðinde, entegrasyon ile hali hazýrda gelmiþ alanlar için birer gösterge (info) görebilir.
+Seçtiði alanlarýn nasýl veriler saðlayacaðýný ve detay gösterimlerinin nasýl olacaðýna dair ekranda bir template card görünümü görür.
+Dolu veriler ile yönetici ve hrbp, host rollerinin only view olarak bu alanlarý nasýl göreceðine dair "Preview" butonuna týklayarak bir önizleme yapabilir.
+Performans bölümündeki sonuçlarýn ölçütünün nasýl gösterileceðine vb. ayarlamalarý için Performans Bölümü Ayarlarý modalini açar ve þu aksiyonlarý alýr:
+Performans bölümü alanlarýný aç kapa yaparak görmek istediði bilgileri buradan da düzenleyebilir.
+Eðer performans yetkinlikleri entegrasyondan gelmemiþ ise:
+Yeni yetkinlik eklemeleri / çýkarma / düzenleme iþlemlerini yapabilir. 
+Yeni yetkinlikleri detaylý eklemek için yetkinlik kütüphanesine yönlenebilir. 
+Veri giriþini excel ile yapabilir. Bu durumda excel ile þablon indirme ve þablonu yükleme iþlemlerini yapabilir.
+Ölçüt türü seçimine göre (skala veya skor/puan) ölçütün nasýl görüneceðine karar verir. (yalnýzca skala türü için bu gösterim biçimi sorusu geçerli olacak ve seçenekler, "yalnýzca puan", "yalnýzca sözel ifadesi", "her ikisini de göster" þeklinde olacaktýr. 
+------------------------------------------------
+Header: Design Requirements
+Data: Yapýlan seçimlere ve entegrasyon olup olmama durumuna göre ekran çizimleri deðiþkenlik göstereceðinden, tasarým çalýþmasý genelince bu durum göz önünde bulundurulur.
+------------------------------------------------
+Header: Engineering Requirements
+Data: Bu ekrana eriþebilir kullanýcý rolü HR Admin (IK Admin) olacaktýr.
+SAP entegrasyonu yapýldýðýnda yeni veri giriþine, mevcut gelen verinin düzenlenmesi veya silinmesine izin verilmez. Only view görüntülenir.
+------------------------------------------------
+Header: Notes
+Data: Performans sonuçlarý ve performans yetkinlikleri tek ve ayný ölçüt üzerinden deðerlendirilebilir. Yetkinlik veya performans sonucu bazýnda skala seçimi özelleþtirilemez. Ya da ölçüt birinde skor birinde skala olamaz. 
+Ayný þekilde skala gösterim biçimi de tümü için ayný ve ortak olacaktýr. 
+------------------------------------------------
+Header: Open Questions
+Data: EMPTY
+------------------------------------------------
+
+Header: Adý
+Data: Çalýþan Paneline Duyuru Ekleme
+------------------------------------------------
+Header: Konu
+Data: Çalýþanlarýn dashboardlarýnda görecekleri duyurularýn eklenmesi 
+------------------------------------------------
+Header: Birincil Aktör
+Data: Duyuru Ekleme Yetkisi Verilmiþ Role Sahip Kullanýcý
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Admin çalýþan paneli kurulumu dashbaord ayarlarý sayfasýný açar.
+Admin dashboard bölümlerinde yer alan duyuru alaný için "içerik yöneticisi ekle" butonuna basar.
+Sistem içerik yöneticisi eklenmesi için popup ekranýný açar.
+Admin gelen kutucuðua isim veya e-posta adresi yazarak kullanýcý ekler.
+Sistem admin'in eklediði kullanýcýlarý getirir.
+Admin kullanýcý isimlerinin yanýnda bulunan X butonu ile kullanýcýlarý kaldýrabilir.
+Admin gerekli kullanýcýlarý ekledikten sonra "seçilenleri ekle" butonuna basar.
+Sistem içerik yöneticilerini kaydeder. Dashboard düzenleme sayfasýna döner ve bir bilgi mesajý yayýnlar.
+Ýçerik Yöneticisi rolüne sahip çalýþan paneline giriþ yapar.
+Sistem dashboard sayfasýný açar. Kullanýcýnýn içerik yöneticisi rolü olduðu için duyurular kýsmýnda "duyuru ekle" butonunu aktif hale getirir.
+Ýçerik yöneticisi "duyuru ekle" butonuna basar. 
+Sistem yeni duyuru ekleme popupýný açar.
+Ýçerik yöneticisi duyuru metni, URL, ve URL Baþlýðýný ekler ve yayýnlaya basar.
+Sistem duyuruyu kaydeder ve duyurular alanýnda en üste ekler.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Ýçerik yöneticisi olarak eklenen kullanýcý çalýþan paneli kullanýcýsý olmalýdýr. Ýçerik yöneticisi ismi/e-postasý yazýlýrken sistem çalýþan paneli aktif kullanýcýlarý arasýnda arama yapar.
+BR2: Ýçerik yöneticisi ekle butonunun yanýnda yer alan info simgesinde hooverda þu mesaj çýkar:
+BR3: Ýçerik yöneticisinin eklediði duyuru kaydete bastýktan sonra tüm çalýþan paneli kullanýcýlarý dashboardlarýna eklenir. 
+BR4: Duyuru ekleme alanlarýnda sadece duyuru baþlýðý zorunlu alandýr. URL ve URL Baþlýðý boþ geçilebilir.
+BR5: Kullanýcý URL linkine týkladýðýnda yeni sekmede link açýlacaktýr.
+------------------------------------------------
+
+Header: Adý
+Data: Çalýþan paneli - Kariyer ve geliþim haritasý ekraný
+------------------------------------------------
+Header: Konu
+Data: Çalýþan paneli profil sayfasýnda yer alan "kariyer ve geliþim haritam" sekmesi içinde, çalýþanýn girebileceði geliþim planlarý ve mobilite bilgileri
+------------------------------------------------
+Header: Birincil Aktör
+Data: Çalýþan
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: Admin, Yönetici
+------------------------------------------------
+Header: Ön Koþullar
+Data: Geliþim ayarlarýnda, geliþim planýný çalýþan girsin seçili olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: Önceden girdiði bilgileri güncelleme:
+1. Kullanýcý "kariyer ve geliþim haritam" sekmesine týklar.
+2. Güncelleme moduna geçer.
+3. Güncellemek istediði bilgileri deðiþtirir.
+4. Formu kaydeder.
+5. Güncelleme iþleminin baþarýyla gerçekleþtiðine dair toast mesajý görür. "Kaydýnýz baþarýyla güncellenmiþtir."
+----
+Kullanýcý yanlýþ girdiði veya geçerliliði olmayan bir plan kaydýný da yine güncelleme moduna geçerek silebilir.
+----
+Girdiði planýn takibini yapma:
+Eðer geliþim ayarlarýnda, geliþim planýnýn takibini çalýþan yapar seçeneði seçilmiþ ise:
+1. Kullanýcý "kariyer ve geliþim haritam" sekmesine týklar.
+2. Takibini yapmak istediði plan için ilgili seçeneðe týklar. Aþaðýdaki bilgileri girer.
+Tamamlanma durumu BR6
+Gerçekleþen tarih
+Yorum
+3. Bilgilerini kaydeder.
+4. Ýþleminin baþarýyla gerçekleþtiðine dair toast mesajý görür. "Kaydýnýz baþarýyla güncellenmiþtir."
+5. Yetenek kartýnda ise çalýþanýn girdiði bilgiler görünür olur.
+
+Eðer geliþim ayarlarýnda, geliþim planýnýn takibini çalýþan yapar seçeneði seçilmemiþ ise:
+1. Kullanýcý "kariyer ve geliþim haritam" sekmesine týklar.
+2. Takibini yapma yetkisi olmadýðýndan, aþaðýdaki bilgileri yalnýzca görüntüler, düzenleyemez veya silemez.
+Tamamlanma durumu 
+Gerçekleþen tarih
+Yorum
+------------------------------------------------
+Header: Sýra Dýþý Durumlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1:
+Çalýþanýn performans ve potansiyel alanlarýnda atalý olan yetkinliklerden, deðerlendirme seviyesi beklenen performans ve üzeri seviyesinde olan yetkinlikler otomatik atanýr, kullanýcý bu yetkinlikleri görüntüler. (beklenen performans seviyesi nedir? - yetkinlik kütüphanesi skala tanýmýnda belirlenmiþ seviyedir. Bkz.
+Deðerlendirme yapýldýkça güçlü yöne giren yetkinlikler bu alana eklenir. Beklenen olup, sonradan beklenenin altýnda bir seviye deðerlendirme yapýlmýþ yetkinlikler ise güçlü yönlerden kaldýrýlýr. (eðer buna eklenmiþ bir yorum varsa o da soft delete yapýlýr, ön yüzde gösterilmez.)
+Yalnýzca güçlü yönlerine gelen yetkinlikler ile baðlantý kurulabilir, yeni yetkinlik ekleyemez. 
+Güçlü yönlerde görüntülenen yetkinlikler deðiþtirilemez, kaldýrýlamaz.
+BR2: Her bir ekli yetkinlik için bir açýklama alaný açýlýr. Çalýþan güçlü yönü olan yetkinlik için yorumlarýný yazabilir. (1-1 iliþki vardýr.)
+BR3: Yetkinlik baðlantýsý olmadan da güçlü yönler baþlýðý altýnda bir veya birden fazla ekle ekle diyerek yorum ekleyebilir. 
+BR4: Güçlü yönler bölümünde geçerli iþ kurallarý (BR1,BR2,BR3) geliþim alanlarý bölümünde de geçerlidir. Tek fark, bu kez beklenen ve üzeri seviyeli yetkinlikler deðil, beklenen seviyenin altýnda kalmýþ yetkinlikler bu bölüme otomatik getirilir.
+BR5:
+Performans ve potansiyel iyileþtirme bölümlerindeki alanlar aynýdýr.
+Bu bölümdeki iþ kurallarý hem performans hem potansiyel iyileþtirme baþlýðý için geçerlidir.
+Çalýþanlar geliþim planlarýný bu ekranda -  bu bölümler içerisinden girerler. 
+Oluþturduklarý planlarý görüntüler, günceller, yeni plan girer veya planlarýný silebilirler.  (plan tamamlandýðýnda da silebilsin mi
+BR6: Tamamlanma durumu ilk plan kaydedildiðinde (defaultta) "Bekliyor" þeklinde gelir. Yetkisi olan kullanýcý, geliþim planý tamamlandýðýnda, "tamamlandý" statüsüne çeker. 2 seçenek bulunur:
+Bekliyor
+Tamamlandý
+BR7: Eðer yetenek kartý tasarýmý mobilite ayarlarý bölümünde, "mobilite bilgisini çalýþan girebilir" seçeneði iþaretlenmiþ ise, çalýþan güncelleme veya veri giriþi yapabilir. Eðer bu alan seçilmemiþ ise, çalýþan, adminin girdiði mobilite bilgisini yalnýzca görüntüler.
+BR8: Mobilite bilgisi mevcutta girili deðilse, defaultta "seçim yok" þeklinde gelir. Bir mobilite bilgisi kaydý atýlýrken tek zorunlu alan mobilite durumudur.
+BR: Çalýþan baþkasýnýn eklediði bir bilgiyi deðiþtiremez, güncelleyemez, silemez.
+BR: Çalýþanýn girdiði - güncellediði - sildiði vb tüm bilgiler, admin ve yönetici dashboardlarýndan açýlan yetenek kartlarýna da otomatik yansýr. Çalýþan bir geliþim planý girdiðinde ya da örneðin güçlü yön girdiðinde, yetenek panosunun geliþim planlarý bölümünde bu bilgiler görünür olur.
+------------------------------------------------
+Header: Fonksiyonel Olmayan
+Gereksinimler
+Data: EMPTY
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+
+Header: Adý
+Data: Organizasyon Þemasý Görüntüleme
+------------------------------------------------
+Header: Konu
+Data: EMPTY
+------------------------------------------------
+Header: Birincil Aktör
+Data: Çalýþan
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: Çalýþanýn organizasyonu görüntülemesi, filtreleme özelliklerini kullanabilmesi
+------------------------------------------------
+Header: Ön Koþullar
+Data: Çalýþan portalýnýn açýk olmasý, çalýþanýn portala giriþ yapmýþ olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Çalýþan portala giriþ yapar. 
+Sistem çalýþanýn dashboard sayfasýný açar.
+Çalýþan sol menüden organizasyon þemasý ikonuna týklar.
+Sistem çalýþanýn bulunduðu iþyerine ait tüm organizasyon þemasýný en üst seviyeden itibaren getirir. BR1,BR2
+Çalýþan açýk pozisyonlarý da görmek isterse kiþi bazlý göster toggle'ýný kapatýr. BR8
+Sistem pozisyon bazlý organizasyon þemasýný getirir.
+Çalýþan sað üstte bulunan export ikonu ile organizasyon þemasýný pdf ya da jpeg olarak dýþarý aktarmak ister.
+Sistem organizasyon þemasýnda ekranda gördüðü alaný dýþarý aktarýr.
+Çalýþan organizasyonda bulunan baþka bir çalýþanýn kutucuðuna týklar.
+Sistem ilgili çalýþanýn özet bilgi içeren kartýný açar. BR7
+Çalýþan kartý inceledikten sonra sað üstte bulunan kapatma ikonuna basar.
+Sistem çalýþan kartýný kapatýr. 
+Çalýþan renklendirme seçeneklerinden departman ya da çalýþma lokasyonunu seçer. BR6
+Sistem seçime göre departman veya çalýþma lokasyonuna göre renklendirme yapar. (örnekte departman seçilidir.)
+Çalýþan renklendirme görünümünden çýkmak isterse renklendirme seçeneðinin yanýnda bulunan X ikonuna basar.
+Sistem varsayýlan þema görünümüne döner.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Þemanýn baþlangýç kiþisi organizasyonun en üst seviyesinde yer alan kiþidir. Kullanýcý dilerse baþlangýç kiþisini sol üstte bulunan alandan deðiþtirebilir. Bu durumda seçilen kiþiden itibaren organizasyon þemasý gösterilir.
+BR2: Organizasyon þemasý büyük olan firmalar düþünülerek ilk organizasyon þemasý görünümünde ilk 3 seviye gösterilmektedir. Çalýþanlarýn altýnda bulunan ikonlar aracýlýðýyla kullanýcý þemayý geniþletebilir.
+BR3: Þemanýn üst kýsmýnda yer alan toplam çalýþan sayýsý ve açýk pozisyon sayýsý; aktif çalýþan ve aktif açýk pozsiyonlarýn sayýsýný içerir. Ýþten ayrýlan kiþiler sayýya dahil deðildir.
+BR4: Þemanýn üst kýsmýnda yer alan arama kutucuðuyla çalýþan isim veya soyisiminden arama yapýlabilir. Arama yapýlan çalýþan þemada zoom yapýlarak gösterilir.
+BR5: Þemanýn üst kýsmýnda yer alan son güncelleme tarihi bilgisi son entegrasyonla alýnan verinin tarihini ve saatini içer.
+BR6: Renklendirme seçeneklerinde 2 seçenek vardýr: Çalýþma lokasyonu ve departman
+BR7: Çalýþanýn kutucuðuna týklandýðýnda bir çalýþan baþka bir çalýþanýn kýsýtlý bilgisini görür. Bu bilgiler:
+Ýsim Soyisim
+Departman
+Pozisyon
+Çalýþma Lokasyonu
+Reports to
+Birincil Telefon
+Birincil e-posta: Kullanýcý bir çalýþanýn kartýný açýp orada bulunan e-posta bilgine týkladýðýnda sistem outlook'da bu e-postaya yeni mail göndermeye yönlendirir.
+BR8: Kiþi Bazlý Göster toggle'ý için ön þart:  Admin'in panel ayarlarý sýrasýnda organizasyon þemasý alaný altýnda "Açýk Pozisyonlarý Göster" toggle'ý açmýþ olmasý gerekir.
+------------------------------------------------
+
+Header: Adý
+Data: Profil Sayfasý Görüntüleme
+------------------------------------------------
+Header: Konu
+Data: EMPTY
+------------------------------------------------
+Header: Birincil Aktör
+Data: Çalýþan
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: Çalýþanýn profil sayfasýnýndaki alanlarý görüntüleyebilmesi
+------------------------------------------------
+Header: Ön Koþullar
+Data: Çalýþan portalýnýn açýk olmasý, çalýþanýn portala giriþ yapmýþ olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Çalýþan portala giriþ yapar. 
+Sistem çalýþanýn dashboard sayfasýný açar.
+Çalýþan sol menüden profil bilgileri ikonuna týklar.
+Sistem çalýþanýn profil sayfasýný getirir.
+Çalýþan profil kýsmýnda kendi bilgilerini görür. Alt kýsýmda yer alan Bilgilerim tabý altýnda employee directory'den gelen alanlarý görür. Bu alanlar employee directory'de olduðu gibi kategorize edilmiþtir. BR4
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Üst kýsýmda eðer admin arka plan görseli eklediyse sistem bu görseli getirir. 
+BR2: Bilgilerim kýsmýnda çalýþanýn gördüðü alanlar adminin panel tasarýmýnda togglelarýný açtýðý alanlardan oluþmaktadýr. t anýnda bu alanlardan herhangi birinin toggle'ý kapatýlýrsa çalýþan artýk bu bilgiyi göremez.
+Detaylý analiz için:7.21.4.1.3 Profil Sayfasý Tasarýmý
+BR3: Çalýþan sadece görüntüleme yetkisine sahiptir. Bilgilerim kýsmýnda yer alan herhangi bir alanda deðiþiklik yapamaz. 
+------------------------------------------------
+Header: Varsayýmlar
+Data: Kariyer ve geliþim tab'i ayrý fazda geliþtirilecektir.
+------------------------------------------------
+
+Header: Adý
+Data: Çalýþan Portalý Dashboard Ekraný
+------------------------------------------------
+Header: Konu
+Data: Dashboard Özellikleri ve Ýçerikleri
+------------------------------------------------
+Header: Birincil Aktör
+Data: EMPTY
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: Portal açýlan çalýþanlarýn dashboard üzerinden organizasyonunu görüntüleyebilmesi, þirket ile ilgili duyuru, döküman vb bilgiye ulaþabilmesi, profil bilgilerine ulaþabilmesi
+------------------------------------------------
+Header: Ön Koþullar
+Data: Recognise ve/veya Optimise ürünü kullanýyor olmak, Admin'in çalýþan portalýný açmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Çalýþanlar kullanýcý adý ve þifreleriyle sisteme giriþ yapar.
+Sistem çalýþan dashboardunu açar.
+Çalýþan üst alanda kendi bilgileri görür. -Ýsim Soyisim- Departman- Pozisyon- Kime Raporluyor- Baðlý Çalýþanlar (Sistem bu bilgileri employee directoryden getirir.)
+Çalýþan üst alanda bulunan "Profiline git" butonuna basar.
+Sistem bu durumda profil bilgileri ekranýna geçer. BR2
+Çalýþan orta alanda aksiyonlar alanýný görür. Admin'in belirlediði aksiyonlar burada gösterilir. External linkler aracýlýðýyla çalýþan bordrosunu görüntüleme gibi çeþitli aksiyonlara basar.. BR3
+Sistem admin eklemiþ olduðu aksiyondaki url'e göre yeni bir sekmede ilgili sayfayý açar. 
+Çalýþan alt alanda baðlý olduðu ekibinin organizasyon þemasýný görüntüler.  BR5
+Çalýþan þirkete ait tüm organizasyon þemasýný görüntülemek için "Tüm Þemayý Görüntüle" butonuna basar.
+Sistem bu durumda Organizasyon Þemasý ekranýna geçer.  BR2
+Çalýþan sað tarafta tarih, duyurular ve önemli dökümanlar bilgilerini görür. Admin'in paylaþtýðý duyurular, önemli dökümanlar (varsa) burada gösterilir. BR7
+Çalýþanýn Optimise ve/veya Recognise'da yönetici ve/veya Admin rolü varsa sað üstte bulunan ikon aracýlýðýyla diðer rolün dashboarduna geçiþ yapar.
+Geçiþ yaptýðý dashboardda sistem bilgilendirme mesajý gösterir.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Çalýþan portalýnda sol ve üst frame detaylarý:
+BR2:
+Profil bilgileri ekaný analizi: 7.21.4.3 Profil Sayfasý
+Organizasyon þemasý ekraný analizi: 7.21.4.4 Organizasyon Þemasý
+BR3: Aksiyonlar, Admin tarafýndan panel ayarlarýnda belirlenen external url linklerinden oluþmaktadýr. Herhangi bir url eklenmediyse aksiyon alaný boþ gösterilir. 
+BR4: Çalýþanýn ona baðlý çalýþaný yoksa; baðlý çalýþan sayýsý 0 gösterilir.
+Baðlý Çalýþan: Bu kiþiye direkt baðlý çalýþanlarý içerir.
+BR5: Ekibim kýsmýnda  ilgili çalýþanýn reports to'sundan itibaren þema çizilir.
+BR6: Admin'in portal tasarýmýnda açtýðý bilgiler çalýþan portalýna yansýr. Çalýþan ancak son güncel açýk alanlarý görebilir. Dashboard tasarým analizi: 7.21.4.1.2 Dashboard Tasarýmý
+BR7: "Tüm Duyurular" ve "Tüm Dökümanlar" butonuna basýldýðýnda sistem sað taraftaki alaný geniþleterek eski duyuru veya dökümanlarý da gösterir. (Norm MVP kapsamýnda "tüm duyurular" butonu kullanýlmayacak.)
+ 
+------------------------------------------------
+
+Header: Adý
+Data: Çalýþan Portalý Aktivasyon epostasý tasarýmý
+------------------------------------------------
+Header: Konu
+Data: Çalýþan portalý aktivasyon maillerinin gönderimi ile ilgili konularý içerir.
+------------------------------------------------
+Header: Birincil Aktör
+Data: Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: Çalýþan portalý açmasý ve kurulumundaki ilk 2 adýmý tamamlamýþ olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: Aktivasyon mailinin kaydedilmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1.Kullanýcý 3.adým olan Aktivasyon e-postasý ekranýna geçer.
+2. Kullanýcý çalýþan panelini açmak istediði çalýþanlara gelecek olan mailin içeriðini oluþturmak için e-posta düzenle butonuna basar. BR2
+Kullanýcý mail içeriðine deðiþkenler ekleyebilir, pdf yada jpeg gibi dosyalar ekleyebilir.
+Eklenebilecek deðiþkenler: Çalýþan Adý, Çalýþan Soyadý, Aktivasyon linki
+3.Kullanýcý mail içeriðini oluþturur. Logo ekle butonuna basarak þirket logosunu ekler ve kaydet'e basar. BR3
+
+4. Sistem kayýt iþlemini gerçekleþtirir.
+5. Kullanýcý "Panel Aktivasyonunu Tamamla" butonuna basar.
+6. Sistem popup ekraný açarak kullanýcýdan seçim yapmasýný bekler. 
+Hemen aktive et: Bu durumda seçili kiþilere aktivasyon mailleri gönderilir.  
+Daha sonra aktive et: Bu durumda aktivasyon mailleri gönderilmez. Kullanýcýya daha sonra aktivasyon mailerinin nereden yönetileceði gösterilir. BR5
+7. Kullanýcý "hemen aktive et" butonuna basar.
+8. Sistem tebrikler mesajý yayýlar. Kullanýcýya bir sonraki adým için iki seçenek sunar.
+Kullanýcý dashboarduna geçebilir. BR4
+Kullanýcý çalýþan paneli açtýðý çalýþanlarýn listesini kontrol etmek, yeni çalýþan eklemek veya durumlarýný kontrol etmek için çalýþan paneli listesine geçebilir. 
+Kullanýcý sað üstte bulunan X butonu ile popup'ý kapatýrsa kullanýcýya daha sonra aktivasyon mailerinin nereden yönetileceði gösterilir. BR5
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Çalýþan paneli kurulumu 3 adýmdan oluþur ve adýmlar sýrasýyla yapýlmak zorundadýr. 
+Adýmlar:
+Çalýþan paneli kullanýcý seçimi
+Çalýþan paneli tasarýmý
+Aktivasyon e-postasý hazýrlama
+BR2: Aktivasyon mail içeriði için defaultta hazýr metin verilecektir. Kullanýcý direkt bu þablonu gönderebilir veya düzenle seçeneði ile metinde deðiþiklik yapabilir.
+BR3: Aktivasyon Mail içeriði düzenle modunda açýkken "Panel Kurulumunu Tamamla" butonu inaktif olur. Kaydet'e basýldýktan sonra "Panel Kurulumunu Tamamla" butonu aktifleþir.
+BR4: Aktivasyon maili gönderildikten sonra çýkan tebrikler mesajýnýn altýndaki "Dashboarda git" butonuna basýldýðýnda hangi ürünün admini ise o ürünün dashboardunu açar.
+BR6: Kullanýcýya  aktivasyon mailerinin nereden yönetileceðinin gösterilmesi:
+BR6: Deðiþkenler: 
+Çalýþan Adý
+Çalýþan Soyadý 
+Aktivasyon linki
+(ilerleyen aþamalarda deðiþkenler artabilir. örnek mail adresi, sicil no vb diðer ED alanlarý gelebilir.)
+BR7: Kullanýcýlar HTML ekleyerek mail içeriði oluþturulabilecektir.
+------------------------------------------------
+Header: Varsayýmlar
+Data: 5.adýma kadar  OPT-626 maddesi kapsamýna girmektedir.
+5.adýmdan itibaren  OPT-627 maddesi kapsamýna girmektedir.
+------------------------------------------------
+
+Header: Adý
+Data: Çalýþan Portalý Tasariminda Organizasyon Þemasý Tasarým ekraný
+------------------------------------------------
+Header: Konu
+Data: EMPTY
+------------------------------------------------
+Header: Birincil Aktör
+Data: Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: Paneli kullanacak çalýþanlarýn seçilmiþ olmasý (panel tasarýmý 1.adýmýnýn yapýlmýþ olmasý)
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1. Sistem ikinci adým olan çalýþan paneli tasarýmý ekranýný açar.   BR1
+Panel tasarýmý dashboard, profil sayfasý, organizasyon þemasý tab'larýndan oluþur.
+
+2. Kullanýcý sað üstte bulunan "paneli düzenle" butonuna basar.
+3. Sistem çalýþan paneli bölümlerinde kullanýcýnýn kullanýma alabileceði veya kullaným dýþý býrakabileceði alanlarý ekranýn sað tarafýnda gösterir. BR2
+Organizasyon þemasý alanýnda; þemayý çalýþan portalýnda göster/gösterme ve açýk pozisyonlarý göster/gösterme seçenekleri bulunmaktadýr. BR3
+4. Kullanýcý "deðiþiklikleri kaydet" butonuna basar.
+5. Sistem ayarlarý kaydeder ve tam ekran olarak önizleme ekranýný açar. 
+
+Kullanýcý düzenlemeye devam etmek isterse sað üstte bulunan "Paneli düzenle" butonuna basar. Bu durumda düzenleme ekranýna tekrar geçiþ yapýlýr.
+Kullanýcý kontrollerini tamamladýktan sonra "Aktivasyon e-postasý" butonuna basar. Bu durumda tasarým ayarlarý tamamlanmýþ olur.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Tasarýmda gösterilecek örnek önizlemede çalýþan paneli kurulumu yapan admin'in bilgileri gösterilecektir. 
+BR2: Çalýþan paneli düzenlenirken çalýþan bilgileri, organizasyon þemasý gibi bölümlerde kullanýcý dolaþýrken sistem hangi alan açýksa portal önizlemesinde o ekraný getirir.
+BR3: Bu toggle'ýn açýk olmasý durumunda; çalýþanlar organizasyon þemasýný pozisyon bazlý da görebilecekler (boþ koltuklar ve dolu koltuklarý görebilecek)
+Bu toggle'ýn kapalý olmasý durumunda; çalýþanlar sadece çalýþan bazlý þema görebilecekler. Boþ pozisyonlarý göremeyecekler.
+Organizasyon þemasý alanýnda açýk pozisyonlarý göster seçeðinin yanýnda info butonu bulunmaktadýr. Bu ikona hover edildiðinde açýklama ekrana çýkar.
+Açýklama: "Þemaya eklenen kiþi bazlý gösterim seçeneði açýlýp kapatýlarak mevcut çalýþanlara ek olarak açýk pozisyonlar da görüntülenebilir."
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+Header: Adý
+Data: Çalýþan Portalý Profil Sayfasýnýn Tasarýmý
+------------------------------------------------
+Header: Konu
+Data: EMPTY
+------------------------------------------------
+Header: Birincil Aktör
+Data: Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: Paneli kullanacak çalýþanlarýn seçilmiþ olmasý (panel tasarýmý 1.adýmýnýn yapýlmýþ olmasý)
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1. Sistem ikinci adým olan çalýþan paneli tasarýmý ekranýný açar.   BR2
+Panel tasarýmý dashboard, profil sayfasý, organizasyon þemasý tab'larýndan oluþur.
+
+2. Kullanýcý sað üstte bulunan "paneli düzenle" butonuna basar.
+3. Sistem çalýþan paneli bölümlerinde kullanýcýnýn kullanýma alabileceði veya kullaným dýþý býrakabileceði alanlarý ekranýn sað tarafýnda gösterir. BR3
+Çalýþan bilgileri alanýnda employee directory'den gelen hakkýnda, çalýþma bilgileri, organizasyon bilgileri ve yasal bilgiler alanlarý bulunmaktadýr. BR1
+4. Kullanýcý + butonun basarak alt alanlarýn detaylarýný görür. Kullanmak istemediði alanlarý toggle aracýlýðýyla kapatýr.
+5. Sistem autosave ile kapatýlan veya açýlan alanlarý kaydeder.
+6. Kullanýcý deðiþiklikleri kaydet butonuna basar.
+7. Sistem güncellenmiþ haliyle önizleme ekranýný getirir. 
+8. Kullanýcý yeniden düzenleme yapmak için "paneli düzenle" butonuna basar veya deðiþiklikleri tamamladýysa bir sonraki aþama olan aktivasyon e-postasý aþamasýna geçer.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: Çalýþan Paneli Arka Görsel Ekleme OPT-629
+Kullanýcý panel tasarýmý düzenler. Çalýþan bilgileri sectionýna gelir. Aþaðýdaki önizlemede aþaðýda kýrmýz kutu içerisinde gösterilen ikona týklayarak arka plan görselini yükler.
+Sistem görseli kaydeder. 
+Kullanýcý deðiþiklileri kaydet butonuna basar.
+ Sistem güncellenmiþ haliyle önizleme ekranýný getirir.
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Çalýþan bilgileri bölümleri; employee directorydeki toggle'ý açýlmýþ yani kullanýmda olan alanlarýn  getirilecektir. Use case'in altýnda alanlar listelenmiþtir.
+BR2: Tasarýmda gösterilecek örnek önizlemede çalýþan paneli kurulumu yapan admin'in bilgileri gösterilecektir. 
+BR3: Çalýþan paneli düzenlenirken çalýþan bilgileri, organizasyon þemasý gibi bölümlerde kullanýcý dolaþýrken sistem hangi alan açýksa portal önizlemesinde o ekraný getirir.
+BR4:  Admin üst alanlarýn toggleýný kapatýrsa o alana ait diðer alt alanlarda kapanmýþ olur. Örneðin "Hakkýnda" toggleý kapatýlýrsa sistem öðrenim durumu ve diller togglelarýný da otomatik olarak kapatýr. Çalýþan hakkýnda alanýný komple göremez.
+Benzer þekilde Öðrenim durumu ve diller bilgisi kapatýlýrsa Hakkýnda alanýnda hiçbir bilgi kalmayacaðý için Hakkýnda bölümü tabý sistem tarafýndan kapatýlacaktýr. Bu durumda da çalýþan hakkýnda alanýný komple göremez.
+------------------------------------------------
+Header: Varsayýmlar
+Data: Tema rengi seçimi kapsam dýþý býrakýlmýþtýr.
+------------------------------------------------
+
+Header: Adý
+Data: Çalýþan Portalý Dashboard Sayfasýnýn Tasarýmý
+------------------------------------------------
+Header: Konu
+Data: EMPTY
+------------------------------------------------
+Header: Birincil Aktör
+Data: Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: Paneli kullanacak çalýþanlarýn seçilmiþ olmasý (panel tasarýmý 1.adýmýn yapýlmýþ olmasý)
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1.Sistem ikinci adým olan çalýþan paneli tasarýmý ekranýný açar.   BR1
+Panel tasarýmý dashboard, profil sayfasý, organizasyon þemasý tab'larýndan oluþur.
+
+2. Kullanýcý sað üstte bulunan "paneli düzenle" butonuna basar.
+3.. Sistem çalýþan paneli bölümlerinde kullanýcýnýn kullanýma alabileceði veya kullaným dýþý býrakabileceði alanlarý ekranýn sað tarafýnda gösterir. BR2
+ Dashboard ayarlarýnda çalýþan bilgileri, duyurular, önemli dökümanlar ve aksiyonlar alanlarýný açýp kapatabilir. Aksiyon alanýný açmasý durumunda çeþitli aksiyon linkleri (external linkler) ekleyebilir.  (Alternatif akýþta detaylandýrýlmýþtýr.) (Duyuru ve dokümanlar için use case'in varsayýmlarýna bakýnýz)
+4. Kullanýcý seçimlerini yaptýktan sonra sað altta bulunan deðiþiklileri kaydet butonuna basar.
+5. Sistem güncellenmiþ haliyle önizleme ekranýný getirir. 
+6. Kullanýcý yeniden düzenleme yapmak için "paneli düzenle" butonuna basar veya deðiþiklikleri tamamladýysa bir sonraki aþama olan aktivasyon e-postasý aþamasýna geçer.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: Dashboard Aksiyon Bölümüne Link Ekleme-  OPT-628
+Kullanýcý çalýþan paneli tasarýmý'nda düzenleme yapar.
+Sistem çalýþan paneli bölümlerini ekranýn sað tarafýna getirir.
+Kullanýcý dashboard sayfasý alaný altýnda aksiyonlarda "Aksiyon Linki Ekle" butonuna basar.
+Sistem popup ekraný açar. Ýçeriðinde ikon yüklenecek alan, aksiyon baþlýk alaný ve link alaný bulunmaktadýr.
+Kullanýcý ikon seçimi yapar veya svg formatýnda farklý bir ikon yükler. Aksiyon baþlýðý yazar. Ýlgili linkin url'ini ekler. Kaydet'e basar.
+Sistem aksiyonu kaydeder ve çalýþan paneli önizlemeye getirir.
+Kullanýcý daha sonra dilerse toggle aracýlýðýyla daha önce eklemiþ olduðu aksiyon linkinde deðiþiklik yapmak için düzenle butonuna basar.
+Sistem popup ekranýnda aksiyonun detaylarýný getirir.
+Kullanýcý buradaki alanlar (ikon , aksiyon  baþlýðý ve linkini ) deðiþtirebilir ve kaydete basar. Ayný zamanda kullanýcý aksiyonu sistemden silmek istiyorsa buradan aksiyonu sil butonuna basar.
+Sistem güncellemeyi yapar.
+Ýsminin, ikonunun veya url'sinin düzenlenmesi halinde çalýþan yeni halini görür. Silinmesi halinde çalýþan artýk bu aksiyonu dashboardunda göremez.
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Tasarýmda gösterilecek örnek önizlemede çalýþan paneli kurulumu yapan admin'in bilgileri gösterilecektir. 
+BR2: Çalýþan paneli düzenlenirken dashboard, çalýþan bilgileri, organizasyon þemasý gibi bölümlerde kullanýcý dolaþýrken sistem hangi alan açýksa portal önizlemesinde o ekraný getirir.
+BR3: Kullanýcý daha sonra dilerse toggle aracýlýðýyla daha önce eklemiþ olduðu aksiyon linklerini kapatabilir, yeniden ismini ve içeriðini düzenleyebilir ve silebilir.  Kapatmasý, silinmesi durumunda sistem çalýþan portalýnda bu aksiyonu göstermez.
+BR4: Dashboardda yer alan alanlarýn analizi için; 7.21.4.2 Dashboard
+------------------------------------------------
+Header: Varsayýmlar
+Data: Bu use case kapsamýnda panel dashboard'unda doküman ve duyuru paylaþým alaný olacaðý varsayýlmýþtýr. Bu bölümlerin içeriklerinin detaylarý daha sonra belirlenecektir. (Ýçerikler hangi rol tarafýndan eklenecek, hangi çalýþanlar hangi içerikleri görebilecek vb)
+OPT-620 kapsamýnda duyuru ve döküman yönetimi kapsam dýþýdýr.
+OPT-628 kapsamýnda Dashboard Aksiyon Bölümüne Link Ekleme bu analizde yer almaktadýr.
+------------------------------------------------
+
+Header: Adý
+Data: Çalýþan Portalý Açýlýþý, Kullanýcý Seçimi
+------------------------------------------------
+Header: Konu
+Data: Çalýþan portalý açýlýþý ve paneli kullanacak kiþilerin seçimi  ilgili konularý içerir. 
+------------------------------------------------
+Header: Birincil Aktör
+Data: Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: Recognise ve/veya Optimise ürünlerini satýn almýþ olmasý, bu ürünlerin kurulumunu tamamlamýþ olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: En az 1 kullanýcý seçilmiþ olmasý
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Kullanýcý Ayarlar menüsü altýnda çalýþan paneli alt menüsüne týklar.
+Ýlk açýlýþ olduðu için sistem çalýþan paneli kapalý olarak getirir.
+3. Kullanýcý sað üstte bulunan "çalýþan paneli açýlsýn" toggle'ýný açar.
+4. Sistem 3 aþamadan oluþan çalýþan paneli ayarlarý ekranýný açar. Ýlk aþama olan çalýþan paneli kullanýcýlarý seçim ekranýný getirir. 
+a. Tüm Çalýþanlara Panel Açýlsýn: Bu durumda employee directoryde kayýtlý aktif çalýþan sayýsý dikkate alýnýr.
+b. Belirli Çalýþanlara Panel Açýlsýn: Bu durumda kullanýcýdan panel açýlacak kiþileri seçmesi beklenir. 3 seçenek ile çalýþan seçimi yapýlabilir.
+Kiþi Ekle: Kullanýcý elle çalýþan ismi yazarak kiþi ekler.
+Listeden Ekle: Aktif çalýþan listesi üzerinden bir veya birden fazla seçim yaparak kiþi ekler.
+Kural Oluþtur: Kural ekraný açýlýr ve kurala baðlý olarak aktif çalýþanlar getirilir. 
+5. Kullanýcý paneli açmak istediði çalýþanlarý eklemek için "kiþi ekle" butonuna basar.
+6. Sistem isim veya e-posta adresi girilecek kutucuðu açar.
+7. Kullanýcý çalýþanlarý tek tek ekler.
+8. Sistem seçim yapýlan kiþilerin listesini ekrana getirir ve bilgilendirme mesajý çýkarýr. "Seçtiðiniz kiþiler panel açýlacak çalýþanlar listesine eklenmiþtir."
+9. Kullanýcý bu listede düzenleme yapabilir, yeni çalýþan eklemeye devam edebilir. 
+
+10. Çalýþan listesi belirlendikten sonra kullanýcý sað altta bulunan çalýþan paneli tasarýmý butonuna basar.
+11. Sistem ikinci adým olan çalýþan paneli tasarýmý ekranýný açar.   
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: Listeden Ekle yöntemiyle kullanýcý seçimi  - OPT-618
+1.Kullanýcý paneli açmak istediði çalýþanlarý listeden ekleyerek seçmek için "Listeden ekle" butonuna basar. 
+2. Sistem popup ekranýnda liste görünümünde aktif çalýþan listesini getirir.  
+3. Kullanýcý bir veya birden fazla çalýþaný seçer ve "Seçilenleri Ekle" butonuna basar.  
+4. Sistem seçim yapýlan kiþilerin listesini ekrana getirir. Bilgilendirme mesajý çýkar: "Seçtiðiniz kiþiler panel açýlacak çalýþanlar listesine eklenmiþtir."
+5. Kullanýcý bu listede düzenleme yapabilir, yeni çalýþan eklemeye devam edebilir. 
+
+Kural Ekle yöntemiyle kullanýcý seçimi  - OPT-619
+1.Kullanýcý paneli açmak istediði çalýþanlarý kural girerek seçer. "Kural Oluþtur" butonuna basar. 
+2. Sistem popup ekranýnda paneli kullanacak çalýþan seçimi için kural ekranýný getirir.  
+3. Kullanýcý kuralý oluþturur ve kaydete basar. (örnek yaka rengi = beyaz yaka olanlar)
+4. Sistem seçim yapýlan kiþilerin listesini ekrana getirir. Bilgilendirme mesajý çýkar: "Seçtiðiniz kiþiler panel açýlacak çalýþanlar listesine eklenmiþtir."
+5. Kullanýcý bu listede düzenleme yapabilir, yeni çalýþan eklemeye devam edebilir. 
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: Genel Kurallar
+ Paneli kullanacak belirli çalýþanlar seçildikten sonra gelen ekranda çalýþan listesi yeniden düzenlenebilir. Kiþilerin yanýnda bulunan X ikonu ile kiþi listeden çýkartýlabilir. Ayrýca çalýþan listesi altýnda bulunan ikon aracýlýðýyla liste geniþler.
+Çalýþan paneli sahipleri seçimi defaultta "tüm çalýþanlar" seçili gelir. Admin belirli çalýþanlara açýlsýn seçeneðini iþaretlerse mutlaka çalýþan seçimini 3 yöntemden biriyle (kiþi ekle, listeden ekle, kural oluþtur) yapmak zorundadýr. Diðer adýma geçmek için en az 1 kullanýcý seçilmiþ olmasý beklenir.
+ Kiþi Ekle butonu ile arama yapýlýrken minimum 3 karakter (isim veya mail adresinden) yazýlmasý beklenir. Sistem uyan kullanýcýlarýn isim ve soyisimlerini ekranda gösterir (auto complete box)
+Panel açýlacak kiþiler seçilirken kullanýcý kural oluþtur ile belirli sayýda çalýþan seçtikten sonra, farklý bir yöntemle yani listeden ekleyerek ya da manuel olarak kiþi eklemeye devam edebilir. Kiþi ekleme seçimleri birbiriyle beraber çalýþabilir.
+Örneðin organizasyonda 100 kiþi çalýþýyorsa ve kullanýcý listesinde 40 kiþi varsa kural oluþturarak seçilmiþse, admin listeden seçim yaparken kalan 60 kiþi listeye getirilecektir
+
+OPT-619 maddesi kapsamýnda kullanýcý seçimi kural ekleme yöntemi için iþ kurallarý
+Çalýþan paneli açýlacak kullanýcýlar seçilirken kural oluþtur seçeneðindeki filtre seçenekleri:
+Organizasyon seviyesi, iþ ailesi, yaka rengi, ürün hattý, iþyeri tipi, iþyeri adý, sözleþme tipi, çalýþma þekli, çalýþma zamaný, çalýþma lokasyonu
+
+
+OPT-618 maddesi kapsamýnda kullanýcý seçimi listeden seçme yöntemi için iþ kurallarý
+Listeden seç popuupda gelen listede yer alacak bilgiler:
+Çalýþan Adý Soyadý, Pozisyon, Departman
+Liste görünümü özellikleri:
+ Çalýþan Adý kolon isminin yanýnda sol headerda checkbox seçenekleri yer alýr. Kullanýcý tek tek kiþi seçebildiði gibi sayfadakileri ve/veya tüm sayfalardaki kiþileri topluca seçebilir.
+ Sayfadakileri seç: Bulunduðu sayfadaki çalýþanlarý seçer.
+Tüm sonuçlarý seç: O an ekrandaki tüm sayfalara gelen çalýþanlarý seçer.
+Tüm seçimi kaldýr: Tüm checkler uncheck olur ve seçimler kaldýrýlýr.
+Seçim sayýsý deðiþtikçe sol üstte bilgi güncellenir. Örnek: "8 kiþi seçili"
+Kolon Ekle butonu aracýlýðýyla çalýþan kartýnda yer alan bölümlere göre listedeki default gösterime ek alanlar eklenebilir ve kaldýrýlabilir.  Bu alanlar ED'ye yer alan sectionlardýr. Ayarlar butonuna bastýðýnda; baþlýk ve alt grup baþlýklarý görür, kolona eklenecek baþlýk arama kutucuðu bulunur. Kullanýcý görmek istediði alanlarý seçerek kolon ekle butonuna basar. Listede görmek istemediði kolon isimlerinin seçimini kaldýrýr. Örnek: Kullanýcý listeye kademe kolonu ekler. 
+Listedeki kolonlarýn yanýnda bulunan filtre butonu aracýlýðýyla kullanýcý seçimini daraltabilir. Kullanýcý filtre butonuna týkladýðýnda, sistem kolonlarýn içerdiði verileri getirir.  
+"Çalýþan Ara" kutucuðundan çalýþan ismiyle arama yapar ve ekler. Sitem çalýþaný o an mevcut listedeki tüm sayfalar içinde arar. Listede filtreleme yapýlmýþ ve çalýþan kümesi daraltýlmýþsa o küme içerisinde arama yapar.
+------------------------------------------------
+Header: Varsayýmlar
+Data: OPT-617 maddesi kapsamýnda kullanýcý seçimi sadece manuel olarak "kiþi ekle" yöntemiyle çalýþan ekler. 
+OPT-618 maddesi kapsamýnda kullanýcý seçimi listeden seçme yöntemiyle de belirlenebilir olacaktýr.
+OPT-619 maddesi kapsamýnda kullanýcý seçimi kural ekleme yöntemiyle de belirlenebilir olacaktýr.
+------------------------------------------------
+
+Header: Adý
+Data: Çalýþan Portalý Açýlýþý, Tasarýmý ve Ayarlarýn Kaydedilmesi
+------------------------------------------------
+Header: Konu
+Data: Çalýþan portalý açýlýþý, paneli kullanacak kiþilerin seçimi, panel tasarýmý ve aktivasyon maillerinin gönderimi ile ilgili konularý içerir. 
+------------------------------------------------
+Header: Birincil Aktör
+Data: Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: Recognise ve/veya Optimise ürünlerini satýn almýþ olmasý, bu ürünlerin kurulumunu tamamlamýþ olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: Çalýþan portalý ayarlarýnýn kaydedilmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Kullanýcý Ayarlar menüsü altýnda çalýþan paneli alt menüsüne týklar.
+Ýlk açýlýþ olduðu için sistem çalýþan paneli açýk olarak gelir.
+Sistem 3 aþamadan oluþan çalýþan paneli ayarlarý ekranýný açar. Ýlk aþama olan çalýþan paneli kullanýcýlarý seçim ekranýný getirir.
+a. Tüm Çalýþanlara Panel Açýlsýn: Bu durumda employee directoryde kayýtlý aktif çalýþan sayýsý dikkate alýnýr.
+b. Belirli Çalýþanlara Panel Açýlsýn: Bu durumda kullanýcýdan panel açýlacak kiþileri seçmesi beklenir. 3 seçenek ile çalýþan seçimi yapýlabilir.
+Kiþi Ekle: Kullanýcý elle çalýþan ismi yazarak kiþi ekler.
+Listeden Ekle: Aktif çalýþan listesi üzerinden bir veya birden fazla seçim yaparak kiþi ekler.
+Kural Oluþtur: Kural ekraný açýlýr ve kurala baðlý olarak aktif çalýþanlar getirilir. 
+4. Kullanýcý paneli açmak istediði çalýþanlarý kural girerek seçer. "Kural Oluþtur" butonuna basar.
+5. Sistem popup ekranýnda paneli kullanacak çalýþan seçimi için kural ekranýný getirir. 
+6. Kullanýcý kuralý oluþturur ve kaydete basar. (örnek yaka rengi = beyaz yaka olanlar)
+7. Sistem seçim yapýlan kiþilerin listesini ekrana getirir.
+8. Kullanýcý bu listede düzenleme yapabilir, yeni çalýþan eklemeye devam edebilir. 
+
+9. Çalýþan listesi belirlendikten sonra kullanýcý sað altta bulunan çalýþan paneli tasarýmý butonuna basar.
+10. Sistem ikinci adým olan çalýþan paneli tasarýmý ekranýný açar.   
+Panel tasarýmý dashboard, profil sayfasý, organizasyon þemasý tab'larýndan oluþur.
+
+11. Kullanýcý sað üstte bulunan "paneli düzenle" butonuna basar.
+12. Sistem çalýþan paneli bölümlerinde kullanýcýnýn kullanýma alabileceði veya kullaným dýþý býrakabileceði alanlarý ekranýn sað tarafýnda gösterir. 
+ Dashboard ayarlarýnda kullanýcý, duyurular, önemli dökümanlar ve aksiyonlar alanlarýný açýp kapatabilir. Aksiyon alanýný açmasý durumunda çeþitli aksiyon linkleri (external linkler) ekleyebilir.  (Alternatif akýþta detaylandýrýlmýþtýr.) (Duyuru ve dokümanlar için use case'in varsayýmlarýna bakýnýz)
+Çalýþan bilgileri alanýnda employee directory'den gelen hakkýnda, çalýþma bilgileri, organizasyon bilgileri ve yasal bilgiler alanlarý bulunmaktadýr.
+Kariyer ve Geliþim alanýnda Recognise alanlarýndan belirlenen alanlar bulunmaktadýr.
+Organizasyon þemasý alanýnda; þemayý çalýþan portalýnda göster/gösterme ve açýk pozisyonlarý göster/gösterme seçenekleri bulunmaktadýr. 
+13. Kullanýcý "deðiþiklikleri kaydet" butonuna basar.
+14. Sistem ayarlarý kaydeder ve tam ekran olarak önizleme ekranýný açar.
+
+Kullanýcý düzenlemeye devam etmek isterse sað üstte bulunan "Paneli düzenle" butonuna basar. Bu durumda düzenleme ekranýna tekrar geçiþ yapýlýr.
+Kullanýcý kontrollerini tamamladýktan sonra "Aktivasyon e-postasý" butonuna basar. Bu durumda tasarým ayarlarý tamamlanmýþ olur.
+15 .Kullanýcý dashboard, profil sayfasý ve organizasyon þemasý ekranlarýný kontrol ettikten sonra "Aktivasyon e-postasý" butonuna basar.
+16. Sistem 3.adým olan Aktivasyon e-postasý ekranýna geçer.
+17. Kullanýcý çalýþan panelini açmak istediði çalýþanlara gelecek olan mailin içeriðini oluþturmak için e-posta düzenle butonuna basar. 
+Kullanýcý mail içeriðine deðiþkenler ekleyebilir, pdf yada jpeg gibi dosyalar ekleyebilir.
+18.Kullanýcý mail içeriðini oluþturduktan sonra kaydet'e basar. 
+
+19. Sistem kayýt iþlemini gerçekleþtirir.
+20. Kullanýcý "Panel Aktivasyonunu Tamamla" butonuna basar.
+21. Sistem popup ekraný açarak kullanýcýdan seçim yapmasýný bekler. 
+Hemen aktive et: Bu durumda seçili kiþilere aktivasyon mailleri gönderilir.  
+Daha sonra aktive et: Bu durumda aktivasyon mailleri gönderilmez. Kullanýcýya daha sonra aktivasyon mailerinin nereden yönetileceði gösterilir. 
+22. Kullanýcý "hemen aktive et" butonuna basar.
+23. Sistem tebrikler mesajý yayýlar. Kullanýcýya bir sonraki adým için iki seçenek sunar.
+Kullanýcý dashboarduna geçebilir. 
+Kullanýcý çalýþan paneli açtýðý çalýþanlarýn listesini kontrol etmek, yeni çalýþan eklemek veya durumlarýný kontrol etmek için çalýþan paneli listesine geçebilir. 
+Kullanýcý sað üstte bulunan X butonu ile popup'ý kapatýrsa kullanýcýya daha sonra aktivasyon mailerinin nereden yönetileceði gösterilir. 
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Çalýþan paneli kurulumu 3 adýmdan oluþur ve adýmlar sýrasýyla yapýlmak zorundadýr. 
+Adýmlar:
+Çalýþan paneli kullanýcý seçimi: Detaylý analiz için 7.21.4.1.1 Kullanýcýlarýn Belirlenmesi
+Çalýþan paneli tasarýmý: Detaylý analiz için 7.21.4.1.2 Dashboard Tasarýmý 7.21.4.1.3 Profil Sayfasý Tasarýmý 7.21.4.1.4 Organizasyon Þemasý Tasarýmý
+Aktivasyon e-postasý hazýrlama: Detaylý analiz için 7.21.4.1.6 Aktivasyon e-posta Tasarýmý ve Gönderilmesi
+BR2: Admin t anýnda çalýþan paneli açýlsýn toggle'ýný kapayabilir. Kaparsa herhangi bir kullanýcý kullanýcý bilgileriyle portala giriþ yaptýðýnda hiçbir bilgi görmez. Uyarý mesajý yayýnlanýr. ""Çalýþan paneli geçici olarak hizmet dýþýdýr."
+Admin çalýþan panelini kapatsa dahi paneli düzenlemeye devam edebilir. (read only kapsamdýþý býrakýlmýþtýr. Bu sebeple figmadaki gibi gri gösterim olmayacaktýr.)
+Toggle'ý kapatsa bile admin ayarlarý yapmaya devam edebilir. 
+BR3: Tasarýmda gösterilecek örnek önizlemede çalýþan paneli kurulumu yapan admin'in bilgileri gösterilecektir. 
+BR4: Çalýþan paneli düzenlenirken çalýþan bilgileri, organizasyon þemasý gibi bölümlerde kullanýcý dolaþýrken sistem hangi alan açýksa portal önizlemesinde o ekraný getirir.
+BR5: Portal açýlan kullanýcýlarýn yönetimi ile ilgili detaylý analiz: 7.21.4.5 Çalýþan Portalý Kullanýcý Yönetme
+BR6: Admin çalýþan o
+------------------------------------------------
+Header: Varsayýmlar
+Data: Bu use case kapsamýnda panel dashboard'unda doküman ve duyuru paylaþým alaný olacaðý varsayýlmýþtýr. Bu bölümlerin içeriklerinin detaylarý daha sonra belirlenecektir. (Ýçerikler hangi rol tarafýndan eklenecek, hangi çalýþanlar hangi içerikleri görebilecek vb)
+------------------------------------------------
+
+Header: Adý
+Data: Terfi Planý Akýþýnýn Oluþturulmasý
+------------------------------------------------
+Header: Konu
+Data: Terfi planýnýn seçilmesi ve akýþ adýmlarýnýn tamamlanmasýný kapsar
+------------------------------------------------
+Header: Birincil Aktör
+Data: Optimise Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: Akýþta 1. ve 2. adýmlardaki seçimlerin kaydedilmesi
+------------------------------------------------
+Header: Son Koþullar
+Data: Admin'in akýþ yöntemlerini seçip kaydetmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Terfi Planý 
+Ücret Deðiþiklik Akýþ Planý kaydedildikten sonra, sistem organizasyonel deðiþiklik akýþ planýný getirir.  Sað tarafta ücret deðilikiði akýþýnýn tanýmý ve amacýný içeren bilgi metni görülür. 
+Kullanýcý akýþ planýný inceler.
+1.adým: Organizasyonel Deðiþiklik Planý seçili kiþiler tarafýndan yapýlýr.
+2. adým : Organizasyonel Deðiþiklik Planý onaya gönderilir.
+3.adým: Final Onaycý organizasyonel deðiþiklik planýný finalize eder.
+Kullanýcý 1. adýmda bulunan organizasyonel deðiþiklik çalýþmasý kimlerin tarafýndan yapýlacaðýný seçer.
+Optmise Admin
+Bütçe Sahibi
+4.Kullanýcý "Seçimi Kaydet" butonuna basar.
+5. Sistem seçimi kaydeder ve baþarýyla kaydedildiðine dair mesaj yayýnlanýr.
+6. 3 akýþ için seçimler yapýldýktan sonra sistem özet ekranýnda akýþ planlarýný gösterir.  
+7. Kullanýcý kontrol ettikten sonra düzenlemek isterse "Düzenlemeye Geri Dön" butonuna basar. Bu durumda sistem Bütçe Akýþ Planý düzenleme ekranýna geri döner.
+8. Kullanýcý kontrol ettikten sonra Launch butonuna basar ve akýþ adýmý tamamlanýr.
+9. Sistem kullanýcýya dilediði zaman akýþ ayarlarýný deðiþtirebileceði yer gösterir.
+10. Kullanýcý OK butonuna basar ve Launch adýmýna geçer.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Akýþ planý seçimi yapýlmak zorundadýr. Bir sonraki adýma geçmeden önce seçimler kaydedilmiþ  olmalýdýr. Uyarý mesajý: "Herhangi bir akýþ seçimi yapmadýðýnýz için bir sonraki adýma geçilememektedir."
+
+BR2: Ekranýn sað tarafýnda bulunan info balonu kullanýcý tarafýndan küçültülebilir yapýda olacaktýr.
+Bilgi Metni:
+"Optimise, kullanýcýlarýna sadece organizasyonel deðiþikliklerini simüle edebilecekleri bir çözüm sunmaktadýr. Organizasyon deðiþiklik planlamasý yaparken hangi akýþý kullanacaðýnýzý seçebilirsiniz."
+
+BR3:  Info'larda yer alan açýklama metinleri:
+1. adým: "Terfi çalýþmasýnýn kimler tarafýndan yapýlacaðýnýn seçilmesini içeren adýmdýr. Bütçe sahiplerini terfi planý sürecine dahil etmek için lütfen iþaretleyiniz."
+2. adým: "Hazýrlanan terfi planlarý onaya gönderir. Üst yöneticisi kontrol eder.  Uygunsa onaylar, deðilse ilgili bütçe sahibine geri iletir."
+3. adým: "Onaylanan terfi planlarý final onaycýya ulaþýr. Final onaycý terfi planlarýnýn konsolide halini tek bir liste halinde görür, gerekli kontrolleri yaptýktan sonra deðiþiklikleri finalize eder."
+
+BR4: 1.Adýmdaki 2 seçenekten en az biri mutlaka iþaretlenmiþ olmalýdýr.
+Sadece Optimise Admin iþaretlenmiþse; terfi simülasyonlarý ve planlarý Admin'ler tarafýndan yapýlýr. Bu durumda 2. adým inaktif olur. 
+Sadece Bütçe Sahipleri iþaretlenmiþse; terfi simülasyonlarý yöneticiler tarafýndan yapýlýr ve onay zincirine gönderilir.
+her iki rolde iþaretliyse; hem Optimise Admin hem de yöneticiler terfi planý yapabilir.
+------------------------------------------------
+
+Header: Adý
+Data: Ücret Deðiþikliði Akýþýnýn Oluþturulmasý
+------------------------------------------------
+Header: Konu
+Data: Akýþta yer alan 2 adýmýn kaydedilmesini 
+------------------------------------------------
+Header: Birincil Aktör
+Data: Optimise Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: Admin'in akýþta yer alan 1. adým (bütçe planý akýþý) için seçimini kaydetmiþ olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: Admin'in ücret deðiþiklik planlamasý sürecinde kullanacaðý akýþ yöntemini seçip kaydetmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Ücret Deðiþiklik Akýþ Planý
+Bütçe Akýþ Planý kaydedildikten sonra, sistem ücret deðiþiklik akýþ planýný getirir.  Sað tarafta ücret deðilikiði akýþýnýn tanýmý ve amacýný içeren bilgi metni görülür. 
+Kullanýcý akýþ adýmlarýný inceler. Info butonlarý aracýlýðýyla adýmlarýn detaylarýný görür.  
+Birinci Adým: "Bütçe Varsayýmlarý Optimise Admin tarafýndan oluþturulur."  
+Ýkinci Adým: "Ücret Deðiþikliði Çalýþmasý seçili kiþiler tarafýndan yapýlýr." 
+Üçüncü Adým: "Ücret Deðiþikliði Çalýþmasý onaya gönderilir." 
+Dördüncü Adým: "Final Onaycý konsolide bütçeyi kontrol edip  finalize eder."
+Kullanýcý 2. adýmda bulunan ücret deðiþikliði çalýþmasý kimlerin tarafýndan yapýlacaðýný seçer.
+Optimise Admin
+Bütçe Sahibi
+Sistem seçimi kaydeder.
+Kullanýcý "Seçimi Kaydet" butonuna basar.
+Sistem seçimi kaydeder ve ekranýn sað üst köþesinde baþarýlý kayýta dair mesaj yayýnlar. "Bütçe Akýþ Planý için yapmýþ olduðunuz seçimler baþarýyla kaydedilmiþtir."
+Sistem, bir sonraki akýþ planý olan ücret deðiþikliði akýþ planýna geçer.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Akýþ planý seçimi yapýlmak zorundadýr. Bir sonraki adýma geçmeden önce seçimler kaydedilmiþ  olmalýdýr. Uyarý mesajý: "Herhangi bir akýþ seçimi yapmadýðýnýz için bir sonraki adýma geçilememektedir."
+
+BR2: Ekranýn sað tarafýnda bulunan info balonu kullanýcý tarafýndan küçültülebilir yapýda olacaktýr.
+Bilgi Metni:
+"Optimise, kullanýcýlarýna sadece ücret deðiþikliði simüle edebilecekleri bir çözüm sunmaktadýr.
+Tüm bütçe kalemlerinden baðýmsýz olarak sadece ücret artýþlarýný planlayabilirsiniz. Ücret deðiþiklik planlamasý yaparken hangi akýþý kullanacaðýnýzý seçebilirsiniz." 
+
+BR3:  Info'larda yer alan açýklama metinleri:
+1. adým: "Yasal parametreler, kur, ücret, bütçe kalemleri ve teþviklerle ilgili bütçe simülasyonlarýnda kullanýlacak tüm varsayýmlarýn oluþturulmasýna iliþkin bir adýmdýr."
+2. adým: " Varsayýmlardan sonra, ücret deðiþikliði çalýþmasýnýn kimler tarafýndan yapýlacaðýnýn seçilmesini içeren adýmdýr. Bütçe sahiplerini ücret deðiþiklik sürecine dahil etmek için lütfen iþaretleyiniz."
+3. adým: "Hazýrlanan ücret deðiþiklik planlarý onaya gönderir. Üst yöneticisi kontrol eder.  Uygunsa onaylar, deðilse ilgili bütçe sahibine geri iletir."
+4. adým: "Onaylanan bütçeler final onaycýya ulaþýr. Final onaycý ücret deðiþiklilerinin konsolide halini tek bir liste halinde görür, gerekli kontrolleri yaptýktan sonra bütçeyi finalize eder."
+
+BR4: 2.Adýmdaki 2 seçenekten en az biri mutlaka iþaretlenmiþ olmalýdýr.
+Sadece Optimise Admin iþaretlenmiþse; Ücret deðiþiklik simülasyonlarý ve planlarý Admin'ler tarafýndan yapýlýr. Bu durumda 3. adým inaktif olur.
+Sadece Bütçe Sahipleri iþaretlenmiþse; Ücret deðiþiklik simülasyonlarý yöneticiler tarafýndan yapýlýr ve onay zincirine gönderilir.
+her iki rolde iþaretliyse; hem Optimise Admin hem de yöneticiler ücret deðiþiklik simülasyonu yapabilir.
+------------------------------------------------
+
+Header: Adý
+Data: Bütçe Plan Akýþýnýn Kurulmasý
+------------------------------------------------
+Header: Konu
+Data: Bütçe sürecinin adýmlarýnýn seçilmesini kapsar.
+------------------------------------------------
+Header: Birincil Aktör
+Data: Optimise Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: EMPTY
+------------------------------------------------
+Header: Ön Koþullar
+Data: Kurulum aþamalarýndan maliyet kartý, rollerin belirlenmesi beklenir.
+------------------------------------------------
+Header: Son Koþullar
+Data: Admin'in bütçe sürecinde kullanacaðý akýþ yöntemini seçip kaydetmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Bütçe Akýþ Planý
+Kullanýcý kurulum adýmlarýndan 5.adým olan Akýþ aþamasýna gelir.
+Sistem akýþ ekranýný açar. Bütçe akýþ planý için akýþ adýmlarý gelir. Sað tarafta Bütçe Akýþýnýn tanýmý ve amacýný içeren bilgi metni görülür. BR5 
+Kullanýcý akýþ adýmlarýný inceler. Info butonlarý aracýlýðýyla adýmlarýn detaylarýný görür. BR2 
+Birinci Adým: "Bütçe Varsayýmlarý Optimise Admin tarafýndan oluþturulur."  BR3
+Ýkinci Adým: "Optimise Admin taslak bütçeyi oluþturur." BR4
+Üçüncü Adým: "Bütçe Sahipleri kendi taslak bütçelerini oluþtururlar." BR4
+Dördüncü Adým: "Bütçe Çalýþmasý onaya gönderilir."
+Beþinci Adým: "Final Onaycý konsolide bütçeyi kontrol edip  finalize eder."
+Kullanýcý taslak bütçenin Optimise Admin tarafýndan yapýlmasýný istemiyorsa 2.adýmda bulunan toggle'ý kapatýr. Bu durumda 1.adýmdan sonra 3.adým iþler.
+Sistem seçimi kaydeder.
+Kullanýcý Bütçe sahipleri (Budget owner) tarafýndan bütçe planlarý yapýlmasýný istemiyorsa diðer bir deyiþle tüm sürecin Admin tarafýndan planlanmasýný istiyorsa 3.adýmda bulunan toggle'ý kapatýr. Bu durumda bütçe taslaklarý budget ownerlar ile paylaþýlmaz.
+Sistem seçimi kaydeder.
+Kullanýcý "Seçimi Kaydet" butonuna basar.
+Sistem seçimi kaydeder ve ekranýn sað üst köþesinde baþarýlý kayýta dair mesaj yayýnlar. "Bütçe Akýþ Planý için yapmýþ olduðunuz seçimler baþarýyla kaydedilmiþtir."
+Sistem, bir sonraki akýþ planý olan ücret deðiþikliði akýþ planýna geçer.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: Onay Adýmý Ekleme
+Kullanýcý onay eklemek istediði 2. ve 3. adýma "Onay "Ekle" butonuna basarak onay detaylarýný oluþturur. BR6
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Akýþ planý seçimi yapýlmak zorundadýr. Bir sonraki adýma geçmeden önce seçimler kaydedilmiþ  olmalýdýr. Uyarý mesajý: "Herhangi bir akýþ seçimi yapmadýðýnýz için bir sonraki adýma geçilememektedir."
+BR2: Infolarda yer alan açýklama metinleri:
+1.adým: "Yasal parametreler, kur, ücret, bütçe kalemleri ve teþviklerle ilgili bütçe simülasyonlarýnda kullanýlacak tüm varsayýmlarýn oluþturulmasýna iliþkin bir adýmdýr."
+2.adým:" Varsayýmlardan sonra, ilk bütçe taslaðý Optimise admin tarafýndan çalýþtýrýlýr. Admin kontrollerini saðladýktan sonra hazýrladýðý taslaðý bütçe sahipleri ile paylaþýlabilir."
+3. adým: "Varsayýmlar oluþturulduktan sonra her bütçe sahibi kendi sorumluluðundaki çalýþanlar için  taslak bütçelerini oluþturarak simülasyonlar yapar."
+4.adým: "Hazýrlanan bütçe taslaklarýndan seçilen taslak onaya gönderir. Üst yöneticisi bütçeyi kontrol eder.  Bütçe uygunsa onaylar, deðilse ilgili bütçe sahibine geri iletir."
+5.adým: "Onaylanan bütçeler final onaycýya ulaþýr. Final onaycý tüm bütçelerin konsolide halini tek bir liste halinde görür, gerekli kontrolleri yaptýktan sonra bütçeyi finalize eder."
+BR3: 1.adým deðiþtirilmez. Bütçe sürecinin iþlemesi için admin tarafýndan bütçe varsayým ayarlarýnýn tamamlanmýþ olmasý gerekir.
+BR4: 2.ve 3.adýmdaki toggle kurallarý
+2. ve 3. adýmdaki togglelar açýksa; Bütçe taslaðýný Optimise Admin oluþturur daha sonra Bütçe Sahiplerine iletir. Bütçe sahipleri bu taslak üzerinden büt.e simülasyonlar yapar.
+2.adýmdaki toggle açýk ve 3. adýmdaki toggle kapalý ise; Bütçe oluþturma süreci Admin tarafýndan yapýlýr. Bütçe sahipleri yani yöneticiler sürece dahil edilmez.
+2.adýmdaki toggle kapalý ve 3.adýmdaki toggle açýk ise; Optimise Admin varsayýmlarý oluþturduktan sonra taslak bütçe üzerinde çalýþmaz. Bütçe sahipleri kendi ekipleri için bütçe taslaklarýný oluþturur.
+2. ve 3. adým togglelarý ayný anda kapalý olamaz. Uyarý mesajý çýkar: " Bütçe akýþý için 2. ve 3. adým ayný anda kapalý olamaz."
+Default ayarda her iki toggle da açýk olarak getirilecektir.
+BR5:
+Ekranýn sað tarafýnda bulunan info balonu kullanýcý tarafýndan küçültülebilir yapýda olacaktýr.
+Bilgi mesajý:
+"Bütçe planlama sürecinin hangi adýmlardan geçeceðinin belirlendiði adýmdýr. Bütçe sürecinin plana uygun þekilde ilerlemesi için akýþýn gözden geçirilmesi önemlidir. Adýmlarda bulunan detaylý bilgi mesajlarýný inceleyebilirsiniz."
+
+Onay Ekleme Kurallarý
+BR6: Onay eklenebilmesi için 2. ve/veya 3. adýmlarýn toggle'larýnýn açýk olmasý gerekir. Toggle kapalý ise onay ekle butonu görünmez olur.
+BR7: Onay eklebilir adýmlara n tane onay adýmý eklenebilir. 
+------------------------------------------------
+
+Header: Adý
+Data: Maliyet Kartý içerisine Yeni Ödeme Baþlýðý Ekleme ve Düzenleme
+------------------------------------------------
+Header: Konu
+Data: Entegrasyondan gelmeyen maliyet kalemlerinin Admin tarafýndan manuel olarak eklenmesi 
+------------------------------------------------
+Header: Birincil Aktör
+Data: Optimise Admin
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: Admin'in Maliyet kartý içerisine yeni ödeme baþlýðý ekleyebilmesi ve düzenleyebilmesi.  Eklediði yeni baþlýðýn altýna yeni ödeme kalemleri ekleyip düzenleyebilmesi ve kural bazlý daðýtým yapabilmesi
+------------------------------------------------
+Header: Ön Koþullar
+Data: Sisteme giriþ yapmasý
+Entegrasyon ile müþteri verisinin alýnmýþ olmasý
+Employee directory adýmlarýnýn (çalýþan kartý ve organizasyon þemasý) tamamlanmýþ olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Kullanýcý Maliyet Kartý menüsüne gelir. 
+Kullanýcý entegrasyondan gelmeyen bir ödeme kalemi eklemek için "Yeni Ödeme Baþlýðý Ekle" butonuna basar.
+Sistem yeni ödeme baþlýðý popup ekranýný açar.
+Kullanýcý Yeni ödeme baþlýðýna isim verir ve kaydeder (Örnek: Parasal Olmayan Ödemeler)
+Sistem yeni ödeme baþlýðý ismini kaydeder. (maliyet kartý bölümlerinde de bu isim görünür.)
+Kullanýcý yeni açtýðý baþlýðýn altýna yeni bir kalem ekler ve kaydet'e basar. (Örn: Kýyafet Yardýmý)
+Sistem yeni ödeme baþlýðýný ve alt kalemini kaydeder ve maliyet kartýna yansýtýr. Maliyet kaleminde yeni ödeme baþlýðý ve detaylarý gösterilir ve info mesajý çýkar. "Yeni eklediðiniz bölümün ayarlarýný buradan yapabilir, daðýtým yapabilirsiniz."
+ Kullanýcý infoda çýkan "görüntüle" butonuna týklar veya
+ikonuna týklar.
+Sistem ilgili ödeme baþlýðýnýn ayarlar popupýný açar.
+Kullanýcý daðýtým kuralý butonuna týklar.
+Sistem kural oluþturma popup ekranýný açar. Burada sistem yeni kural ekleme seçeneðini ve daha önceden tanýmlanmýþ kurallar gösterir.
+Kullanýcý "Yeni Kural Ekle"ye basar.
+Sistem kural adý, dönemi, kural ekleme alaný, ödeme þekli baþlýklarýný getirir. BR1, BR142
+Kullanýcý açtýðý ödemenin daðýtýmýný yapar.
+Kuralýn ismi yazýlýr.
+Ödemenin baþlangýç ve bitiþ tarihi belirlenir.
+Ödemeye tabi olacak çalýþanlarýn özelleþtirmek için varsa kural tanýmý yapýlýr. 
+Ödeme þekli detaylarý - ödeme dönemi, ödeme tipi, tutarý ve para birimi seçilir.
+Ayni yardým olup olmadýðýna ait seçim yapýlýr.
+Bütçe sahibinin düzenleme yapýp yapamayacaðý ayarlarýný düzenler (Bütçe sahibi düzenleme yapabiliyor toggle'ý açýksa oransal veya tutarsal olarak minimum ve maksimum deðer girilir. 
+Kullanýcý kaydet'e basar.
+Sistem ayarlarý kaydeder. BR3
+Kullanýcý birden fazla kural girdiyse çakýþma kuralý belirler ve kaydete basar. BR4
+Sistem ayarlarý kaydeder ve baþarýyla kaydedildiðine dair bilgi mesajý yayýnlar.
+ 
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: Kullanýcý Ödeme baþlýklarý alanýndaki "Ayarlar" butonuna týklayarak tüm ödeme baþlýklarý altýnda bulunan alt baþlýklarý görür. Buradan da yeni ödeme baþlýðý ve alt baþlýklar ekleyebilir, daðýtým kuralý ayarý yapabilir. BR6
+ Kullanýcý gizle ikonuna týklayarak kartta görmek ve kullanmak istemediði alanlarý gizleyebilir. (Bu iþlem ayný zamanda maliyet kartýnda bu alanýn toggle'ýný da kapatýr)
+Kapattýðý zamanki görünüm:
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: Kural oluþtururken kullanýlacak filtre yapýsý aþaðýdaki linkte detaylandýrýlmýþtýr.
+7.10.4 Filtre Yapýsý
+BR1: Tüm çalýþanlara uygula toggle'ý açýk olursa; eðer kýsmýnda yazan kural seti gösterilmeyecektir.  
+BR2: 
+Daðýtým Ayarlarý:
+Baþlangýç ve Bitiþ Dönemi (örnek Ocak 2023- Aralýk 2023)
+Tüm Çalýþanlara Uygula toggle'ý 
+Kural Tanýmý (filtreleme)
+Ödeme dönemi Comobox seçenekleri: Aylýk, Yýllýk, Özel ( Özel seçilirse dönem içerisindeki aylar gelecek ve kullanýcý birden fazla ay seçebilecek.)
+Ücret Tipi Combobox seçenekleri: Brüt
+Para Birimi Combobox seçenekleri: TL, USD, EUR
+Ayni Yardým Toggle'ý
+Bütçe Sahibi'nin ilgili maliyet kalemini düzenleme yetkisi olmasý toggle'ý. Eðer yetkisi varsa (toggle açýksa);
+Alt üst sýnýr kriteri combobox seçenekleri: Oran , Tutar
+Oran veya Tutar için Minimum ve Maksimum deðer giriþi alanlarý
+Yeni ödeme baþlýðý açýlarak eklenen bir gelir kaleminde matrah seçenekleri getirilmeyecektir.  Ayarlar içerisinde sadece sabit tutardan giriþ yapýlabilecektir ve ücret tipi olarak sadece brüt ücret tipi getirilecektir.
+
+BR3: Yeni eklenen manuel ödeme baþlýklarýnýn içine kaydedilen kurallar tekrar düzenlenebilir ve silinebilir.
+
+BR4: Çakýþma Kuralý: 3 farklý çakýþma kuralý vardýr.
+1.Ýlk geçerli kuralý uygula : Birden fazla kural olmasý durumunda sistem ilk kaydedilmiþ kuraldaki deðeri iþler.
+2.En yüksek tutarý uygula: Birden fazla kural olmasý durumunda sistem kurallar arasýnda en yüksek deðere sahip sonucu iþler.
+3.En düþük tutarý uygula: Birden fazla kural olmasý durumunda sistem kurallar arasýnda en düþük deðere sahip sonucu iþler.
+Örnek: Kýyafet Yardýmý için 2 farklý daðýtým kuralý belirlenmiþ.
+1. Kayýtlý Kural Beyaz yaka içi  kýyafet yardýmý: 500 TL
+2. Kayýtlý Kural Pazarlama Departmaný çalýþanlarý için kýyafet Yardýmý: 1000 TL
+Bu örneðe göre Pazarlama Departmanýnda çalýþan beyaz yakalý çalýþanlarda kural çakýþmasý olmaktadýr.
+Ýlk geçerli kuralý uygula seçiliyse; sistem, çakýþma durumuna sahip çalýþanlarýn maliyet kartýnda kýyafet yardýmý alanýna 500 TL deðerini iþler.
+En yüksek tutarý uygula seçiliyse;  sistem, çakýþma durumuna sahip çalýþanlarýn maliyet kartýnda kýyafet yardýmý alanýna 1000 TL deðerini iþler.
+En düþük tutarý uygula seçiliyse; sistem, çakýþma durumuna sahip çalýþanlarýn maliyet kartýnda kýyafet yardýmý alanýna 500 TL deðerini iþler.
+
+BR5: Yeni ödeme baþlýðý oluþturduktan sonra altýna n adet yeni ödeme eklenebilir.
+
+BR6: Entegrasyonla gelen alanlarýn daðýtým kuralý oluþturulamaz. Sadece Admin'in manuel olarak eklediði ücret kalemleri için daðýtým ayarý yapýlýr.
+------------------------------------------------
+
+Header: Adý
+Data: Çalýþan Kartý Tasarlama
+------------------------------------------------
+Header: Konu
+Data: Entegrasyonla gelen kullanýcýnýn entegrasyon tamamlandýktan sonra çalýþan kartý tasarýmý yapmasý
+------------------------------------------------
+Header: Birincil Aktör
+Data: SuperAdmin / Ýlgili ürünün Admin'i
+------------------------------------------------
+Header: Ýlgililer ve Beklentileri
+Data: Admin'in çalýþan kartý görünümüne eklemek isteyeceði alanlarý seçmesi beklenir.
+------------------------------------------------
+Header: Ön Koþullar
+Data: Sisteme giriþ yapmasý
+Entegrasyon ile müþteri verisinin alýnmýþ olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: Çalýþan kartý tasarýmýný tamamlayýp, ön izleme yaparak onay vermesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Kullanýcý uygulamayý açar.
+Sistem, entegrasyon sonucu alýnan veriler hakkýnda özet bilgi getirir. - BR10
+Kullanýcý entegrasyon sonuçlarýyla ilgili detaylarý incelemek için "Tüm Veri Detayýný Göster" butonuna basar.
+Sistem veri detayýný getirir.
+Kullanýcý "Çalýþan Kartýný Tasarla" butonuna basar.
+Sistem Çalýþan Kartý Tasarýmý ekranýný açar.
+Sistem öncelikle önizleme seçeneðini ön plana çýkarak bilgi mesajý yayýnlar.
+Kullanýcý Görüntüle butonuna basar.
+Sistem toggle'larý açýk olan alanlar için örnek çalýþan kartý önizlemesini getirir.
+Kullanýcý önizlemeyi görüntüler ve X ile kapatýr.
+Sistem entegrasyonla gelen alanlarýn yanýna 
+ile gösterir. (kýrmýzý kutu ile iþaretli)
+Kullanýcý sað taraftaki "Employee Directory Bölümleri" kýsmýndan Profil Bilgileri, Hakkýnda, Çalýþan Bilgileri, Organizasyon Bilgiler ve Yasal Bilgileri içeriklerinden kartta ve ürünün genelinde (raporlarda&filtrelerde) kullanmak istediði alanlarýn toggle'larýný açar. - BR1
+Sistem toggle ile açýlan bölümleri kart kýsmýna getirir. Kapatýlan bölümleri ise tasarýmdan kaldýrýr.
+Kullanýcý profil bilgileri, hakkýnda, çalýþan bilgileri, organizasyon bilgileri ve yasal bilgiler alanlarýnýn detaylarýný inceler.
+Kullanýcý, Organizasyon Bilgileri alanýnda yer alan Organizasyon Seviyesi içinde kullanmak istediði seviyeleri iþaretler.
+Kullanýcý seçimlerini yaptýktan sonra " Kaydet" butonuna basar. -BR2, BR3
+Sistem seçimi kaydetme iþlemini yapmak için öncelikle tasarlanan kart görünümünü kullanýcýya açar.
+Kullanýcý onayla butonuna basar.
+Sistem baþarýyla kaydedildiðine dair bilgi mesajýný gösterir.
+Sistem, kullanýcýya çalýþan kartýna dair seçimleri daha sonra deðiþtirebilmesi için yönlendirme mesajý çýkarýr. Mesaj: "Çalýþan kartýna dair seçimlerinizi ve veri yükleme iþlemlerinizi dilediðinizde buradan yapabilirsiniz."
+Kullanýcý "OK" butonuna basar.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: 4.1. Kullanýcý detaylý verileri gördükten sonra X iþaretine basarak çýkar. 
+4.2. Sistem bir önceki sayfayý açar (entegrasyon baþarýyla gerçekleþti sayfasý) 
+
+
+18.1. Kullanýcý çalýþan kartý ön izleme yaparken "Vazgeç" veya sað üstte bulunan "X" butonuna basar.
+18.2. Sistem kartý kaydetmez ve kart tasarým ekranýna geri döner.
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Employee directory alanlarý aþaðýdaki linkte detaylandýrýlmýþtýr.
+7.6.3 Veri Yapýsý
+Toogle'larýn kapanmasý bu alanlarýn üründe kullanýlmayacaðý anlamýna gelmektedir. Filtrelerde ve raporlarda bu alanlar getirilmez.
+Toogle açýk alanlar tüm rollerde görüntülenebilir olur. Rapor ve filtrelerin içeriklerinde seçilebilir/görüntülenebilir.
+BR2: Vatandaþlýk numarasý, sicil no veya e-posta bilgilerinden en az birinin mutlaka seçilmiþ olmasý gerekir. Hiçbiri seçili deðilse, sistem kart tasarýmýný kaydetmeye izin vermez. Herhangi biri seçilmemiþ ise sistem uyarý mesajý verir: " Vatandaþlýk numarasý, sicil no veya e-posta bilgilerinden en az birinin açýk olmasý gerekir."
+BR3: Vatandaþlýk numarasý toggle ilk açýlýþta kapalý olarak gelecek. Kullanýcý açmak isterse kullanýcýya uyarý mesajý verilir.
+Kullanýcý'dan Vazgeç veya Göster seçeneklerinden birini iþaretlemesi beklenir. 
+BR4: Zorunlu alanlarýn togglelarý kapatýldýysa default deðerler kullanýlacaktýr. Alanlarýn default deðerleri aþaðýdaki linkte verilmiþtir.
+7.6.3 Veri Yapýsý
+BR5: Entegrasyon ile alýnan alanlar daha önceden manuel veya excel aracýlýðýyla girilmiþ alanlarý ezer. Örneðin önceden excelden alýnmýþ sonradan entegrasyona geçilmiþ durumlarda entegrasyondan gelen yeni bilgiler eski bilgileri ezer.
+BR6: Kullanýcý tasarým aþamasýnda istediði t anýnda önizleme yapabilir. Önizleme esnasýnda seçmiþ olduðu alanlara (açýk togglelar) göre örnek çalýþan kart görüntüsü getirilir. Diðer bir deyiþle toggle'larýn açýk kapalý olmasý önizleme deki görünümü etkiler.
+BR7: Eðer linkedin kullanýlacaksa (linkedin toggle'ý açýksa) öðrenim bilgilerini linkedin'den entegrasyonla alýnacak. 
+BR8: Kullanýcý linkedin toggle'ýný kapatýrsa sistem uyarý verecek. "Öðrenim bilgisi artýk linkedinden alýnamayacak, emin misiniz?" Kullanýcý evet derse entegrasyon baðlantýsý kesilecek hayýr derse toggle açýk kalmaya devam edecek.
+BR9: Kart Tasarýmý sýrasýnda sað taraftaki bölümler açýlýp kapabilir. Hangi bölüm açýksa kartta o bölüme ait alanlar da otomatik olarak açýlacak ve o bölüm highlight edilecek.
+Örnek:
+BR10: Entegrasyon sonucu alýnan verilerle ilgili detaylý analiz aþaðýdaki linktedir.
+7.6.5 Entegrasyondan Gelen Verilerin Gösterimi
+BR11: Önizlemede onay verebilmesi için kullanýcýnýn en az bir kez Kaydet butonuna basmýþ olmasý gereklidir. t anýnda Kaydet butonuna basýlmadan yapýlan önizleme ekranda Onayla butonu olmaz.
+BR12: Kaydet&Kapat butonuna basýldýðý durumda kullanýcýnýn o ana kadar yaptýðý seçimler kaydedilir ve sistem ana ekrana geri döner. Kullanýcý sonraki butonuna bastýðý durumda kullanýcýnýn en son kaydettiði seçimler üzerinden sistem bir sonraki adým olan Organizasyon Þemasý ekranýný açar. Ancak Bir sonraki adým olan organizasyon þemasý adýmýna geçebilmek için Kullanýcý Önizleme'de onay vermesi gereklidir.
+BR13: Çalýþan kartý alanlarýnýn görünüm olarak sýralamasý kullanýcý tarafýndan deðiþtirilebilir. Aþaðýda verilen sürükle býrak ikonu ile yapýlýr.
+BR14: Kart bölümlerinin altýnda yer alan tüm alt bölümlerin toggle'larý kapalýysa bu bölümün toggle'ý da sistem tarafýndan kapatýlacaktýr. 
+BR15:  Kartlarda yapýlan deðiþiklikler (Kaydetme iþlemleri) tarihsel ve kullanýcý bazlý loglanacaktýr.
+------------------------------------------------
+
+Header: Adý
+Data: Task tirgger'larýnýn yeniden tetiklenmesi
+------------------------------------------------
+Header: Konu
+Data: Task triggerlarý kullanýlarak farklý uygulamalar ile yapýlan entegrasyonlarda, bir adýmdaki trigger'ýn çalýþmamasý durumunda, triggerý tekrar çalýþtýrýlabilmesi saðlanacaktýr.
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin
+------------------------------------------------
+Header: Ön Koþullar
+Data: Senaryoda fonksiyon eklenmiþ adýmýn olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: Senaryo adýmýndaki trigger çalýþtýðýnda hata dönmesi halinde arayüzden triggerýn yeniden çalýþtýrýlabilmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: ÝK kullanýcýsý, Onboardee kullanýcý sayfasýndan fonksiyon eklenmiþ senaryoyu seçer. 
+Senaryo akýþý tab'ýna týklar.
+Fonksiyon eklenmiþ adýmda bulunan fonksiyon ikonuna týklar.
+Sistem bu adýma eklenen fonksiyonlarýn log sonuçlarýnýn olduðu liste ekranýný açar. BR-1
+5. Kullanýcý Yeniden Çalýþtýr
+ikonuna týklar.
+6. Son çalýþma sonucuna göre satýrdaki bilgiler güncellenir. BR-2
+7. Kullanýcý  Geçmiþ
+ikonuna týklar. Fonksiyonun geçmiþ sonuçlarýný listeleyen ekran çýkar.
+8. Kullanýcý Görüntüle
+ikonuna týklar.
+9. Trigger sonucuna ait detay bilgi gösterilir. BR-3
+10. Kapat butonuna týklar.
+------------------------------------------------
+Header: 
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR-1
+Senaryo adýmýna birden fazla fonksiyon eklenmesi durumunda bu listede tüm foksiyonlarýn sonuçlarý listelenecektir.
+Ayný fonksiyonun birden fazla kez çalýþmasý durumunda son sonuç gösterilecek. (Trigger yeniden tetiklendiðinde ProcessTaskTriggerSchedule’daki mevcut kaydý güncelleyeceðiz. Geçmiþ
+ikonuna týklanarak geçmiþ detaylarýna ProcessTaskTriggerHistory tablosundan bakabilecek.(7. adým)
+Fonksiyon henüz çalýþmamýþ ise Durumu, Çalýþma Zamaný ve Açýklama  kolonlarý boþ olarak listelenecektir. Ayrýca Görüntüle ve Geçmiþ
+ikonu gelmeyecektir.
+Fonksiyon henüz çalýþmamýþ ise Yeniden Çalýþtýr butonu ile tetiklenebilecek.
+Durumu kolonunda fonksiyonun sonucunu Integrationlog’dan alabiliriz.
+Açýklama kolonuna entegrasyon sonucunu deðiþkene yazýyorsak deðiþkenden, yazmýyorsak integration log’daki açýklamayý getirebiliriz. Elimizde açýklama yoksa boþ geçeceðiz.
+BR-2
+Fonksiyonun yeniden tetiklenmesi anýnda yapýlabiliyorsa yapalým. Job'ýn çalýþmasý için belirli bir zamanýn geçmesi gerekecek ise bilgilendirme yapýlmasý gerekir. Bilgilendirme metni; "Fonksiyon yeniden çalýþtýrýlmak üzere sýraya alýndý"
+En güncel sonuç en üstte olacak þekilde listeleme yapýlýr.
+Durumu kolonunda Baþarýsýz sonuçlar kýrmýzý, Baþarýlý sonuçlar yeþil gösterilir.
+Baþarýlý sonuçlarýn yeniden çalýþtýrýlmasýna izin verilir. Ancak öncesinde "Bu fonksiyon baþarýlý olarak çalýþmýþtýr. Yeniden çalýþtýrýlsýn mý?" þeklinde onay ekraný çýkar. Kullanýcý onaylarsa yeniden çalýþtýrýlýr.
+BR-2 Detay penceresi içeriði örnek olarak verilmiþtir. PH-1481 - Jira project doesn't exist or you don't have permission to view it. maddesi ile yapýlan geliþtirmeye göre, baþarýlý ve baþarýsýz sonuçlara göre gösterilecek bilgi içeriði belirlenecektir. Hata olmasý durumunda tespit için request ve responslar gösterilmelidir.
+------------------------------------------------
+
+
+Header: Adý
+Data: Senaryo adýmlarýnda "Görevin amacý" sahasýnýn eklenmesi
+------------------------------------------------
+Header: Konu
+Data: Senaryo adýmlarýna Görevin Amacý alanýnýn eklenmesi ile ileri vadede uygulama kullanýmýnda görevlerin hangi amaçla eklendiðine yönelik analitik raporlama yapýlabilmesi amaçlanmaktadýr.  
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: Senaryo adýmýnýn görevin amacý ile birlikte kaydedilmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1- Kullanýcý senaryo tanýmýnda yeni adým eklemek için + seçeneðine týklar. 
+2- Ýçerik Paylaþ, Görev Ata, Anket Gönder ya da Profil Doldurt seçeneklerinden birini seçer.
+3- Adýmýn detaylarýnýn girileceði ekran gelir.
+4- Baþlýk ve Görev Tipi alanlarýnýn yanýnda bulunan Görevin Amacý alanýnda listelenen alanlardan, adýma uygun birini seçer.
+3- Adýma iliþkin diðer alanlarý doldurur.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR-1 Görevin amacý alanýnda aþaðýdaki seçenekler listelenir.
+Ýdari görev
+Çalýþan baðlýlýðý
+Kültürel Uyum
+Br-2 Geliþtirme tamamlandýktan sonra tanýmlanan adýmlarda görevin amacý alanýnda veri giriþi zorunludur. Ancak önceden tanýmlanmýþ adýmlarda bu data olmadýðý için boþ olacaktýr.
+BR-3 Önceden tanýmlanmýþ adýmlar düzenleme ile açýldýðýnda adým üzerinde herhangi bir deðiþiklik yapýlýrsa Görevin amacý sahasýnda seçim yapýlmasý istenir.
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+
+
+Header: Adý
+Data: Yeni rapor tasarýmý
+------------------------------------------------
+Header: Konu
+Data: Kullanýcýlarýn ihtiyaç duyduklarý liste raporlarýnýn tasarýmlarýný yapabilecekleri ekrandýr.
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: Tasarým sayfasýnda yapýlan seçimlerin þablon olarak saklanabilmesi ve/veya raporu baþlat seçeneði ile raporlar sayfasýnda gösterilmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data:  1- Kullanýcý menüden Liste Raporlarýna týklar. 
+2- Sistem Rapor Þablonlarý ekranýný açar.
+3- Kullanýcý Yeni Rapor Tasarýmý Oluþtur butonuna týklar.
+4- Yeni Rapor Þablonu Oluþtur sayfasý açýlýr. BR-1
+5- Kullanýcý Rapor Türü alanýnda Senaryo Raporu'nu seçer. BR-2
+6- Senaryo raporuna ait kolon baþlýklarý listelenir. BR-3
+7- Kullanýcý raporlamak istediði kolon baþlýklarýný
+simgesini kullanarak sað tarafa sürükler. BR-4
+8- Sað tarafa taþýnan kolonlarýn adýný Düzenle
+ikonuna týklayarak deðiþtirir.
+9- Kullanýcý raporlamaktan vazgeçtiði alanlarý Sil
+ikonuna týklayarak rapor kolonlarýndan çýkartabilir.
+10- Gruplama alanýnda raporun gruplanarak gösterilmesini istediði kolonu seçer. BR-5
+11- Toplamlar kolonunda raporda toplam alýnmasý istenen kolonlar seçilir. BR-6
+12- Kullanýcý Filtre ekle butonuna týklar.
+13- Sistem filtreleme yapýlacak kolonun seçileceði alaný getirir.
+14- Filtreleme için Görev Tipi alanýný ve istenen deðeri seçer. BR-7 
+15- Filtre ekle butonuna týklar.
+16- Filtreleme için Deðiþken Adý alanýný ve istenen deðeri seçer.
+17- Filtre ekle butonuna týklar.
+18- Filtreleme için Tamamlanma Tarihi alanýný ve istenen deðeri seçer.
+19- Þablon adýna "Örnek senaryo raporu" girer.
+20- Kaydet butonuna týklar. BR-8
+21- Kullanýcý Raporu Baþlat butonuna týklar. BR-9
+22. Bilgilendirme ekranýnda Hayýr'a týklar.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR-1
+Yeni bir þablon tasarýmý yapýlýrken sayfa ilk açýldýðýnda;
+Rapor Kolonlarý alaný boþ gelir. Bu alandaki liste seçilecek rapor türüne göre dolacaktýr.
+Gruplama Alaný'nda combobox deðeri boþ gelir. Rapor türü seçildikten sonra alan seçilebilecektir.
+Toplamlar combobox'ýna týklandýðýnda herangi bir alan listelenmez. Rapor türü seçimine göre alanlar gelecektir.
+Herhangi bir filtre seçilmemiþ olarak gelir. Sadece Filtre Ekle butonu gelir. Rapor türü seçilmeden Filtre Ekle'ye týklanýrsa Rapor Türü sahasý kýrmýzý olur. Rapor türü zorunlu alandýr.
+Sað tarafta seçilen kolonlarýn gösterildiði alan boþ olarak gelir.
+Ýlk açýlýþta Raporu Baþlat ya da Kaydet butonlarýna týkladýðýnda zorunlu alan olan Rapor Türü baþlýðý kýrmýzý olarak gösterilir. Rapor baþlatýlmaz veya kaydedilmez.
+Hazýr Rapor þablonlarý butonuna týkladýðýnda Rapor Þablonlarý analizinde verilen sayfa açýlýr.
+BR-2
+Rapor türü baþlýðý yanýndaki infoya
+týklandýðýnda "Þablon tasarýmýna devam etmek için rapor türü seçiniz." metni gösterilir.
+Rapor türü alanýnda aþaðýdaki liste gösterilir.
+Senaryo Raporu
+Profil Raporu
+Yeni Kiþi Raporu
+Anket Raporu
+Kiþiler Görev Durum Raporu
+Diðer Kiþiler Görev Raporu
+BR-3
+Rapor kolonlarý baþlýðýnýn yanýndaki infoya
+týklandýðýnda "Seçtiðiniz rapor türüne ait baþlýklar aþaðýda listelenir." metni gösterilir.
+Her bir rapor türü için listelenecek baþlýklar Liste Raporlarý için Rapor Türleri analizinde verilmiþtir. 
+Yanýnda + iþareti bulunan baþlýklar grup baþlýðýdýr. Bu baþlýklarýn altýndaki alanlar + ikonuna basýldýðýnda gösterilir. Liste Raporlarý için Rapor Türleri analizindeki dosyada rapor grup baþlýðý olan alanlar belirtilmiþtir.
+
+BR-4
+Seçilen alan bir grup baþlýðý ise (bu türdeki alanlarýn yanýnda + iþareti bulunur), altýndaki tüm alanlar sað tarafa taþýnýr. Ancak grup baþlýðý taþýnmaz. Örneðin Senaryo Raporunda aþaðýdaki gibi Alt Görev Bilgileri adýnda bir grup baþlýk alaný ve buna baðlý diðer kolonlar bulunmakta. 
+Alt Görev Bilgileri
+    Alt görev tipi
+    Anket adý
+    Soru
+    Açýklama
+    Cevap
+    Video/Fotoðraf/Dosya link
+    Deðiþken adý
+    Deðiþken deðeri
+Kullanýcý Alt Görev Bilgileri baþlýðýný sað tarafa sürüklediðinde bu alt görev baþlýðýna baðlý tüm alanlarýn sað tarafa taþýnmasý beklenir.
+Kullanýcý grup baþlýðýnda bulunan alanlardan sadece bazýlarýný sürükleyerek de sað tarafa taþýyabilir. (prototipte sadece soru kolonu taþýnmýþ olarak gösterilmekte)
+Sað tarafa taþýnan kolon baþlýklarý solda gösterilmeye devam edilir.
+Seçilen rapor kolonlarýnýn sýralamasý sürükle býrak ile deðiþtirilebilir.
+BR-5
+Gruplama alanýnda seçim yapýlmasý zorunlu deðildir.
+Rapor kolonlarýnda bulunan tüm kolonlar için gruplama yapýlabilir.
+Gruplama alanýnda sadece tek bir kolon seçilebilir.
+Bu alanda yapýlacak seçime göre rapor çýkrýsýnýn nasýl oluþacaðýna ait örnek Liste Raporlarý için Rapor Türleri analizinde paylaþýlan dosyanýn Senaryo Raporu örnek_gruplama sayfasýnda verilmiþtir.
+BR-6
+Toplamlar alanýnda seçim yapýlmasý zorunlu deðildir.
+Rapor kolonlarýnda bulunan sayýsal alanlar combobox'ta listelenir.
+Toplam alaný olarak birden fazla kolon seçilebilir. Kolonlar aþaðýdaki þekilde gösterilecektir.
+Birden fazla kolon seçildiðinde combobox kapalý iken deðer olarak ilk seçilen alan adý gösterilir.
+Toplam alanýnda yapýlacak seçime göre rapor çýkrýsýnýn nasýl oluþacaðýna ait örnek Liste Raporlarý için Rapor Türleri analizinde paylaþýlan dosyanýn Senaryo Raporu örnek_gruplama sayfasýnda verilmiþtir.
+BR-7
+Her bir rapor tipi için filtrelemede kullanýlabilecek kolonlar Liste Raporlarý için Rapor Türleri analizinde paylaþýlan dosyada belirtilmiþtir.
+Herhangi bir filtreleme yapmadan tüm data raporlanabilir.
+Filtreleme alanlarýnda 3 tip filtreleme yapýlabilir.
+Combobox'tan seçim ile filtreleme; dosyada Filtre Açýklama kolonunda "listeden seçim" yazan alanlarda kullanýcý bir veya daha fazla deðer seçimi yapabilir. Örneðin Görev Tipi filtresi için aþaðýda þekilde kullanýlacaktýr.
+Text girerek filtreleme:  dosyada Filtre Açýklama kolonunda "listeden seçim" yazan alanlarda kullanýcý filtre olarak text deðer girebilecektir. Örneðin Deðiþken Adý filtresi için aþaðýda þekilde kullanýlacaktýr.
+Tarih aralýðý girerek filtreleme:  dosyada Filtre Açýklama kolonunda "tarih aralýðý girilebilecek" yazan alanlarda kullanýcý tarih aralýðý belirleyebilecektir. Örneðin Tamamlanma Tarihi filtresi için aþaðýda þekilde kullanýlacaktýr.
+          Birden fazla filtreleme alaný eklendiðinde VE ile filtreleme yapýlýr.
+Fazla sayýda filtre alaný eklendiðinde scroll ile aþaðýya inebilmeli
+BR-8
+Kaydet butonuna basýldýðýnda rapor þablonu kaydedilir ve Rapor þablonlarý sayfasýnda gridde gösterilir hale gelir.
+Kaydedildiðinde "Rapor þablonunuz kaydedildi" bilgilendirmesi yapýlýr ve uygulamada bu sayfa açýk kalmaya devam eder.
+Kullanýcý yaptýðý seçimlerde deðiþiklik yaparak mevcut rapor þablonunun üzerine son halini kaydedebilir.
+Kayýtlý rapor þablonun ismini deðiþtirerek tekrar kaydet'e týkladýðýnda yeni bir rapor þablonu olarak kaydedilir.
+BR-9
+Rapor baþlatýldýðýnda, rapor asenkron olarak hazýrlanmaya baþlanýr.
+Bilgilendirme ekranýnda Evet'e týklanýrsa Raporlar ekraný açýlýr.
+Hayýr'a týklanýrsa ayný ekranda kalmaya devam eder.
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+Header: Adý
+Data: Liste raporlarn Rapor Þalonlarýnýn eklenmesi
+------------------------------------------------
+Header: Konu
+Data: Hazýr olarak verilen ya da kullanýcý tarafýndan oluþturulan rapor þablonlarýnýn listelendiði ekrandýr.
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: Þaplonlarýn listede gösterilmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1- Kullanýcý menüden Liste Raporlarýna týklar. 
+2- Sistem Rapor Þablonlarý ekranýný açar.
+3- Listede hazýr olarak sunulan þablonlarýn yaný sýra kullanýcýlar tarafýndan oluþtururulan þablonlar listelenir. BR-1
+4- Kullanýcý "Raporu Baþlat"
+ikonuna týklar.
+5- Raporun oluþturulmaya baþlandýðýný bildiren popup açýlýr. BR-2
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: 4.a Kullanýcý Düzenle
+ikonuna týklar. BR-3
+4.b Kullanýcý Sil butonuna
+týklar.  BR-4
+4.c Kullanýcý Yeni Rapor Tasarýmý Oluþtur butonuna týklar. Rapor tasarýmý ekraný açýlýr. BR3
+4.d Kullanýcý Raporlar butonuna týklar. Raporlar ekraný açýlýr. 
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR-1 Hazýr olarak verilen rapor þablonlarý için Oluþturan kolonunda Peoplise yazar.
+BR-2 
+Kullanýcý Evet'e týklarsa Raporlar ekraný açýlýr. Raporlar
+Kullanýcý Hayýr'a týklarsa rapor hazýrlanmaya baþlanýr ancak kullanýcý bu sayfada kalmaya devam eder.
+BR-3 Sistem rapor tasarým sayfasýný açar. Rapor Tasarýmý
+BR-4 Raporu Baþlata týklandýðýnda gelen ekran benzeri ekran açýlýr. "Rapor þablonunu silmek istediðinizden emin misiniz?" metni ve Evet Hayýr seçenekleri gelir. Evet týklandýðýnda rapor þablonu silinir. Hayýr týklandýðýnda herhangi bir iþlem yapýlmaz.
+Br-5 Liste üstündeki arama seçeneði ile tüm kayýtlar içinde rapor adý ve açýklamasýnda arama yapýlýr.
+BR-6 Rapor þablonlarý gridinde paging olmalýdýr.
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+
+Header: Adý
+Data: Liste raporlarýna Raporlarýn eklenmesi
+------------------------------------------------
+Header: Konu
+Data: Raporu baþlat seçeneði ile asenkron olarak hazýrlanan raporlarýn listelendiði ve excel dosya olarak indirildiði sayfadýr
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: Asenkron çalýþan raporlarýn durumlarýnýn izlenebilmesi ve tamamlanan raporun excel dosya olarak indirilebilmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1- Kullanýcý menüden Liste Raporlarýna týklar. 
+2- Sistem Rapor Þablonlarý ekranýný açar.
+3- Kullanýcý sað üst köþedeki Raporlar butonuna týklar.
+3- Rapor þablonlarý sayfasýndan ya da yeni rapor tasarýmý sayfasýndan baþlatýlan raporlarýn listelendiði sayfa açýlýr. BR-1
+4- Kullanýcý Durumu "Sonlandý" olan bir rapor için Raporu Ýndir'e
+týklar. BR-2
+5- Rapor þablon tasarýmýnda yapýlan kolon, gruplama ve toplam seçimlerine uygun olarak rapor excel dosya olarak indirilir.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: 4.a Kullanýcý satýrda bulunan Sil
+ ikonuna týklar. BR-3
+4.b Sil butonuna týklandýðýnda bilgilendirme/Onay ekraný gelir.
+4.c Kullanýcý Evet'e týklar.
+4.d Rapor listeden silinir.
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR-1 Gridde aþaðýdaki bilgiler bulunur.
+Ýþlem Tarihi: Raporun baþlatýldýðý tarih/saat gösterilir.
+Rapor Adý:  Rapor þablonunun ismi gösterilir.
+Durumu:  Baþlatýlan raporlarýn oluþturulmasý tamamlanana kadar "Devam ediyor", tamamlandýðýnda ise "Sonlandý" statüsü ile gösterilir.
+Rapor gridinde paging olmalýdýr.
+
+BR-2 Durumu "Devam Ediyor" olan rapor satýrlarýnda "Raporu Ýndir" seçeneði pasif gelir.
+BR-3 Sil butonuna týklandýðýnda Raporu Baþlata týklandýðýnda gelen ekran benzeri ekran açýlýr. "Raporu silmek istediðinizden emin misiniz?" metni ve Evet Hayýr seçenekleri gelir. Evet týklandýðýnda rapor silinir. Hayýr týklandýðýnda herhangi bir iþlem yapýlmaz.
+Durumu "Devam Ediyor" olan raporda Sil butonuna týklandýðýnda raporun hazýrlanmasý durdurulur ve raporlar listesinden silinir.
+Durumu "Sonlandý" olan rapor silindiðinde hazýrlanan rapor silinir.
+Br-4 Liste üstündeki arama seçeneði ile tüm kayýtlar içinde rapor adý alanýnda arama yapýlýr.
+BR-5 Yeni Rapor Tasarým Oluþtur butonuna týklandýðýnda rapor tasarým sayfasý açýlýr. Rapor Tasarýmý
+BR-6 Rapor Þablonlarý butonuna týklandýðýnda rapor þablonlarý sayfasý açýlýr. Rapor Þablonlarý
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+
+Header: Adý
+Data: KVKK metinlerinin yasal dokümanlar altýnda gösterimi ve arayüz deðiþikliðinin yapýlmasý
+------------------------------------------------
+Header: Konu
+Data: Senaryolarda kullanýlan KVKK metinlerinin ayrý bir menüden kütüphaneye eklenmesi ve senaryolarda kullanýlmasý
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: Hesap bazýnda tanýmlanan tüm dokümanlarýn yasal dokümanlar bölümünde gösterilmesi
+Senaryoda kullanýlacak dokümanlarýn senaryo planlama adýmýnda seçilebilmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: Kullanýcý, Seçenekler menüsüne eklenecek Yasal Dokümanlar menüsüne týklar.
+Yasal Dokümanlar ekraný açýlýr.
+Sistem daha önceden Senaryo/plan/seçenekler bölümünde eklenen tüm metin dokümanlarýný listede gösterir.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR-1 : Yasal dokümanlar ekraný görünümü ve https://panel.peoplise.com/template/common/legal-documents/3 adresindeki gibi olacak.
+BR2- Halihazýrda sistemde tanýmlý olan dokümanlar, dokümanýn eklenmesi sýrasýnda aþaðýdaki alanlar için yapýlan seçimlere göre listelenir.
+
+BR3-  Yeni doküman ekle ile açýlan ekran tasarýmý https://panel.peoplise.com/template/common/create-legal-document gibi olacak.
+BR4- Liste aksiyonlarýnda Signed Candidate yerine Signed Onboardee (Onaylayan Kiþiler) yazýlacak. Týklandýðýnda metin onay loglarýnýn listesi gösterilecek. https://panel.peoplise.com/template/common/signed-documents?document=1
+BR-5 Senaryo planlama Seçenekler bölümünden yeni metin dosyasý eklenmek istenirse, Yasal dokümanlar menüsündeki Yeni Doküman Ekle seçeneðindeki ekran açýlacak.
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+Header: Notes for test
+Data: EMPTY
+------------------------------------------------
+
+Header: Adý
+Data: Güvenlik Ayarlarý
+------------------------------------------------
+Header: Konu
+Data: Kullanýcýlarýn þifre ve login iþlemleri için gücenlik ayarlarýnýn yapýlmasý
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: Login iþlemlerinin ayarlarda verilen kurallara göre yapýlmasý
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: HR Admin Hesap Ayarlarý menüsünden Güvenlik Ayarlarýna týklar.
+Sistem Güvenlik Ayarlarý sayfasýný getirir.
+3. Kullanýcý gerek gördüðü seçimleri yapar. 
+4. Kaydet butonuna týklar.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR1: Þifre zorluk ayarlarý
+PH-1734 - Jira project doesn't exist or you don't have permission to view it.  
+Þifre zorluk ayarlarýnda halihazýrda yapýlan kontroller var. Bunlar;
+Minimum 8 karakter uzunluðunda
+En az bir büyük harf
+En az bir sayýsal deðer 
+Eklenecek kontroller;
+En az bir küçük harf (Þifre zorluk ayarlarýnda iþaretlendiyse)
+En az 3 özel karakter (Þifre zorluk ayarlarýnda iþaretlendiyse)
+BR2:  2FA kontrolleri 
+PH-1740 - Jira project doesn't exist or you don't have permission to view it.
+Ýki faktörlü kimlik doðrulama yapýlsýn iþaretli ise Doðrulama Yöntemi seçeneði sorulacak. 2FA iþaretli deðilse doðrulama yöntemi alaný görünmeyecek.
+Kimlik doðrulama iþlemi e-posta ya da SMS ile yapýlabilecek. Ýkisi birden iþaretlenemez.
+2FA devreye alýndýðýnda login sonrasýnda çýkacak bir arayüz ile kod sorulur. ve 180'den geri sayarak kullanýcýnýn kodu girmesi beklenir.
+Kullanýcý kod girmezse login ekranýna geri döner.
+BR3: Diðer kontrolleri
+X günde bir þifre deðiþtirilsin
+PH-1735 - Jira project doesn't exist or you don't have permission to view it.
+Bu seçenek açýldýðýnda gün sayýsý olarak default 90 gelecek. Kullanýcý günü deðiþtirebilir. Gün deðerinin 0 olmasýna izin verilmeyecek.
+90 gün girildiyse ve son þifre deðiþiklik tarihinden itibaren 90 geçtiyse ve kullanýcý login olduðunda þifre deðiþtirme sayfasý açýlarak þifresini deðiþtirmesi istenecek.
+Þifresini güncellemeyen kullanýcýnýn login olmasýna izin verilmeyecek. 
+
+Þifre X gün yanlýþ girildiðinde kullanýcý kilitlensin
+PH-1736 - Jira project doesn't exist or you don't have permission to view it.
+Bu seçenek açýldýðýnda sayýsý olarak default 5 gelecek. Kullanýcý sayýyý deðiþtirebilir. 
+Sayý olarak 0 býrakýlýrsa, ilk yanlýþ giriþte kullanýcý kilitlenecek.
+Kilitli kullanýcýnýn statüsü ÝK Kullanýcý listesinde Kilitli olarak gösterilecek.
+ Kilitli kullanýcý login olmak istediðinde "Kullanýcý kilitli" uyarýsý gösterilecek. 
+Liste aksiyonlarýna Kilidi aç seçeneði eklenecek.
+ Kilidi açýlan kullanýcýnýn eski þifresi ile giriþ yapmasý beklenecek.
+
+Üst üste þifre deðiþtirme engellensin
+PH-1738 - Jira project doesn't exist or you don't have permission to view it.
+Seçenek iþaretlendiðinde kullanýcýnýn 1 gün üst üste þifre deðiþtirmesi engellenmeli.
+Þifre deðiþtirme menüsüne girdiðinde bir önceki gün þifre deðiþmiþ ise "Son þifre deðiþtirme tarihinden 1 gün sonra þifre deðiþtirilemez." uyarýsý verilebilir.
+Þifremi unuttum seçeneðinde de- ayný kontrol olmalý ve uyarý verilmeli. Þifre deðiþtirme maili gönderilmemeli
+
+X gün giriþ yapmayan kullanýcý kilitlensin
+PH-1739 - Jira project doesn't exist or you don't have permission to view it.
+Bu seçenek açýldýðýnda gün sayýsý olarak default 180gelecek. Kullanýcý günü deðiþtirebilir. Gün deðerinin 0 olmasýna izin verilmeyecek.
+Kilitli kullanýcýnýn statüsü ÝK Kullanýcý listesinde Kilitli olarak gösterilecek.
+Kilitli kullanýcý login olmak istediðinde "Kullanýcý kilitli" uyarýsý gösterilecek. 
+Liste aksiyonlarýna Kilidi aç seçeneði eklenecek.
+Kilidi açýlan kullanýcýnýn eski þifresi ile giriþ yapmasý beklenecek.
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+Header: Notes for test
+Data: EMPTY
+------------------------------------------------
+
+Header: Adý
+Data: Görevlerin toplu olarak iptal edilmesi
+------------------------------------------------
+Header: Konu
+Data: Kullanýcý sayfasýnda seçilen görevlerin toplu olarak iptal edilmesi
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin
+------------------------------------------------
+Header: Ön Koþullar
+Data: Bu kiþiye görev atanmýþ olmasý
+Kullanýcý üzerinde durumu Tamamlandý olmayan görevler olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: HR Admin'in, Kullanýcý sayfasýnda seçtiði görevlerin toplu olarak iptal edildi statusune alýnmasý
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: HR Admin Kiþi Listesinden iþlem yapmak istediði kullanýcý adýna týklar. 
+Sistem ekrana kullanýcý sayfasýný getirir.
+Kullanýcý, iptal etmek istediði görevler için kolon filtrelerini kullanarak filtreleme yapar.
+Kullanýcý durumu deðiþtirilecek kayýtlar listedeki görevlerin baþýna checkbox'ý kullanarak seçer.
+Kullanýcý durumunu iptal etmek istediklerini seçer ve Ýptal Et'e týklar. (BR-1)
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR-1 : Ýptal Et seçeneðinin yanýna ekleneecek info ile  "Seçilen görevler toplu olarak iptal edilebilir." metni gösterilecek.
+BR-2: "Seçilen görevler ve bu göreve baðlý diðer görevler iptal edilecek. Devam etmek istiyor musunuz?" metni çýkar. Onaylarsa, listede gösterilmese de baðlý görevler de iptal edilir.
+BR-3: Mevcut ekranda liste gösteriminde checkbox bulunmuyor. Default gösterime checkbox eklenecek. Kiþi Listesindeki seçim filtreleri ile ayný þekilde olacak.
+BR-4: Sayfada gösterilen kayýtlarý ya da gösterilen kayýtlarýn tamamýný seçmek için Senaryo kolon baþlýðýnýn solundaki ikona týklanýr. Aþaðýdaki seçenek listesi açýlýr. 
+Sayfayý seç ile sadece gösterilen sayfadaki görevler seçilir. Tümünü seç ile tüm kayýtlar seçilir.
+BR-5: Burada iptal edilen görevler, journey flow chart'tan iptal edilenler gibi iþlem görecek. 
+------------------------------------------------
+Header: Varsayýmlar
+Data: Analiz deðiþikliði sonrasýnda Vazgeç butonunun olmamamasýna karar verildi.
+------------------------------------------------
+Header: Notes for test
+Data: *** Ýþlem sonrasýnda seçilen kayýtlar iptal edileceði için detaylý test edilmesi gerekir. Sadece seçilen kayýtlarýn iptal edildiðinden emin olunmalýdýr.
+*** Baðlý görevi olan görev iptallerinde, baðlý görevlerin statüsü ayrýca kontrol edilmelidir.
+------------------------------------------------
+
+Header: Adý
+Data: Hesap Yönetimine Dýþ Kaynak Listesinin eklenmesi
+------------------------------------------------
+Header: Konu
+Data: Seçenek doldurtma görevinde seçeneklerin dýþ kaynaktan okunarak gösterilmesi ihtiyacý bulunuyor.
+Farklý bir madde ile alt görevlerde görev tipi olarak "Dýþ Kaynaktan Getir" seçeneði eklenmesi saðlanacaktýr. Bu use case'in konusu Alt görevde kullanýlacak dýþ kaynak servislerinin sisteme tanýmlanmasýdýr.
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin, Key Account Manager
+------------------------------------------------
+Header: Ön Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Son Koþullar
+Data: Dýþ kaynak tanýmýnýn yapýlabilmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1- Kullanýcý Hesap Yönetimi menüsünden "Dýþ Kaynak Listesi" ne týklar.
+2- Herhangi bir taným bulunmayan Dýþ Kaynak Listesi sayfasý açýlýr.
+3- Kullanýcý Ekle seçeneðine týklar.
+4- Dýþ Kaynak Ekle ekraný açýlýr.
+
+5- Kullanýcý servis bilgilerini bir isim vererek girer ve Baðlantýyý Kontrol Et'e týklar.  Baðlantý baþarýlý olduðunda servis parametreleri listelenir.
+
+6- Kullanýcý Seçenekler'den düzenle ile girerek parametreleri düzenler ve kaydeder.
+ 
+6- Kullanýcý dýþ kaynaðý kaydeder, kaydedilen bilgi listede gösterilir.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR-1 Düzenle ile açýlan ekranda Þifre bilgisi **** olarak gösterilmelidir.
+BR-2 Ayný servis için birden fazla dýþ kaynak tanýmlanabilir.
+BR-3 Tanýmlý dýþ kaynak listeden silinmek istenirse, bu kaydýn görev tanýmlarýnda kullanýlýp kullanýlmadýðý kontrol edilmelidir. Eðer kullanýlýyorsa, "Görevlerde kullanýlan dýþ kaynak silinemez. Ýþlem tamamlanamadý." uyarýsý verilir ve kayýt silinmez.
+BR-4 "Baðlantýyý kontrol et" butonuna týklandýðýnda servis baðlantýsý saðlanýrsa, parametrelerin listesi gösterilir. Baðlantýnýn baþarýsýz olmasý durumunda "Baðlantý saðlanamadý, ..................................." mesajý ile baðlantýnýn neden saðlanamadýðýna iliþkin daha net bir açýklama yazýlabilirse (örn kullanýcý bulunamadý, hatalý kullanýcý þifresi gibi) yazýlýr.
+BR-5 Gösterilecek Deðer sahasýnýn yanýndaki info'ya týklandýðýnda "Dýþ kaynaktan getirilen alt görevlerde, seçenekte gösterilecek alanlar için Gösterilecek Deðer iþaretlenir" metni gösterilir.
+BR-6 Dönecek Deðer sahasýnýn yanýndaki info'ya týklandýðýnda "Dýþ kaynaktan getirilen deðerin seçimi sonucunda hangi alanýn deðiþkene kaydedileceði Dönecek Deðer ile belirlenir." metni gösterilir.
+BR-7 Dönecek deðer sahasý birden fazla parametre için iþaretlenemez. iþaretlenmesi halinde parametre düzenleme ekranýnda kayýt esnasýnda "Parametrelerden yalnýz bir tanesi dönecek deðer olarak belirlenebilir." uyarýsý gösterilir.
+BR-8 Parametre adý deðiþtirilemez.
+BR-9 Gösterilecek deðer seçeneði birden fazla parametrede seçilirse, seçenekte aralarýna - koyarak gösterebiliriz.
+BR-10: Tanýmlý dýþ kaynakta sadece parametre tanýmlarýnda yapýlan seçimlerde deðiþikliðe izin verilmeli. Adý, url, kullanýcý adý, þifre ve baðlantýyý kontrol pasif gelmeli.
+BR-11: Bir görevde kullanýlan servis silinememeli.
+BR-12: Hiçbir parametrede dönecek deðer iþaretli deðilse, gösterilecek deðer iþaretli olan parametreler deðerleri deðiþkene kaydedilir.
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
+
+
+Header: Adý
+Data: Seçenek Doldurt alt görevinde seçeneklerin Excel'den toplu olarak eklenebilmesi
+------------------------------------------------
+Header: Konu
+Data: Alt görevlerde görev tipi "Seçenek Doldurt" olduðunda, seçenekler tek tek elle girilebiliyor. Yapýlacak geliþtirme ile seçeneklerin excel'den import edilerek eklenebilmesi amaçlanmaktadýr.
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin
+------------------------------------------------
+Header: Ön Koþullar
+Data: Senaryo alt görevinde Seçenek doldurt tipinin seçilmesi
+Seçeneklerin excel'den yüklenebilmesi için dosyanýn kullanýcý tarafýndan oluþturulmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: Seçeneklerin excel'den toplu olarak yüklenmesi
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1- Kullanýcý senaryo adýmlarýna Görev Atama görevi ekler.
+2- Yeni alt görev ekleye týklar.
+3- Görev tipinde "Seçenek Doldurt" u seçer.
+4- Seçenek bölümünde "Toplu seçenek ekle" ye týklar.  
+5- Açýlan toplu seçenek ekleme popup'ýnda Þablon Ýndir seçeneðine týklar.
+6. Sistem option-import.xlsx isimli þablon dosyasýný oluþturur.
+Spreadsheet
+7- Kullanýcý dosyayý açarak eklenmesini istediði seçenekleri dosyaya yazar.
+Spreadsheet
+8- Toplu seçenek ekleme ekranýnda, seçenekleri girdiði dosyayý seçer.
+9- Kaydet butonuna týklar.
+10- Excel'deki data seçeneklere eklenir.
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR-1: Toplu ekleme öncesinde eklenmiþ seçenekler varsa bunlara herhangi bir iþlem yapýlmaz. Excel'deki seçenekler mevcutlara ilave olarak eklenir.
+BR-2: Seçenekler dosyadaki sýra ile eklenmelidir.
+BR-3: Dosyadan ekleme öncesinde eklenmiþ seçenekler üst sýrada gösterilmeye devam etmelidir.
+------------------------------------------------
+Header: Varsayýmlar
+Data: Seçeneklerin aðýlýk eklenerek girildiði durumlar için excel'den aktarým yapýlmayacaðý varsayýlmýþtýr. 
+------------------------------------------------
+
+Header: Adý
+Data: Alt görevlere "Dýþ Kaynaktan Getir" seçeneðinin eklenmesi
+------------------------------------------------
+Header: Konu
+Data: Alt görevlerde "Dýþ Kaynaktan Getir" seçeneði kullanarak seçenek içeriklerinin servisten okunabilmesi saðlanmalý.
+------------------------------------------------
+Header: Birincil Aktör
+Data: HR Admin
+------------------------------------------------
+Header: Ön Koþullar
+Data: Senaryo alt görevlerine Dýþ kaynaktan getir seçeneðinin eklenmesi
+Dýþ kaynak tanýmýnýn yapýlmýþ olmasý
+------------------------------------------------
+Header: Son Koþullar
+Data: EMPTY
+------------------------------------------------
+Header: Ana Baþarýlý Senaryo
+Data: 1- Kullanýcý senaryo adýmýnda alt görev ekle'ye týklar.
+2- Alt görev tipi olarak "Dýþ Kaynaktan Seçenek Doldurt" seçer.
+3- Soru, Açýklama bilgilerini girer.
+4- Sistem Kontrol tipi olarak Tekli seçim dropdown seçeneðini getirir.
+5- Sistem Dýþ Kaynak Adý sahasýnda dýþ kaynak listesine eklenmiþ kaynaklarý gösterir.
+6- Kullanýcý Kaynaðý seçer ve kaydeder.
+ 
+------------------------------------------------
+Header: Alternatif Akýþlar
+Data: EMPTY
+------------------------------------------------
+Header: Ýþ Kurallarý
+Data: BR-1 Dýþ Kaynak adý boþ geçilemez.
+BR-2 Dýþ kaynak tanýmý aþaðýdaki gibi olan örnek için örnek seçenek gösterimi;
+Örnekte kullanýcý ISL01 - ABC TURIZM'i  seçtiðinde alt görev deðiþkene baðlandýysa, deðiþkene iþletme kodu olan ISL01 gönderilir.
+------------------------------------------------
+Header: Varsayýmlar
+Data: EMPTY
+------------------------------------------------
