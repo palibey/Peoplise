@@ -1,0 +1,2 @@
+In the first week, I wrote Report1.docx to show my understanding of NLTK and Spacy
+then I read some parts of the books and the online content
