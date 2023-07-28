@@ -1,0 +1,4 @@
+In the second week I parsed Confluence and got all the scenarios in there
+Which the output is in the output.txt
+Then I started generating Gherkin code in Chat-GPT to create a dataset for the 
+ML model that I was going to create which is in first_output.txt
