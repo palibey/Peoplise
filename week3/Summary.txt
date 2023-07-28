@@ -1,0 +1,8 @@
+The Third week of my internship was more on the learing side.
+I started the week by searching how to create a ML model for code generation 
+Then I saw 2 options the first one was building the ML model from scratch using N grams 
+https://www.youtube.com/watch?v=kCc8FmEb1nY
+The second option was using GPT-2 and fine tuning it
+https://www.youtube.com/watch?v=nsdCRVuprDY
+Since my Internship was coming to an end I moved on with the second option and 
+Dedicated my work week to generating the documents in a specific format and 
