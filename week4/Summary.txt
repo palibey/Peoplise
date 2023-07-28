@@ -1,1 +1,5 @@
+In the last week of my internship I used the previous courses code to train a ML model
+which the contents are in the following link
 https://drive.google.com/drive/folders/1-8jfnywbU_f8ipLxLllWulJB2En3ZAqu?usp=sharing
+Then I tested that trained mode with the newly generated BDD scenario but it was a fail because GPT-2 
+was not able to give a correct output
